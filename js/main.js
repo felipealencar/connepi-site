@@ -16,7 +16,7 @@ $(document).ready(function(){
         scrollSpeed: 1200
     });
 
-     
+
     //animated header class
     $(window).scroll(function () {
         if ($(window).scrollTop() > 100) {
@@ -118,26 +118,26 @@ function init() {
         zoom: 16,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(23.751945, 90.384590), // Dhaka ,
+        center: new google.maps.LatLng(-9.639299, -35.698823), // Dhaka ,
         scrollwheel: false,
 
-        // How you would like to style the map. 
+        // How you would like to style the map.
         // This is where you would paste any style found on Snazzy Maps.
         styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
     };
 
-    // Get the HTML DOM element that will contain your map 
+    // Get the HTML DOM element that will contain your map
     // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('map-canvas');
+    var mapElement = document.getElementById('location-map');
 
     // Create the Google Map using our element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
 
     // Let's also add a marker while we're at it
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(23.751945, 90.384590),
+        position: new google.maps.LatLng(-9.639299, -35.698823),
         map: map,
-        icon: 'img/map.png',
+        icon: 'images/map.png',
         title: 'Twing!'
     });
 }
