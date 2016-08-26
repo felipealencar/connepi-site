@@ -1010,3 +1010,16 @@ footer p a {
 footer p a:hover {
   color: #fff;
 }
+
+/**
+ * Maps
+ */
+#mapa-google
+{
+  min-height: 300px;
+  width: 100%;
+}
+
+/**
+ * cadastro de avaliadores
+ */
