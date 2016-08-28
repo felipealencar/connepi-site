@@ -1,3 +1,8 @@
+<?php
+  require_once('pdo.php');
+  $db = DB::init(); 
+  $grandeArea = $db->query('select * from site_grandes_areas ORDER BY nome_area ASC')->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -107,11 +112,43 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="form-group">
-            <label for="area_do_conhecimento">Área do conhecimento<span>*</span></label>    
-            <select class="form-control input-lg" name="area_do_conhecimento">
-              <option value="">Selecione</option>
+            <label for="">Grande Área<span>*</span></label>
+            <select class="form-control input-lg grandes-areas" name="grande_area">
+              <?php if(count($grandeArea)): ?>
+                <option value="">Selecione</option>
+                <?php foreach($grandeArea as $area): ?>
+                  <option value="<?php echo $area['cod_area'] ?>"><?php echo $area['nome_area'] ?></option> 
+                <?php endforeach; ?>
+              <?php endif; ?>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Áreas de Conhecimento<span>*</span></label>
+            <select class="form-control input-lg areas" name="area">
+                <option value="">Selecionar - Grande Área</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Sub Área de Conhecimento<span>*</span></label>
+            <select class="form-control input-lg sub-areas" name="sub_area">
+                <option value="">Selecionar - Área de Conhecimento</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Especialidades<span>*</span></label>
+            <select class="form-control input-lg especialidades" name="especialidade">
+                <option value="">Selecionar - Sua Área</option>
             </select>
           </div>
         </div>
@@ -143,8 +180,6 @@
 <!-- Js -->
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArAVwzg8f29OT6J_0AKMdEGSWjrkT8YrY&callback=iniciarMapa"
-async defer></script>
 <script src="js/jquery.lwtCountdown-1.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
