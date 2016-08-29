@@ -391,6 +391,12 @@ a:active {
 .animated .logo-1 {
     display: none!important;
 }
+.logo-1 {
+  box-sizing: border-box;
+  background:white;
+  padding:20px;
+  border-radius:20px;
+}
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default.animated .navbar-nav > li > a:hover {
