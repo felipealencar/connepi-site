@@ -115,6 +115,21 @@
             </select>
           </div>
         </div>
+		<div class="col-md-4">
+          <div class="form-group">
+            <label for="area_do_conhecimento">(alimentado pela área de conhecimento) Sub-Área<span>*</span></label>    
+            <select class="form-control input-lg" name="area_do_conhecimento">
+              <option value="">Selecione</option>
+            </select>
+          </div>
+        </div>
+		<div class="col-md-12">
+          <div class="form-group">
+            <label for="area_do_conhecimento">(alimentado pela sub-área)Especialidades<span>*</span></label>    
+            Checkboxes...
+            </select>
+          </div>
+        </div>
 
         <div class="col-md-12">
           <div class="form-group">
