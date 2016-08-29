@@ -381,6 +381,15 @@ a:active {
 
 
 /* #hero-area  */
+.logo-1 {
+   width: 190px;
+   height: 140px;
+   background: white; 
+   -moz-border-radius: 10px; 
+   -webkit-border-radius: 10px; 
+   border-radius: 10px;
+	
+}
 .animated .logo-2 {
     display: block!important;
 }
