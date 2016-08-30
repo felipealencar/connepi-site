@@ -1037,3 +1037,10 @@ footer p a {
 footer p a:hover {
   color: #fff;
 }
+
+.morecontent span {
+    display: none;
+}
+.morelink {
+    display: block;
+}
