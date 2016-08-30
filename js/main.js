@@ -108,7 +108,7 @@ $(document).ready(function(){
 	// Configure/customize these variables.
     var showChar = 500;  // How many characters are shown by default
     var ellipsestext = "...";
-    var moretext = "Leia mais...";
+    var moretext = "<p class=\"btn btn-default btn-more\">Leia mais</p>";
     var lesstext = "Ocultar";
     
     $('.more').each(function() {
