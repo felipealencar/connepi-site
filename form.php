@@ -77,20 +77,23 @@
  <section class="section" id="cadastro-de-avaliadores">
   <div class="container">
 
-    <form class="form">
+    <div class="retorno hidden">      
+    </div>
+
+    <form class="form-ajax" action="ajax.php" method="post">
       <div class="row">
 
         <div class="col-md-6">
           <div class="form-group">
-            <label for="nome_completo">Nome Completo <span>*</span></label>
-            <input type="text" class="form-control input-lg" id="nome_completo">
+            <label for="nome">Nome Completo <span>*</span></label>
+            <input type="text" class="form-control input-lg" id="nome" name="nome">
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="form-group">
             <label for="cpf">CPF <span>*</span></label>    
-            <input type="text" class="form-control input-lg" id="cpf" placeholder="999.999.999-99">
+            <input type="text" class="form-control input-lg" id="cpf" placeholder="999.999.999-99" name="cpf">
           </div>
         </div>
 
@@ -138,7 +141,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="">Sub Área de Conhecimento<span>*</span></label>
-            <select class="form-control input-lg sub-areas" name="sub_area">
+            <select class="form-control input-lg sub-areas" name="sub_area" multiple="5">
                 <option value="">Selecionar - Área de Conhecimento</option>
             </select>
           </div>
@@ -147,7 +150,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="">Especialidades<span>*</span></label>
-            <select class="form-control input-lg especialidades" name="especialidade">
+            <select class="form-control input-lg especialidades" name="especialidade" multiple="5">
                 <option value="">Selecionar - Sua Área</option>
             </select>
           </div>
@@ -155,6 +158,7 @@
 
         <div class="col-md-12">
           <div class="form-group">
+            <input type="hidden" name="form" value="avaliador">
             <button type="submit" class="btn btn-success btn-lg">Enviar</button>
           </div>
         </div>

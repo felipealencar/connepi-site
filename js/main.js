@@ -5,11 +5,69 @@ $(window).load(function() {
 $(document).ready(function(){
 
     //ajax form areas ...
-    var form = $('.form-auditores'),
+    var form = $('.form-ajax'),
         grandesAreas = $('.grandes-areas'),
         areas = $('.areas'),
         subAreas = $('.sub-areas'),
         especialidades = $('.especialidades');
+
+    form.on('submit', function(e){
+
+        e.preventDefault();
+
+        var dados   = $(this).serialize(),
+            url     = $(this).attr('action'),
+            metodo  = $(this).attr('method'),
+            retorno = $('.retorno'),
+            self    = $(this);
+
+        $.ajax({
+
+            data:   dados,
+            type:   metodo,
+            url:    url,
+
+            beforeSend: function()
+            {
+                retorno.removeClass('hidden').empty().append('<div class="alert alert-warning"><p>Aguarde...</p></div>');
+            },
+            error: function(response)
+            {
+                if(response.responseJSON.erros)
+                {
+                    
+                    retorno.removeClass('hidden').empty().append('<div class="alert alert-danger"><p>Erros de validação:</p><ul class="erros"></ul></div>');
+                    var ul = retorno.find('.erros');
+
+                    $.each(response.responseJSON.erros, function(indice, msg){
+                        ul.append('<li>'+ msg +'</li>');
+                    });
+
+                }else{
+                    retorno.empty().append('<div class="alert alert-danger"><p>'+response.erro+'</p></div>');
+                }
+            },
+            success: function(response)
+            {
+                if(response.sucesso)
+                {
+                    retorno.empty().append('<div class="alert alert-success"><p>'+response.sucesso+'</p></div>');
+                }
+
+                $(':input','.form-ajax')
+                      .not(':button, :submit, :reset, :hidden')
+                      .val('')
+                      .removeAttr('checked')
+                      .removeAttr('selected');
+
+                self[0].reset();
+            }
+
+        });  
+
+        return false;
+
+    });   
 
     grandesAreas.on('change', function(){
         
@@ -65,7 +123,7 @@ $(document).ready(function(){
             success: function(response)
             {
                 if(response.length > 0){
-                    var novasOpcoes = '<option value="">Selecione</option>';
+                    var novasOpcoes = '';
                     $.each(response, function(indice, obj){
                         novasOpcoes += '<option value="'+obj.cod_sub_area+'">'+obj.nome_sub_area+'</option>';
                     });
@@ -101,7 +159,7 @@ $(document).ready(function(){
             success: function(response)
             {
                 if(response.length > 0){
-                    var novasOpcoes = '<option value="">Selecione</option>';
+                    var novasOpcoes = '';
                     
                     $.each(response, function(indice, obj){
                         novasOpcoes += '<option value="'+obj.cod_especialidade+'">'+obj.nome_especialidade+'</option>';
