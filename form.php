@@ -78,7 +78,7 @@
   <div class="container">
 
     <form class="form">
-      <div class="row">
+      <div class="row wow fadeInDown">
 
         <div class="col-md-6">
           <div class="form-group">
