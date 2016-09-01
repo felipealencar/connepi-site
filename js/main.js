@@ -2,6 +2,9 @@ $(window).load(function() {
     $("#preloader").fadeOut("slow");
 });
 
+// máscara (input)
+$("#cpf").mask("000.000.000-00");
+
 $(document).ready(function(){
 
     //ajax form areas ...
