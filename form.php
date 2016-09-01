@@ -62,12 +62,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <nav class="collapse navbar-collapse" id="navbar">
        <ul class="nav navbar-nav navbar-right" id="top-nav">
-         <li class="current"><a href="#body">Principal</a></li>
-         <li><a href="#about">Sobre o evento</a></li>
-         <li><a href="#location">Local do evento</a></li>
-         <li><a href="#authors">Autores</a></li>
-         <li><a href="#programacao">Programação</a></li>
-         <li><a href="#">Inscrição</a></li>
+         <li class="current"><a href="index.html#body">Principal</a></li>
+         <li><a href="index.html#about">Sobre o evento</a></li>
+         <li><a href="index.html#location">Local do evento</a></li>
+         <li><a href="index.html#authors">Autores</a></li>
+         <li><a href="index.html#programacao">Programação</a></li>
+         <li><a href="form.php">Inscrição</a></li>
        </ul>
      </nav><!-- /.navbar-collapse -->
    </div><!-- /.container-fluid -->
@@ -180,6 +180,7 @@
 <!-- Js -->
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-mask-plugin.min.js"></script>
 <script src="js/jquery.lwtCountdown-1.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
