@@ -6,7 +6,7 @@ $db = DB::init();
 //apenas pra assegurar que o que vai entrar aqui é o formulário
 if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 {
-	$erroValidacao = [];
+	$erroValidacao = array();
 
 	$dados['nome'] 		= (isset($_POST['nome']) && !empty($_POST['nome'])) 
 		? $_POST['nome'] 
@@ -47,8 +47,8 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 	if(count($erroValidacao))
 	{
 
-		$msgsErro = [];
-		$dicionarioDeCampos = [
+		$msgsErro = array();
+		$dicionarioDeCampos = array(
 			'nome' => 'Nome',
 			'cpf' => 'CPF',
 			'titulacao' => 'Titulação',
@@ -58,7 +58,7 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 			'area' => 'Área de Conhecimento',
 			'sub_area' => 'Sub Área',
 			'especialidade' => 'Especialidades',
-		];
+		);
 
 		foreach($erroValidacao as $campo => $regra)
 		{
@@ -70,7 +70,7 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 
 		header('Content-Type: application/json');
 		header('Status', true, 422);
-		echo json_encode(['erros' => $msgsErro]);
+		echo json_encode(array('erros' => $msgsErro));
 		exit(0);		
 	}
 
@@ -80,19 +80,19 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 		$sqlInsert = 'INSERT INTO site_avaliadores (nome, cpf, titulacao, lattes, criado_em, area, email) VALUES (?,?,?,?,?,?,?)';
 		
 		$objPDO = $db->prepare($sqlInsert);
-		$objPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//$objPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$objPDO->bindValue(1, $dados['nome']);
 		$objPDO->bindValue(2, $dados['cpf']);
 		$objPDO->bindValue(3, $dados['titulacao']);
 		$objPDO->bindValue(4, $dados['lattes']);
 		$objPDO->bindValue(5, date('Y-m-d'));
 
-		$areas = [
+		$areas = array(
 			'grande_area' => $dados['grande_area'],
 			'area' => $dados['area'],
 			'sub_areas' => $dados['sub_area'],
 			'especialides' => $dados['especialidade']
-		];
+		);
 		
 		$objPDO->bindValue(6, serialize($areas));
 		
@@ -102,14 +102,14 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 		
 		$avaliadorID = $db->lastInsertId();
 		header('Content-Type: application/json');
-		echo json_encode(['sucesso' => 'Registro criado com sucesso!'.print_r($objPDO->errorInfo())]);
+		echo json_encode(array('sucesso' => 'Registro criado com sucesso!'));
 		exit(0);
 
 
 	}catch(Exception $e){
 
 		header('Content-Type: application/json');
-		echo json_encode(['erros' => 'Não foi possível criar o registro.'.print_r($objPDO->errorInfo())]);
+		echo json_encode(array('erros' => 'Não foi possível criar o registro.'));
 		exit(0);
 
 	}

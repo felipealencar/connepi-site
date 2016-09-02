@@ -54,14 +54,13 @@
            <span class="icon-bar"></span>
          </button>
          <a class="navbar-brand" href="index.html">
-          <img class="logo-1" src="images/logo.png" alt="LOGO">
           <img class="logo-2" src="images/logo-2.png" alt="LOGO">
         </a>
       </div>
 
       <nav class="collapse navbar-collapse" id="navbar">
        <ul class="nav navbar-nav navbar-right" id="top-nav">
-         <li class="current"><a href="#body">Principal</a></li>
+         <li class="current"><a href="index.html">Principal</a></li>
          <li><a href="#about">Sobre o evento</a></li>
          <li><a href="#location">Local do evento</a></li>
          <li><a href="#authors">Autores</a></li>

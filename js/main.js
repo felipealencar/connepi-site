@@ -200,10 +200,10 @@ $(document).ready(function(){
 
      
     //animated header class
-    $(window).scroll(function () {
+    $(window).scroll(function () {			
             if ($(window).scrollTop() > 100) {
                 $(".navbar-default").addClass("animated");
-            } else {
+            } else if ($(window).scrollTop() <= 100 && $('[name="form"]').val() != 'avaliador') {
                 $(".navbar-default").removeClass('animated');
             }
         });
