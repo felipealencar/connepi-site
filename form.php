@@ -1,3 +1,8 @@
+<?php
+  require_once('pdo.php');
+  $db = DB::init(); 
+  $grandeArea = $db->query('select * from site_grandes_areas ORDER BY nome_area ASC')->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -117,11 +122,16 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="form-group">
-            <label for="area_do_conhecimento">Área do conhecimento<span>*</span></label>    
-            <select class="form-control input-lg" name="area_do_conhecimento">
-              <option value="">Selecione</option>
+            <label for="">Grande Área<span>*</span></label>
+            <select class="form-control input-lg grandes-areas" name="grande_area">
+              <?php if(count($grandeArea)): ?>
+                <option value="">Selecione</option>
+                <?php foreach($grandeArea as $area): ?>
+                  <option value="<?php echo $area['cod_area'] ?>"><?php echo $area['nome_area'] ?></option> 
+                <?php endforeach; ?>
+              <?php endif; ?>
             </select>
           </div>
         </div>
