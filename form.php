@@ -59,7 +59,6 @@
         </a>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <nav class="collapse navbar-collapse" id="navbar">
        <ul class="nav navbar-nav navbar-right" id="top-nav">
          <li class="current"><a href="#body">Principal</a></li>
