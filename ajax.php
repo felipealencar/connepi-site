@@ -12,6 +12,10 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 		? $_POST['nome'] 
 		: $erroValidacao['nome'] = 'required';
 
+	$dados['email'] 		= (isset($_POST['email']) && !empty($_POST['email'])) 
+		? $_POST['email'] 
+		: $erroValidacao['email'] = 'required';	
+
 	$dados['cpf'] 		= (isset($_POST['cpf']) && !empty($_POST['cpf']))
 		? $_POST['cpf'] 
 		: $erroValidacao['cpf'] = 'required';
@@ -50,6 +54,7 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 			'titulacao' => 'Titulação',
 			'lattes' => 'Lattes',
 			'grande_area' => 'Grande Área',
+			'email' => 'E-mail',
 			'area' => 'Área de Conhecimento',
 			'sub_area' => 'Sub Área',
 			'especialidade' => 'Especialidades',
@@ -71,7 +76,7 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 
 	try{
 
-		$sqlInsert = 'INSERT INTO site_avaliadores (nome, cpf, titulacao, lattes, criado_em, area) VALUES (?,?,?,?,?,?)';
+		$sqlInsert = 'INSERT INTO site_avaliadores (nome, cpf, titulacao, lattes, criado_em, area, email) VALUES (?,?,?,?,?,?)';
 		
 		$objPDO = $db->prepare($sqlInsert);
 
@@ -89,6 +94,8 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 		];
 
 		$objPDO->bindValue(6, serialize($areas));
+		
+		$objPDO->bindValue(7, $dados['email']);
 
 		$objPDO->execute();
 

@@ -36,7 +36,7 @@ $(document).ready(function(){
                 if(response.responseJSON.erros)
                 {
                     
-                    retorno.removeClass('hidden').empty().append('<div class="alert alert-danger"><p>Erros de validação:</p><ul class="erros"></ul></div>');
+                    retorno.removeClass('hidden').empty().append('<div class="alert alert-danger"><p><strong>Erros de validação:</strong></p><hr /><ul class="erros"></ul></div>');
                     var ul = retorno.find('.erros');
 
                     $.each(response.responseJSON.erros, function(indice, msg){

@@ -83,10 +83,17 @@
     <form class="form-ajax" action="ajax.php" method="post">
       <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="nome">Nome Completo <span>*</span></label>
             <input type="text" class="form-control input-lg" id="nome" name="nome">
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="email">E-mail <span>*</span></label>
+            <input type="text" class="form-control input-lg" id="email" name="email">
           </div>
         </div>
 
