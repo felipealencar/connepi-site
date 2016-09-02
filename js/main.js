@@ -2,7 +2,128 @@ $(window).load(function() {
     $("#preloader").fadeOut("slow");
 });
 
+// máscara (input)
+$("#cpf").mask("000.000.000-00");
+
 $(document).ready(function(){
+
+    //ajax form areas ...
+    var form = $('.form-auditores'),
+        grandesAreas = $('.grandes-areas'),
+        areas = $('.areas'),
+        subAreas = $('.sub-areas'),
+        especialidades = $('.especialidades');
+
+    grandesAreas.on('change', function(){
+        
+        var self = $(this);
+        if(self.val() == undefined)
+        {
+            return false;
+        }
+
+        //se for Outras vai rodar algum ajax? acho que não
+        if(self.val() == '90000005')
+        {
+            return false;
+        }
+
+        $.ajax({
+            url : 'ajax.php',
+            type: 'get',
+            data: {
+                cod_grande_area : self.val()
+            },
+            success: function(response)
+            {
+                var novasOpcoes = '<option value="">Selecione</option>';
+                $.each(response, function(indice, obj){
+                    novasOpcoes += '<option value="'+obj.cod_area+'">'+obj.nome_area+'</option>';
+                });
+
+                areas.empty().append(novasOpcoes);
+            },
+            error: function(response)
+            {
+                alert('Entrar em contato com o suporte, algo não está legal');
+            }
+        });
+
+    });
+
+    areas.on('change', function(){
+
+        var self = $(this);
+        if(self.val() == undefined)
+        {
+            return false;
+        }
+
+        $.ajax({
+            url : 'ajax.php',
+            type: 'get',
+            data: {
+                cod_area : self.val()
+            },
+            success: function(response)
+            {
+                if(response.length > 0){
+                    var novasOpcoes = '<option value="">Selecione</option>';
+                    $.each(response, function(indice, obj){
+                        novasOpcoes += '<option value="'+obj.cod_sub_area+'">'+obj.nome_sub_area+'</option>';
+                    });
+
+                }else{
+                    var novasOpcoes = '<option value="">Nada Encontrado</option>';
+                }
+                
+                subAreas.empty().append(novasOpcoes);
+            },
+            error: function(response)
+            {
+                alert('Entrar em contato com o suporte, algo não está legal');
+            }
+        });
+
+    });
+
+    subAreas.on('change', function(){
+
+        var self = $(this);
+        if(self.val() == undefined)
+        {
+            return false;
+        }
+
+        $.ajax({
+            url : 'ajax.php',
+            type: 'get',
+            data: {
+                cod_sub_area : self.val()
+            },
+            success: function(response)
+            {
+                if(response.length > 0){
+                    var novasOpcoes = '<option value="">Selecione</option>';
+                    
+                    $.each(response, function(indice, obj){
+                        novasOpcoes += '<option value="'+obj.cod_especialidade+'">'+obj.nome_especialidade+'</option>';
+                    });
+
+                }else{
+                    var novasOpcoes = '<option value="">Nada Encontrado</option>';
+                }
+                
+                especialidades.empty().append(novasOpcoes);
+
+            },
+            error: function(response)
+            {
+                alert('Entrar em contato com o suporte, algo não está legal');
+            }
+        });
+
+    });
 
     wow = new WOW({
         mobile:       false,       // default
