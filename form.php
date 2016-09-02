@@ -190,14 +190,13 @@
 <!-- Js -->
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArAVwzg8f29OT6J_0AKMdEGSWjrkT8YrY&callback=iniciarMapa"
-async defer></script>
 <script src="js/jquery.lwtCountdown-1.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/jquery.form.js"></script>
 <script src="js/jquery.nav.js"></script>
+<script src="js/jquery-mask-plugin.min.js"></script>
 <script src="js/jquery.sticky.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/wow.min.js"></script>
