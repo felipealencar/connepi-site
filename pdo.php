@@ -8,7 +8,7 @@ class DB extends PDO
     {
         if (is_null(self::$db) === true)
         {
-            self::$db = new PDO( "pgsql:dbname=ocs; user=postgres; password=123123; host=localhost; port=5432" );
+            self::$db = new PDO( "pgsql:dbname=ocs; user=postgres; password=postgres; host=localhost; port=5432" );
         }
 
         return self::$db;

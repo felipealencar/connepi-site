@@ -76,10 +76,11 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 
 	try{
 
-		$sqlInsert = 'INSERT INTO site_avaliadores (nome, cpf, titulacao, lattes, criado_em, area, email) VALUES (?,?,?,?,?,?)';
+		
+		$sqlInsert = 'INSERT INTO site_avaliadores (nome, cpf, titulacao, lattes, criado_em, area, email) VALUES (?,?,?,?,?,?,?)';
 		
 		$objPDO = $db->prepare($sqlInsert);
-
+		$objPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$objPDO->bindValue(1, $dados['nome']);
 		$objPDO->bindValue(2, $dados['cpf']);
 		$objPDO->bindValue(3, $dados['titulacao']);
@@ -92,24 +93,23 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 			'sub_areas' => $dados['sub_area'],
 			'especialides' => $dados['especialidade']
 		];
-
+		
 		$objPDO->bindValue(6, serialize($areas));
 		
 		$objPDO->bindValue(7, $dados['email']);
 
 		$objPDO->execute();
-
+		
 		$avaliadorID = $db->lastInsertId();
-
 		header('Content-Type: application/json');
-		echo json_encode(['sucesso' => 'Registro criado com sucesso!']);
+		echo json_encode(['sucesso' => 'Registro criado com sucesso!'.print_r($objPDO->errorInfo())]);
 		exit(0);
 
 
 	}catch(Exception $e){
 
 		header('Content-Type: application/json');
-		echo json_encode(['erro' => 'Não foi possível criar o registro.']);
+		echo json_encode(['erros' => 'Não foi possível criar o registro.'.print_r($objPDO->errorInfo())]);
 		exit(0);
 
 	}

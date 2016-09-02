@@ -36,23 +36,26 @@ $(document).ready(function(){
             },
             error: function(response)
             {
-                if(response.responseJSON.erros)
+                
+				alert(console.log(response));
+				if(response.erros)
                 {
                     
                     retorno.removeClass('hidden').empty().append('<div class="alert alert-danger"><p><strong>Erros de validação:</strong></p><hr /><ul class="erros"></ul></div>');
                     var ul = retorno.find('.erros');
 
-                    $.each(response.responseJSON.erros, function(indice, msg){
+                    $.each(response.erro, function(indice, msg){
                         ul.append('<li>'+ msg +'</li>');
                     });
 
                 }else{
-                    retorno.empty().append('<div class="alert alert-danger"><p>'+response.erro+'</p></div>');
+                    retorno.empty().append('<div class="alert alert-danger"><p>'+response.erros+'aqui</p></div>');
                 }
             },
             success: function(response)
             {
-                if(response.sucesso)
+                alert(console.log(response));
+				if(response.sucesso)
                 {
                     retorno.empty().append('<div class="alert alert-success"><p>'+response.sucesso+'</p></div>');
                 }
