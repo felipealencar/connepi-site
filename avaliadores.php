@@ -61,10 +61,10 @@
       <nav class="collapse navbar-collapse" id="navbar">
        <ul class="nav navbar-nav navbar-right" id="top-nav">
          <li class="current"><a href="index.html">Principal</a></li>
-         <li><a href="#about">Sobre o evento</a></li>
-         <li><a href="#location">Local do evento</a></li>
-         <li><a href="#authors">Autores</a></li>
-         <li><a href="#programacao">Programação</a></li>
+         <li><a href="index.html#about">Sobre o evento</a></li>
+         <li><a href="index.html#location">Local do evento</a></li>
+         <li><a href="index.html#authors">Autores</a></li>
+         <li><a href="index.html#programacao">Programação</a></li>
          <li><a href="#">Inscrição</a></li>
        </ul>
      </nav><!-- /.navbar-collapse -->
@@ -160,7 +160,7 @@
             </select>
           </div>
         </div>
-
+		*Em caso de "Outra" alguns campos não são obrigatórios.
         <div class="col-md-12">
           <div class="form-group">
             <input type="hidden" name="form" value="avaliador">

@@ -37,7 +37,6 @@ $(document).ready(function(){
             error: function(response)
             {
                 
-				alert(console.log(response));
 				if(response.erros)
                 {
                     
@@ -54,7 +53,6 @@ $(document).ready(function(){
             },
             success: function(response)
             {
-                alert(console.log(response));
 				if(response.sucesso)
                 {
                     retorno.empty().append('<div class="alert alert-success"><p>'+response.sucesso+'</p></div>');
@@ -86,7 +84,8 @@ $(document).ready(function(){
         //se for Outras vai rodar algum ajax? acho que não
         if(self.val() == '90000005')
         {
-            return false;
+            
+			return false;
         }
 
         $.ajax({
