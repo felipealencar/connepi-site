@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.16
 -- Dumped by pg_dump version 9.1.16
--- Started on 2016-09-02 23:51:13
+-- Started on 2016-09-03 00:50:13
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -21,7 +21,7 @@ SET default_with_oids = false;
 --
 -- TOC entry 319 (class 1259 OID 26793)
 -- Dependencies: 6
--- Name: ies; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: ies; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE ies (
@@ -31,12 +31,10 @@ CREATE TABLE ies (
 );
 
 
-ALTER TABLE public.ies OWNER TO postgres;
-
 --
 -- TOC entry 318 (class 1259 OID 26785)
--- Dependencies: 319 6
--- Name: ies_id_ies_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 6 319
+-- Name: ies_id_ies_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE ies_id_ies_seq
@@ -47,12 +45,10 @@ CREATE SEQUENCE ies_id_ies_seq
     CACHE 1;
 
 
-ALTER TABLE public.ies_id_ies_seq OWNER TO postgres;
-
 --
--- TOC entry 2382 (class 0 OID 0)
+-- TOC entry 2385 (class 0 OID 0)
 -- Dependencies: 318
--- Name: ies_id_ies_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: ies_id_ies_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE ies_id_ies_seq OWNED BY ies.id_ies;
@@ -61,7 +57,7 @@ ALTER SEQUENCE ies_id_ies_seq OWNED BY ies.id_ies;
 --
 -- TOC entry 326 (class 1259 OID 26832)
 -- Dependencies: 6
--- Name: site_areas_conhecimento; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: site_areas_conhecimento; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE site_areas_conhecimento (
@@ -71,12 +67,10 @@ CREATE TABLE site_areas_conhecimento (
 );
 
 
-ALTER TABLE public.site_areas_conhecimento OWNER TO postgres;
-
 --
 -- TOC entry 327 (class 1259 OID 26838)
--- Dependencies: 6 326
--- Name: site_areas_conhecimento_cod_area_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 326 6
+-- Name: site_areas_conhecimento_cod_area_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_areas_conhecimento_cod_area_seq
@@ -87,12 +81,10 @@ CREATE SEQUENCE site_areas_conhecimento_cod_area_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_areas_conhecimento_cod_area_seq OWNER TO postgres;
-
 --
--- TOC entry 2383 (class 0 OID 0)
+-- TOC entry 2386 (class 0 OID 0)
 -- Dependencies: 327
--- Name: site_areas_conhecimento_cod_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_areas_conhecimento_cod_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_areas_conhecimento_cod_area_seq OWNED BY site_areas_conhecimento.cod_area;
@@ -100,8 +92,8 @@ ALTER SEQUENCE site_areas_conhecimento_cod_area_seq OWNED BY site_areas_conhecim
 
 --
 -- TOC entry 328 (class 1259 OID 26840)
--- Dependencies: 326 6
--- Name: site_areas_conhecimento_cod_grande_area_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 6 326
+-- Name: site_areas_conhecimento_cod_grande_area_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_areas_conhecimento_cod_grande_area_seq
@@ -112,12 +104,10 @@ CREATE SEQUENCE site_areas_conhecimento_cod_grande_area_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_areas_conhecimento_cod_grande_area_seq OWNER TO postgres;
-
 --
--- TOC entry 2384 (class 0 OID 0)
+-- TOC entry 2387 (class 0 OID 0)
 -- Dependencies: 328
--- Name: site_areas_conhecimento_cod_grande_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_areas_conhecimento_cod_grande_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_areas_conhecimento_cod_grande_area_seq OWNED BY site_areas_conhecimento.cod_grande_area;
@@ -126,7 +116,7 @@ ALTER SEQUENCE site_areas_conhecimento_cod_grande_area_seq OWNED BY site_areas_c
 --
 -- TOC entry 315 (class 1259 OID 26700)
 -- Dependencies: 6
--- Name: site_avaliadores; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: site_avaliadores; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE site_avaliadores (
@@ -141,12 +131,10 @@ CREATE TABLE site_avaliadores (
 );
 
 
-ALTER TABLE public.site_avaliadores OWNER TO postgres;
-
 --
 -- TOC entry 316 (class 1259 OID 26706)
--- Dependencies: 315 6
--- Name: site_auditores_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 6 315
+-- Name: site_auditores_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_auditores_id_seq
@@ -157,12 +145,10 @@ CREATE SEQUENCE site_auditores_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_auditores_id_seq OWNER TO postgres;
-
 --
--- TOC entry 2385 (class 0 OID 0)
+-- TOC entry 2388 (class 0 OID 0)
 -- Dependencies: 316
--- Name: site_auditores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_auditores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_auditores_id_seq OWNED BY site_avaliadores.id;
@@ -171,7 +157,7 @@ ALTER SEQUENCE site_auditores_id_seq OWNED BY site_avaliadores.id;
 --
 -- TOC entry 320 (class 1259 OID 26801)
 -- Dependencies: 6
--- Name: site_especialidades; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: site_especialidades; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE site_especialidades (
@@ -181,12 +167,10 @@ CREATE TABLE site_especialidades (
 );
 
 
-ALTER TABLE public.site_especialidades OWNER TO postgres;
-
 --
 -- TOC entry 321 (class 1259 OID 26807)
 -- Dependencies: 6 320
--- Name: site_especialidades_cod_especialidade_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: site_especialidades_cod_especialidade_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_especialidades_cod_especialidade_seq
@@ -197,12 +181,10 @@ CREATE SEQUENCE site_especialidades_cod_especialidade_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_especialidades_cod_especialidade_seq OWNER TO postgres;
-
 --
--- TOC entry 2386 (class 0 OID 0)
+-- TOC entry 2389 (class 0 OID 0)
 -- Dependencies: 321
--- Name: site_especialidades_cod_especialidade_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_especialidades_cod_especialidade_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_especialidades_cod_especialidade_seq OWNED BY site_especialidades.cod_especialidade;
@@ -210,8 +192,8 @@ ALTER SEQUENCE site_especialidades_cod_especialidade_seq OWNED BY site_especiali
 
 --
 -- TOC entry 322 (class 1259 OID 26809)
--- Dependencies: 6 320
--- Name: site_especialidades_cod_sub_area_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 320 6
+-- Name: site_especialidades_cod_sub_area_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_especialidades_cod_sub_area_seq
@@ -222,12 +204,10 @@ CREATE SEQUENCE site_especialidades_cod_sub_area_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_especialidades_cod_sub_area_seq OWNER TO postgres;
-
 --
--- TOC entry 2387 (class 0 OID 0)
+-- TOC entry 2390 (class 0 OID 0)
 -- Dependencies: 322
--- Name: site_especialidades_cod_sub_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_especialidades_cod_sub_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_especialidades_cod_sub_area_seq OWNED BY site_especialidades.cod_sub_area;
@@ -236,7 +216,7 @@ ALTER SEQUENCE site_especialidades_cod_sub_area_seq OWNED BY site_especialidades
 --
 -- TOC entry 329 (class 1259 OID 26842)
 -- Dependencies: 6
--- Name: site_grandes_areas; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: site_grandes_areas; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE site_grandes_areas (
@@ -245,12 +225,10 @@ CREATE TABLE site_grandes_areas (
 );
 
 
-ALTER TABLE public.site_grandes_areas OWNER TO postgres;
-
 --
 -- TOC entry 330 (class 1259 OID 26848)
--- Dependencies: 329 6
--- Name: site_grandes_areas_cod_area_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 6 329
+-- Name: site_grandes_areas_cod_area_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_grandes_areas_cod_area_seq
@@ -261,12 +239,10 @@ CREATE SEQUENCE site_grandes_areas_cod_area_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_grandes_areas_cod_area_seq OWNER TO postgres;
-
 --
--- TOC entry 2388 (class 0 OID 0)
+-- TOC entry 2391 (class 0 OID 0)
 -- Dependencies: 330
--- Name: site_grandes_areas_cod_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_grandes_areas_cod_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_grandes_areas_cod_area_seq OWNED BY site_grandes_areas.cod_area;
@@ -275,7 +251,7 @@ ALTER SEQUENCE site_grandes_areas_cod_area_seq OWNED BY site_grandes_areas.cod_a
 --
 -- TOC entry 323 (class 1259 OID 26816)
 -- Dependencies: 6
--- Name: site_sub_areas; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: site_sub_areas; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE site_sub_areas (
@@ -285,12 +261,10 @@ CREATE TABLE site_sub_areas (
 );
 
 
-ALTER TABLE public.site_sub_areas OWNER TO postgres;
-
 --
 -- TOC entry 324 (class 1259 OID 26822)
--- Dependencies: 6 323
--- Name: site_sub_areas_cod_area_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 323 6
+-- Name: site_sub_areas_cod_area_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_sub_areas_cod_area_seq
@@ -301,12 +275,10 @@ CREATE SEQUENCE site_sub_areas_cod_area_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_sub_areas_cod_area_seq OWNER TO postgres;
-
 --
--- TOC entry 2389 (class 0 OID 0)
+-- TOC entry 2392 (class 0 OID 0)
 -- Dependencies: 324
--- Name: site_sub_areas_cod_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_sub_areas_cod_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_sub_areas_cod_area_seq OWNED BY site_sub_areas.cod_area;
@@ -314,8 +286,8 @@ ALTER SEQUENCE site_sub_areas_cod_area_seq OWNED BY site_sub_areas.cod_area;
 
 --
 -- TOC entry 325 (class 1259 OID 26824)
--- Dependencies: 6 323
--- Name: site_sub_areas_cod_sub_area_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Dependencies: 323 6
+-- Name: site_sub_areas_cod_sub_area_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE site_sub_areas_cod_sub_area_seq
@@ -326,102 +298,100 @@ CREATE SEQUENCE site_sub_areas_cod_sub_area_seq
     CACHE 1;
 
 
-ALTER TABLE public.site_sub_areas_cod_sub_area_seq OWNER TO postgres;
-
 --
--- TOC entry 2390 (class 0 OID 0)
+-- TOC entry 2393 (class 0 OID 0)
 -- Dependencies: 325
--- Name: site_sub_areas_cod_sub_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: site_sub_areas_cod_sub_area_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE site_sub_areas_cod_sub_area_seq OWNED BY site_sub_areas.cod_sub_area;
 
 
 --
--- TOC entry 2246 (class 2604 OID 26799)
+-- TOC entry 2249 (class 2604 OID 26799)
 -- Dependencies: 319 318 319
--- Name: id_ies; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id_ies; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY ies ALTER COLUMN id_ies SET DEFAULT nextval('ies_id_ies_seq'::regclass);
 
 
 --
--- TOC entry 2251 (class 2604 OID 26850)
+-- TOC entry 2254 (class 2604 OID 26850)
 -- Dependencies: 328 326
--- Name: cod_grande_area; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cod_grande_area; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_areas_conhecimento ALTER COLUMN cod_grande_area SET DEFAULT nextval('site_areas_conhecimento_cod_grande_area_seq'::regclass);
 
 
 --
--- TOC entry 2252 (class 2604 OID 26851)
+-- TOC entry 2255 (class 2604 OID 26851)
 -- Dependencies: 327 326
--- Name: cod_area; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cod_area; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_areas_conhecimento ALTER COLUMN cod_area SET DEFAULT nextval('site_areas_conhecimento_cod_area_seq'::regclass);
 
 
 --
--- TOC entry 2245 (class 2604 OID 26852)
+-- TOC entry 2248 (class 2604 OID 26852)
 -- Dependencies: 316 315
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_avaliadores ALTER COLUMN id SET DEFAULT nextval('site_auditores_id_seq'::regclass);
 
 
 --
--- TOC entry 2247 (class 2604 OID 26853)
+-- TOC entry 2250 (class 2604 OID 26853)
 -- Dependencies: 322 320
--- Name: cod_sub_area; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cod_sub_area; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_especialidades ALTER COLUMN cod_sub_area SET DEFAULT nextval('site_especialidades_cod_sub_area_seq'::regclass);
 
 
 --
--- TOC entry 2248 (class 2604 OID 26854)
+-- TOC entry 2251 (class 2604 OID 26854)
 -- Dependencies: 321 320
--- Name: cod_especialidade; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cod_especialidade; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_especialidades ALTER COLUMN cod_especialidade SET DEFAULT nextval('site_especialidades_cod_especialidade_seq'::regclass);
 
 
 --
--- TOC entry 2253 (class 2604 OID 26855)
+-- TOC entry 2256 (class 2604 OID 26855)
 -- Dependencies: 330 329
--- Name: cod_area; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cod_area; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_grandes_areas ALTER COLUMN cod_area SET DEFAULT nextval('site_grandes_areas_cod_area_seq'::regclass);
 
 
 --
--- TOC entry 2249 (class 2604 OID 26856)
+-- TOC entry 2252 (class 2604 OID 26856)
 -- Dependencies: 324 323
--- Name: cod_area; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cod_area; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_sub_areas ALTER COLUMN cod_area SET DEFAULT nextval('site_sub_areas_cod_area_seq'::regclass);
 
 
 --
--- TOC entry 2250 (class 2604 OID 26857)
+-- TOC entry 2253 (class 2604 OID 26857)
 -- Dependencies: 325 323
--- Name: cod_sub_area; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cod_sub_area; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY site_sub_areas ALTER COLUMN cod_sub_area SET DEFAULT nextval('site_sub_areas_cod_sub_area_seq'::regclass);
 
 
 --
--- TOC entry 2366 (class 0 OID 26793)
--- Dependencies: 319 2378
--- Data for Name: ies; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 2369 (class 0 OID 26793)
+-- Dependencies: 319 2381
+-- Data for Name: ies; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 INSERT INTO ies (id_ies, no_ies, sigla_ies) VALUES (17, 'UNIVERSIDADE FEDERAL DE UBERLÂNDIA', 'UFU');
@@ -2792,18 +2762,18 @@ INSERT INTO ies (id_ies, no_ies, sigla_ies) VALUES (1925, 'FACULDADE DE TECNOLOG
 
 
 --
--- TOC entry 2391 (class 0 OID 0)
+-- TOC entry 2394 (class 0 OID 0)
 -- Dependencies: 318
--- Name: ies_id_ies_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: ies_id_ies_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('ies_id_ies_seq', 2365, true);
 
 
 --
--- TOC entry 2373 (class 0 OID 26832)
--- Dependencies: 326 2378
--- Data for Name: site_areas_conhecimento; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 2376 (class 0 OID 26832)
+-- Dependencies: 326 2381
+-- Data for Name: site_areas_conhecimento; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 INSERT INTO site_areas_conhecimento (cod_grande_area, cod_area, nome_area) VALUES (10000003, 10100008, 'Matemática');
@@ -2887,44 +2857,44 @@ INSERT INTO site_areas_conhecimento (cod_grande_area, cod_area, nome_area) VALUE
 
 
 --
--- TOC entry 2392 (class 0 OID 0)
+-- TOC entry 2395 (class 0 OID 0)
 -- Dependencies: 327
--- Name: site_areas_conhecimento_cod_area_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_areas_conhecimento_cod_area_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_areas_conhecimento_cod_area_seq', 1, false);
 
 
 --
--- TOC entry 2393 (class 0 OID 0)
+-- TOC entry 2396 (class 0 OID 0)
 -- Dependencies: 328
--- Name: site_areas_conhecimento_cod_grande_area_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_areas_conhecimento_cod_grande_area_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_areas_conhecimento_cod_grande_area_seq', 1, false);
 
 
 --
--- TOC entry 2394 (class 0 OID 0)
+-- TOC entry 2397 (class 0 OID 0)
 -- Dependencies: 316
--- Name: site_auditores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_auditores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_auditores_id_seq', 9, true);
 
 
 --
--- TOC entry 2363 (class 0 OID 26700)
--- Dependencies: 315 2378
--- Data for Name: site_avaliadores; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 2366 (class 0 OID 26700)
+-- Dependencies: 315 2381
+-- Data for Name: site_avaliadores; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 
 
 --
--- TOC entry 2367 (class 0 OID 26801)
--- Dependencies: 320 2378
--- Data for Name: site_especialidades; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 2370 (class 0 OID 26801)
+-- Dependencies: 320 2381
+-- Data for Name: site_especialidades; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 INSERT INTO site_especialidades (cod_sub_area, cod_especialidade, nome_especialidade) VALUES (10101004, 10101012, 'Conjuntos');
@@ -3820,27 +3790,27 @@ INSERT INTO site_especialidades (cod_sub_area, cod_especialidade, nome_especiali
 
 
 --
--- TOC entry 2395 (class 0 OID 0)
+-- TOC entry 2398 (class 0 OID 0)
 -- Dependencies: 321
--- Name: site_especialidades_cod_especialidade_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_especialidades_cod_especialidade_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_especialidades_cod_especialidade_seq', 1, false);
 
 
 --
--- TOC entry 2396 (class 0 OID 0)
+-- TOC entry 2399 (class 0 OID 0)
 -- Dependencies: 322
--- Name: site_especialidades_cod_sub_area_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_especialidades_cod_sub_area_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_especialidades_cod_sub_area_seq', 1, false);
 
 
 --
--- TOC entry 2376 (class 0 OID 26842)
--- Dependencies: 329 2378
--- Data for Name: site_grandes_areas; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 2379 (class 0 OID 26842)
+-- Dependencies: 329 2381
+-- Data for Name: site_grandes_areas; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 INSERT INTO site_grandes_areas (cod_area, nome_area) VALUES (10000003, 'Ciências Exatas e da Terra');
@@ -3851,21 +3821,22 @@ INSERT INTO site_grandes_areas (cod_area, nome_area) VALUES (50000004, 'Ciência
 INSERT INTO site_grandes_areas (cod_area, nome_area) VALUES (60000007, 'Ciências Sociais Aplicadas');
 INSERT INTO site_grandes_areas (cod_area, nome_area) VALUES (70000000, 'Ciências Humanas');
 INSERT INTO site_grandes_areas (cod_area, nome_area) VALUES (90000005, 'Outra');
+INSERT INTO site_grandes_areas (cod_area, nome_area) VALUES (80000002, 'Linguística, Letras e Artes');
 
 
 --
--- TOC entry 2397 (class 0 OID 0)
+-- TOC entry 2400 (class 0 OID 0)
 -- Dependencies: 330
--- Name: site_grandes_areas_cod_area_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_grandes_areas_cod_area_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_grandes_areas_cod_area_seq', 18, true);
 
 
 --
--- TOC entry 2370 (class 0 OID 26816)
--- Dependencies: 323 2378
--- Data for Name: site_sub_areas; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 2373 (class 0 OID 26816)
+-- Dependencies: 323 2381
+-- Data for Name: site_sub_areas; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 INSERT INTO site_sub_areas (cod_area, cod_sub_area, nome_sub_area) VALUES (10100008, 10101004, 'Álgebra');
@@ -4226,27 +4197,27 @@ INSERT INTO site_sub_areas (cod_area, cod_sub_area, nome_sub_area) VALUES (80300
 
 
 --
--- TOC entry 2398 (class 0 OID 0)
+-- TOC entry 2401 (class 0 OID 0)
 -- Dependencies: 324
--- Name: site_sub_areas_cod_area_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_sub_areas_cod_area_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_sub_areas_cod_area_seq', 1, false);
 
 
 --
--- TOC entry 2399 (class 0 OID 0)
+-- TOC entry 2402 (class 0 OID 0)
 -- Dependencies: 325
--- Name: site_sub_areas_cod_sub_area_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: site_sub_areas_cod_sub_area_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('site_sub_areas_cod_sub_area_seq', 1, false);
 
 
 --
--- TOC entry 2261 (class 2606 OID 26859)
--- Dependencies: 326 326 2379
--- Name: site_areas_conhecimento_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2264 (class 2606 OID 26859)
+-- Dependencies: 326 326 2382
+-- Name: site_areas_conhecimento_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY site_areas_conhecimento
@@ -4254,9 +4225,9 @@ ALTER TABLE ONLY site_areas_conhecimento
 
 
 --
--- TOC entry 2255 (class 2606 OID 26710)
--- Dependencies: 315 315 2379
--- Name: site_auditores_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2258 (class 2606 OID 26710)
+-- Dependencies: 315 315 2382
+-- Name: site_auditores_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY site_avaliadores
@@ -4264,9 +4235,9 @@ ALTER TABLE ONLY site_avaliadores
 
 
 --
--- TOC entry 2257 (class 2606 OID 26814)
--- Dependencies: 320 320 2379
--- Name: site_especialidades_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2260 (class 2606 OID 26814)
+-- Dependencies: 320 320 2382
+-- Name: site_especialidades_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY site_especialidades
@@ -4274,16 +4245,16 @@ ALTER TABLE ONLY site_especialidades
 
 
 --
--- TOC entry 2259 (class 2606 OID 26829)
--- Dependencies: 323 323 2379
--- Name: site_sub_areas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- TOC entry 2262 (class 2606 OID 26829)
+-- Dependencies: 323 323 2382
+-- Name: site_sub_areas_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY site_sub_areas
     ADD CONSTRAINT site_sub_areas_pkey PRIMARY KEY (cod_sub_area);
 
 
--- Completed on 2016-09-02 23:51:14
+-- Completed on 2016-09-03 00:50:13
 
 --
 -- PostgreSQL database dump complete
