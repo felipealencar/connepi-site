@@ -36,12 +36,10 @@ $(document).ready(function(){
             },
             error: function(response)
             {
-				response = JSON.parse(response.responseText);
-
-				if(response.erros)
+							response = JSON.parse(response.responseText);
+							if(response.erros)
                 {
-                    
-                    retorno.removeClass('hidden').empty().append('<div class="alert alert-danger"><p><strong>Erros de validação:</strong></p><hr /><ul class="erros"></ul></div>');
+										retorno.removeClass('hidden').empty().append('<div class="alert alert-danger"><p><strong>Erros de validação:</strong></p><hr /><ul class="erros"></ul></div>');
                     var ul = retorno.find('.erros');
 
                     $.each(response.erros, function(indice, msg){
@@ -68,14 +66,14 @@ $(document).ready(function(){
                 self[0].reset();
             }
 
-        });  
+        });
 
         return false;
 
-    });   
+    });
 
     grandesAreas.on('change', function(){
-        
+
         var self = $(this);
         if(self.val() == undefined)
         {
@@ -85,8 +83,7 @@ $(document).ready(function(){
         //se for Outras vai rodar algum ajax? acho que não
         if(self.val() == '90000005')
         {
-            
-			return false;
+					return false;
         }
 
         $.ajax({
@@ -137,7 +134,7 @@ $(document).ready(function(){
                 }else{
                     var novasOpcoes = '<option value="">Nada Encontrado</option>';
                 }
-                
+
                 subAreas.empty().append(novasOpcoes);
             },
             error: function(response)
@@ -166,7 +163,7 @@ $(document).ready(function(){
             {
                 if(response.length > 0){
                     var novasOpcoes = '';
-                    
+
                     $.each(response, function(indice, obj){
                         novasOpcoes += '<option value="'+obj.cod_especialidade+'">'+obj.nome_especialidade+'</option>';
                     });
@@ -174,7 +171,7 @@ $(document).ready(function(){
                 }else{
                     var novasOpcoes = '<option value="">Nada Encontrado</option>';
                 }
-                
+
                 especialidades.empty().append(novasOpcoes);
 
             },
@@ -198,9 +195,9 @@ $(document).ready(function(){
         scrollSpeed: 1200
     });
 
-     
+
     //animated header class
-    $(window).scroll(function () {			
+    $(window).scroll(function () {
             if ($(window).scrollTop() > 100) {
                 $(".navbar-default").addClass("animated");
             } else if ($(window).scrollTop() <= 100 && $('[name="form"]').val() != 'avaliador') {
@@ -292,22 +289,22 @@ $(document).ready(function(){
     var ellipsestext = "...";
     var moretext = "<p class=\"btn btn-default btn-more\">Leia mais</p>";
     var lesstext = "Ocultar";
-    
+
     $('.more').each(function() {
         var content = $(this).html();
- 
+
         if(content.length > showChar) {
- 
+
             var c = content.substr(0, showChar);
             var h = content.substr(showChar, content.length - showChar);
- 
+
             var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
- 
+
             $(this).html(html);
         }
- 
+
     });
- 
+
     $(".morelink").click(function(){
         if($(this).hasClass("less")) {
             $(this).removeClass("less");
@@ -336,12 +333,12 @@ function init() {
         center: new google.maps.LatLng(23.751945, 90.384590), // Dhaka ,
         scrollwheel: false,
 
-        // How you would like to style the map. 
+        // How you would like to style the map.
         // This is where you would paste any style found on Snazzy Maps.
         styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
     };
 
-    // Get the HTML DOM element that will contain your map 
+    // Get the HTML DOM element that will contain your map
     // We are using a div with id="map" seen below in the <body>
     var mapElement = document.getElementById('map-canvas');
 

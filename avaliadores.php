@@ -1,6 +1,6 @@
 <?php
   require_once('pdo.php');
-  $db = DB::init(); 
+  $db = DB::init();
   $grandeArea = $db->query('select * from site_grandes_areas ORDER BY nome_area ASC')->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/owl.carousel.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/lity.css">
   <!-- Responsive Stylesheet -->
   <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -40,7 +41,7 @@
   </div>
 </div>
 
-    <!-- 
+    <!--
     Header start
     ==================== -->
     <div class="navbar-default navbar-fixed-top animated" id="navigation">
@@ -63,6 +64,7 @@
          <li class="current"><a href="index.html">Principal</a></li>
          <li><a href="index.html#about">Sobre o evento</a></li>
          <li><a href="index.html#location">Local do evento</a></li>
+				 <li><a href="hospedagem.html" data-lity data-lity-target="hospedagem.html">Hospedagem</a></li>
          <li><a href="index.html#authors">Autores</a></li>
          <li><a href="index.html#programacao">Programação</a></li>
          <li><a href="#">Inscrição</a></li>
@@ -70,12 +72,12 @@
      </nav><!-- /.navbar-collapse -->
    </div><!-- /.container-fluid -->
  </div>
- 
+
 
  <section class="section" id="cadastro-de-avaliadores">
   <div class="container">
 
-    <div class="retorno hidden">      
+    <div class="retorno hidden">
     </div>
 
     <form class="form-ajax" action="ajax.php" method="post">
@@ -97,14 +99,14 @@
 
         <div class="col-md-3">
           <div class="form-group">
-            <label for="cpf">CPF <span>*</span></label>    
+            <label for="cpf">CPF <span>*</span></label>
             <input type="text" class="form-control input-lg" id="cpf" placeholder="999.999.999-99" name="cpf">
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="form-group">
-            <label for="titulacao">Titulação <span>*</span></label>    
+            <label for="titulacao">Titulação <span>*</span></label>
             <select class="form-control input-lg" name="titulacao">
               <option value="">Selecione</option>
               <option value="Mestre">Mestre</option>
@@ -125,9 +127,9 @@
             <label for="">Grande Área<span>*</span></label>
             <select class="form-control input-lg grandes-areas" name="grande_area">
               <?php if(count($grandeArea)): ?>
-                <option value="">Selecione</option>
+                <option value="" disabled selected>Selecione</option>
                 <?php foreach($grandeArea as $area): ?>
-                  <option value="<?php echo $area['cod_area'] ?>"><?php echo $area['nome_area'] ?></option> 
+                  <option value="<?php echo $area['cod_area'] ?>"><?php echo $area['nome_area'] ?></option>
                 <?php endforeach; ?>
               <?php endif; ?>
             </select>
@@ -136,31 +138,33 @@
 
         <div class="col-md-3">
           <div class="form-group">
-            <label for="">Áreas de Conhecimento<span>*</span></label>
+            <label for="">Áreas de Conhecimento</label>
             <select class="form-control input-lg areas" name="area">
-                <option value="">Selecionar - Grande Área</option>
+                <option value="" disabled selected>Selecionar - Grande Área</option>
             </select>
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="form-group">
-            <label for="">Sub Área de Conhecimento<span>*</span></label>
+            <label for="">Sub Área de Conhecimento</label>
             <select class="form-control input-lg sub-areas" name="sub_area" multiple="5">
-                <option value="">Selecionar - Área de Conhecimento</option>
+                <option value="" disabled selected>Selecionar - Área de Conhecimento</option>
             </select>
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="form-group">
-            <label for="">Especialidades<span>*</span></label>
+            <label for="">Especialidades</label>
             <select class="form-control input-lg especialidades" name="especialidade" multiple="5">
-                <option value="">Selecionar - Sua Área</option>
+                <option value="" disabled selected>Selecionar - Sua Área</option>
             </select>
           </div>
         </div>
-		*Em caso de "Outra" alguns campos não são obrigatórios.
+				<div class="col-md-12">
+          * Mantenha o botão Ctrl pressionado para selecionar mais de uma área.
+        </div>
         <div class="col-md-12">
           <div class="form-group">
             <input type="hidden" name="form" value="avaliador">
@@ -199,6 +203,7 @@
 <script src="js/jquery.sticky.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/lity.js"></script>
 <script src="js/main.js"></script>
 
 </body>
