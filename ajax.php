@@ -96,7 +96,7 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 
 		$avaliadorID = $db->lastInsertId();
 		header('Content-Type: application/json');
-		echo json_encode(array('sucesso' => 'Registro criado com sucesso!'));
+		echo json_encode(array('sucesso' => 'Registro criado com sucesso!<br><br>Dentro de 48hrs será enviado um e-email de confirmação.<br><i>Lembre-se de vericar sua caixa de Spam</i>.'));
 		exit(0);
 
 

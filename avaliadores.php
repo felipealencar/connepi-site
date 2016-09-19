@@ -77,9 +77,6 @@
  <section class="section" id="cadastro-de-avaliadores">
   <div class="container">
 
-    <div class="retorno hidden">
-    </div>
-
     <form class="form-ajax" action="ajax.php" method="post">
       <div class="row">
 
@@ -174,6 +171,10 @@
 
       </div>
     </form>
+
+		<div class="retorno hidden">
+    </div>
+		
   </div>
 </section>
 
