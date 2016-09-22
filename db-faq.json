@@ -1,0 +1,90 @@
+[
+	{
+		"question":"Estou tendo problemas com a plataforma OCS (Independente do problema: seja submissão, avaliadores, entre outros), como devo proceder?",
+		"answer":"Favor clicar no <i>link</i> a seguir e relatar o problema para que o pessoal do suporte possa solucioná-lo: <a href='http://connepi.ifal.edu.br/2016/suporte.html' target='_blank'>http://connepi.ifal.edu.br/2016/suporte.html</a>"
+	},
+	{
+		"question":"Haverá prorrogação das submissões?",
+		"answer":"Sim! Os novos prazos já estão disponíveis no <i>site</i> do evento e as submissões poderão ser feitas até o dia 30 deste mês."
+	},
+	{
+		"question":"Quando estou submetendo o trabalho no OCS (sistema) não consigo passar de fase e/ou não consigo inserir as áreas na terceira fase da submissão?",
+		"answer":"Este problema vem se repetindo com algumas versões do <i>Google Chrome</i>. Favor tentar realizar a submissão por outro navegador de <i>internet</i>, a exemplo do <i>Internet Explorer</i> ou o <i>Mozilla</i>."
+	},
+	{
+		"question":"Qual o valor da inscrição?",
+		"answer":"As inscrições são gratuitas."
+	},
+	{
+		"question":"Sou de instituição particular, universidade, curso técnico, superior, mestrado, doutorado, egresso, etc. Posso submeter trabalho no CONNEPI?",
+		"answer":"Sim!"
+	},
+	{
+		"question":"Nas normas diz que tenho que estar inscrito para submeter artigos, mas não consigo fazer a inscrição no <i>site</i>, como devo proceder?",
+		"answer":"Informamos que as inscrições serão disponibilizadas após os aceites dos trabalhos submetidos. Favor desconsiderar essa orientação constante nas normas."
+	},
+	{
+		"question":"Nas orientações para submissão diz que eu tenho que mudar a identificação dos autores no arquivo em PDF, mas não consigo mudar a palavra '“suporte”' para “autor”. Posso submeter assim mesmo?",
+		"answer":"Pode sim. Isso não identificará os autores do trabalho e não comprometerá a sua avaliação."
+	},
+	{
+		"question":"Se eu não puder apresentar o trabalho, qualquer um dos coautores podem apresentar em meu lugar?",
+		"answer":"Sim. Desde que também estejam inscritos no evento."
+	},
+	{
+		"question":"Se eu não apresentar o trabalho receberei certificado?",
+		"answer":"Os certificados só serão entregues para os autores cujo trabalho tenha sido apresentado por um dos autores durante o evento."
+	},
+	{
+		"question":"Posso submeter quantos trabalhos?",
+		"answer":"No máximo 2 trabalhos por primeiro autor. Na condição de coautor pode participar em quantos trabalhos tiver possibilidade."
+	},
+	{
+		"question":"Posso mandar trabalho com mais de 5 autores?",
+		"answer":"Não. Conforme as normas disponibilizadas poderão ser submetidos trabalhos com no máximo 5 autores apenas."
+	},
+	{
+		"question":"Haverá CONNEPI cultural este ano?",
+		"answer":"Devido à indisponibilidade de espaço no local do evento não teremos CONNEPI Cultural este ano!"
+	},
+	{
+		"question":"Não estou conseguindo acessar o sistema pois não recebi minha senha?",
+		"answer":"Basta clicar em “Esqueceu a senha?”, logo abaixo do local de inserção do <i>login</i> e senha e seguir os procedimentos de recuperação de senha."
+	},
+	{
+		"question":"Mandei um trabalho errado (ou Mandei o mesmo trabalho duas vezes; ou mandei o trabalho com a identificação dos autores; ou esqueci de anexar um dos arquivos do trabalho), como devo proceder?",
+		"answer":"Mande um <i>e-mail</i> para <a href='mailto:connepi.artigos.ifal@gmail.com' target='_top'>connepi.artigos.ifal@gmail.com</a>, informando que deseja excluir o trabalho contendo o título do trabalho, o número de identificação (ID) e a área de submissão para que possamos encaminhar para o diretor da área para que ele exclua o trabalho."
+	},
+	{
+		"question":"Como faço para submeter minicursos? É pela mesma plataforma de artigos?",
+		"answer":"Os minicursos devem ser enviados para o <i>e-mail</i> <a href='mailto:connepi.minicursos.ifal@gmail.com' target='_top'>connepi.minicursos.ifal@gmail.com</a>, conforme orientações disponibilizadas no site do evento."
+	},
+	{
+		"question":"Quando serão divulgados os resultados? Esses poderão ser divulgados antes do dia 20 de outubro?",
+		"answer":"Os resultados estão previstos para serem divulgados no dia 20 de outubro, mas caso ocorra alguma divulgação anterior ela estará disponível no site do evento."
+	},
+	{
+		"question":"Haverá Universo IF este ano? Haverá Mostra Tecnológica este ano? Haverá Competição de Ideias este ano?",
+		"answer":"Sim! Em breve estaremos disponibilizando as informações no site do evento."
+	},
+	{
+		"question":"Como faço para me inscrever como avaliador do CONNEPI?",
+		"answer":"As inscrições podem ser feitas pelo <i>link</i>: <a href='http://connepi.ifal.edu.br/2016/avaliadores.php' target='_blank'>connepi.ifal.edu.br/2016/avaliadores.php</a>"
+	},
+	{
+		"question":"Como faço para submeter um trabalho?",
+		"answer":"Basca acessar o <i>site</i> do evento, <a href='http://connepi.ifal.edu.br' target='_blank'>connepi.ifal.edu.br</a>, clicar em autores/as e seguir as orientações constantes nesta aba."
+	},
+	{
+		"question":"Quero ministrar um mini-curso e gostaria de saber quantas vagas poderei disponibilizar.",
+		"answer":"O autor da proposta de mini-curso pode indicar quantas pessoas pretende atender no mini-curso e a comissão organizadora irá avaliar a proposta."
+	},
+	{
+		"question":"Quando a programação estará disponível?",
+		"answer":"Estamos entrando em contato os palestrantes e em breve disponibilizaremos a programação no <i>site</i> do evento."
+	},
+	{
+		"question":"Como faço para fazer parte da organização do evento?",
+		"answer":"Em breve disponibilizaremos no site essa possibilidade para a comunidade do IFAL."
+	}
+]
