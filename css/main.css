@@ -889,6 +889,37 @@ background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#8ec6
     width: 100%;
 }
 
+/*--
+		Universo IF start
+--*/
+#universoif {
+	background: #82c25a;
+}
+
+#universoif h2,
+#universoif p {
+	color: #FFF;
+}
+#universoif .box-img img {position: relative}
+#universoif .box-img i {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%; height: 100.1%;
+	background: rgba(255,255,255,0.9);
+	color: black;
+	font-size: 52px;
+	padding-top: 25%;
+	opacity: 0;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+#universoif .box-img:hover i {
+	opacity: 1;
+}
+
 
 
 .init-slider .owl-dots {
