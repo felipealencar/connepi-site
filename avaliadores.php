@@ -61,13 +61,14 @@
 
       <nav class="collapse navbar-collapse" id="navbar">
        <ul class="nav navbar-nav navbar-right" id="top-nav">
-         <li class="current"><a href="index.html">Principal</a></li>
-         <li><a href="index.html#about">Sobre o evento</a></li>
-         <li><a href="index.html#location">Local do evento</a></li>
-				 <li><a href="hospedagem.html" data-lity data-lity-target="hospedagem.html">Hospedagem</a></li>
-         <li><a href="index.html#authors">Autores</a></li>
-         <li><a href="index.html#programacao">Programação</a></li>
-         <li><a href="#">Inscrição</a></li>
+            <li class="current"><a href="/">Principal</a></li>
+            <li><a href="index.html#about">Sobre o evento</a></li>
+            <li><a href="index.html#location">Local do evento</a></li>
+            <li><a href="index.html#authors">Autores/as</a></li>
+            <li><a href="index.html#universoif">Universo IF</a></li>
+            <li><a href="hospedagem.html" data-lity data-lity-target="hospedagem.html">Hospedagem</a></li>
+            <li><a style="color: #dddddd;" href="#"><i>Programação</i></a></li>
+            <li><a style="color: #dddddd;" href="#"><i>Inscrição</i></a></li>
        </ul>
      </nav><!-- /.navbar-collapse -->
    </div><!-- /.container-fluid -->
@@ -174,7 +175,7 @@
 
 		<div class="retorno hidden">
     </div>
-		
+
   </div>
 </section>
 
@@ -206,6 +207,15 @@
 <script src="js/wow.min.js"></script>
 <script src="js/lity.js"></script>
 <script src="js/main.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-85059492-1', 'auto');
+ga('send', 'pageview');
+</script>
 
 </body>
 </html>
