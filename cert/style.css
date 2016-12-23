@@ -1,0 +1,7 @@
+body {
+  background: url('cert/todo.jpg') no-repeat;
+  background-image-resolution: 300dpi;
+  background-image-resize: 6;
+  font-family: serif;
+  font-size: 18pt;
+}

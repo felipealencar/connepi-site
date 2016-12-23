@@ -205,17 +205,17 @@ $(document).ready(function(){
             }
         });
 
-    $('#countdown_dashboard').countDown({
-        targetDate: {
-            'day':      6,
-            'month':    12,
-            'year':     2016,
-            'hour':     09,
-            'min':      00,
-            'sec':      00,
-        },
-        omitWeeks: true
-    });
+    // $('#countdown_dashboard').countDown({
+    //     targetDate: {
+    //         'day':      6,
+    //         'month':    12,
+    //         'year':     2016,
+    //         'hour':     09,
+    //         'min':      00,
+    //         'sec':      00,
+    //     },
+    //     omitWeeks: true
+    // });
 
     $('.init-slider').owlCarousel({
         items:1,
