@@ -32,29 +32,39 @@ $formulario = array(
   )
 );
 
+$minicursos = array(
+  array('titulo' => 'A arte como potencializador do ensino de ciências', 'link' => 'curso=01'),
+  array('titulo' => 'Audiodescrição: usos, possibilidades e inclusão pedagógica no ensino tecnológico', 'link' => 'curso=02'),
+  array('titulo' => 'Dança asiática: uma alternativa prática de enriquecimento cultural para a educação', 'link' => 'curso=03'),
+  array('titulo' => 'Diz isso de outro jeito: Entonações e interações da voz', 'link' => 'curso=04'),
+  array('titulo' => 'Energia Solar Fotovoltaica: Oportunidades do mercado brasileiro e como se capacitar', 'link' => 'curso=06'),
+  array('titulo' => 'Indicação Gerográfica e Turismo - Inovação e Desenvolvimento Regional', 'link' => 'curso=07'),
+  array('titulo' => 'Introdução à programação de Robôs LEGO', 'link' => 'curso=08'),
+  array('titulo' => 'Técnicas Contemporâneas de Aquarela com materiais sustentáveis para a redução de estress', 'link' => 'curso=10'),
+  array('titulo' => 'Aprendizagem centrada no aluno: Compartilhando a experiência no modelo educacional finlandês', 'link' => 'curso=11')
+);
+
+require_once("pdo.php");
+$db = DB::init();
 $msg = false;
 // salvando respostas
 if(isset($_POST) && !empty($_POST))
 {
-  $for_text = array();
+  $data = array();
   for($i=0; $i<count($formulario); $i++)
   {
-    $for_text[] = array('pergunta' => $formulario[$i]['titulo'], 'resposta' => $_POST["pergunta$i"]);
+    $data[] = array('pergunta' => $formulario[$i]['titulo'], 'resposta' => $_POST["pergunta$i"]);
   }
-  file_put_contents("respostas-minicursos.txt", json_encode($for_text), FILE_APPEND);
-  $msg = "Formulário concluído!";
 
-  $minicursos = array(
-    array('titulo' => 'A arte como potencializador do ensino de ciências', 'link' => 'curso=01'),
-    array('titulo' => 'Audiodescrição: usos, possibilidades e inclusão pedagógica no ensino tecnológico', 'link' => 'curso=02'),
-    array('titulo' => 'Dança asiática: uma alternativa prática de enriquecimento cultural para a educação', 'link' => 'curso=03'),
-    array('titulo' => 'Diz isso de outro jeito: Entonações e interações da voz', 'link' => 'curso=04'),
-    array('titulo' => 'Energia Solar Fotovoltaica: Oportunidades do mercado brasileiro e como se capacitar', 'link' => 'curso=06'),
-    array('titulo' => 'Indicação Gerográfica e Turismo - Inovação e Desenvolvimento Regional', 'link' => 'curso=07'),
-    array('titulo' => 'Introdução à programação de Robôs LEGO', 'link' => 'curso=08'),
-    array('titulo' => 'Técnicas Contemporâneas de Aquarela com materiais sustentáveis para a redução de estress', 'link' => 'curso=10'),
-    array('titulo' => 'Aprendizagem centrada no aluno: Compartilhando a experiência no modelo educacional finlandês', 'link' => 'curso=11')
-  );
+  $sql = "INSERT INTO site_formularios (tipo, dados) VALUES (?,?)";
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(1, 'minicurso');
+  $stmt->bindValue(2, json_encode($data));
+  if($stmt->execute()){
+    $msg = "Formulário concluído!";
+  } else {
+    $msg = "Erro ao enviar o formulário.";
+  }
   $links_cursos = "";
   $i=1;
   foreach($minicursos as $curso){

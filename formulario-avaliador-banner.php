@@ -58,18 +58,28 @@ $formulario = array(
   )
 );
 
+require_once("pdo.php");
+$db = DB::init();
 $msg = false;
+
 // salvando respostas
 if(isset($_POST) && !empty($_POST))
 {
-  $for_text = array();
+  $data = array();
   for($i=0; $i<count($formulario); $i++)
   {
-    $for_text[] = array('pergunta' => $formulario[$i]['titulo'], 'resposta' => $_POST["pergunta$i"]);
+    $data[] = array('pergunta' => $formulario[$i]['titulo'], 'resposta' => $_POST["pergunta$i"]);
   }
-  file_put_contents("respostas-avaliador-banner.txt", json_encode($for_text), FILE_APPEND);
-  $msg = "Formulário concluído!";
-  echo '<META http-equiv="refresh" content="1;URL=certificado-avaliador.php?modalidade=banner">';
+  $sql = "INSERT INTO site_formularios (tipo, dados) VALUES (?,?)";
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(1, 'avaliador-banner');
+  $stmt->bindValue(2, json_encode($data));
+  if($stmt->execute()){
+    $msg = "Formulário concluído!";
+    echo '<META http-equiv="refresh" content="1;URL=certificado-avaliador.php?modalidade=banner">';
+  } else {
+    $msg = "Erro ao enviar o formulário.";
+  }
 }
 
 ?>
