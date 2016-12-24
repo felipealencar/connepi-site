@@ -43,7 +43,24 @@ if(isset($_POST) && !empty($_POST))
   }
   file_put_contents("respostas-minicursos.txt", json_encode($for_text), FILE_APPEND);
   $msg = "Formulário concluído!";
-  echo '<META http-equiv="refresh" content="1;URL=certificado-participante.php">';
+
+  $minicursos = array(
+    array('titulo' => 'A arte como potencializador do ensino de ciências', 'link' => 'curso=01'),
+    array('titulo' => 'Audiodescrição: usos, possibilidades e inclusão pedagógica no ensino tecnológico', 'link' => 'curso=02'),
+    array('titulo' => 'Dança asiática: uma alternativa prática de enriquecimento cultural para a educação', 'link' => 'curso=03'),
+    array('titulo' => 'Diz isso de outro jeito: Entonações e interações da voz', 'link' => 'curso=04'),
+    array('titulo' => 'Energia Solar Fotovoltaica: Oportunidades do mercado brasileiro e como se capacitar', 'link' => 'curso=06'),
+    array('titulo' => 'Indicação Gerográfica e Turismo - Inovação e Desenvolvimento Regional', 'link' => 'curso=07'),
+    array('titulo' => 'Introdução à programação de Robôs LEGO', 'link' => 'curso=08'),
+    array('titulo' => 'Técnicas Contemporâneas de Aquarela com materiais sustentáveis para a redução de estress', 'link' => 'curso=10'),
+    array('titulo' => 'Aprendizagem centrada no aluno: Compartilhando a experiência no modelo educacional finlandês', 'link' => 'curso=11')
+  );
+  $links_cursos = "";
+  $i=1;
+  foreach($minicursos as $curso){
+    $links_cursos .= "<li><a href=\"certificado-minicursos.php?" .$curso['link']. "\" class=\"btn-certificados wow fadeInUp\" data-wow-delay=\"1.{$i}s\"><i class=\"fa fa-share\" aria-hidden=\"true\"></i> " .$curso['titulo']. "</a></li>";
+    $i+=1;
+  }
 }
 
 ?>
@@ -57,6 +74,11 @@ if(isset($_POST) && !empty($_POST))
         include("formulario.tpl");
       else: ?>
         <h1 class="text-center wow fadeInUp" style="margin:30px 0;"><?php echo $msg;?></h1>
+        <div class="wow fadeIn" data-wow-delay="1s">
+          <h2 style="color:white;font-weight:bold;border-bottom:1px solid rgba(0,0,0,0.1);">Selecione o curso</h3>
+          <hr />
+          <ul><?php echo($links_cursos); ?></ul>
+        </div>
       <?php endif;?>
 
     </div>

@@ -42,7 +42,7 @@
                   <li class="wow fadeInUp" data-wow-delay="0.9s"><a class="btn-certificados" href="formulario-avaliador-banner.php"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - BANNER</a></li>
                   <li class="wow fadeInUp" data-wow-delay="1.1s"><a class="btn-certificados" href="formulario-avaliador-oral.php"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - ORAL</a></li>
                   <li class="wow fadeInUp" data-wow-delay="1.3s"><a class="btn-certificados" href="formulario-participante.php"><i class="fa fa-share" aria-hidden="true"></i> PARTICIPANTES</a></li>
-                  <!-- <li class="wow fadeInUp" data-wow-delay="1.5s"><a class="btn-certificados" href="formulario-minicursos.php"><i class="fa fa-share" aria-hidden="true"></i> MINICURSOS</a></li> -->
+                  <li class="wow fadeInUp" data-wow-delay="1.5s"><a class="btn-certificados" href="formulario-minicursos.php"><i class="fa fa-share" aria-hidden="true"></i> MINICURSOS</a></li>
                 </ul>
             </div>
             <div class="alert alert-success wow bounceInUp" data-wow-delay="2s">Informamos que os certicados dos trabalhos apresentados com os autores e os certificados dos apresentadores dos trabalhos estarão disponíveis em breve.</div>
