@@ -82,7 +82,7 @@ if(isset($_POST['inputName'])){
         <div style='padding:200px 10px 0 30px;text-align:center;'>
         Certificamos que <b>$participante</b> participou do XI CONNEPI – Congresso Norte Nordeste de Pesquisa e Inovação, que ocorreu no período de 06 a 09 de dezembro de 2016, no Hotel Ritz Lagoa da Anta, na cidade de Maceió - Alagoas.
         <br><br><br>
-        <b style='font-size:18px;'>Maceió, 09 de novembro de 2016.</b>
+        <b style='font-size:18px;'>Maceió, 09 de dezembro de 2016.</b>
         </div>
         </body></html>");
         $mpdf->Output($link_download, "F");

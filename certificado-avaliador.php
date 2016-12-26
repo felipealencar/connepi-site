@@ -80,7 +80,7 @@ if(isset($_POST['inputName']) && !empty($_POST['inputName'])){
         <div style='padding:200px 10px 0 30px;text-align:center;'>
         Certificamos que <b>$participante</b> participou como avaliador(a) dos trabalhos - modalidade $modalidade – expostos no XI CONNEPI em Maceió – Alagoas.
         <br><br><br>
-        <b style='font-size:18px;'>Maceió, 09 de novembro de 2016.</b>
+        <b style='font-size:18px;'>Maceió, 09 de dezembro de 2016.</b>
         </div>
         </body></html>");
         $mpdf->Output($link_download, "F");
