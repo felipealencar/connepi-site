@@ -37,9 +37,13 @@ if(isset($_POST['inputName']) && !empty($_POST['inputName'])){
 
   $participantes = array();
   $j=0;
+  // Evita os duplicados
   for($i=1; $i<count($data); $i++){
     $participantes[] = (!in_array(strtoupper($data[$i][0]), $participantes)) ? strtoupper($data[$i][0]) : '';
   }
+  // ===========================================================================
+  // Outros participantes
+  $participantes[] = strtoupper('Ayrton Pereira Correia de Barros Junior '); // ayrtonbarros_jr@hotmail.com
 
   function buscaParticipante($inputName, $participantes){
     $out = array();

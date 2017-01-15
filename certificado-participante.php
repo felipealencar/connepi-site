@@ -42,6 +42,12 @@ if(isset($_POST['inputName'])){
       $participantes[] = trim(strtoupper($data[$i][0]), ',');
     }
   }
+  // ===========================================================================
+  // Outros participantes
+  $participantes[] = strtoupper('Carolina Rodrigues'); // carol.rodrigues0807@hotmail.com
+  $participantes[] = strtoupper('Leila Soares Viegas Barreto Chagas'); // leila_viegas@hotmail.com
+  $participantes[] = strtoupper('Ayrton Pereira Correia de Barros Junior'); // ayrtonbarros_jr@hotmail.com
+  $participantes[] = strtoupper('João Ricardo Serique Bernardo'); // ayrtonbarros_jr@hotmail.com
 
   function buscaParticipante($inputName, $participantes){
     $out = array();
