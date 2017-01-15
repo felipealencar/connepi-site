@@ -45,7 +45,17 @@
                   <li class="wow fadeInUp" data-wow-delay="1.5s"><a class="btn-certificados" href="formulario-minicursos"><i class="fa fa-share" aria-hidden="true"></i> MINICURSOS</a></li>
                 </ul>
             </div>
-            <div class="alert alert-success wow bounceInUp" data-wow-delay="2s">Informamos que os certicados dos trabalhos apresentados com os autores e os certificados dos apresentadores dos trabalhos estarão disponíveis em breve.</div>
+            <div class="alert alert-success wow fadeInUp" data-wow-delay="2s">
+              Informamos que os certicados dos trabalhos apresentados com os autores e os certificados dos apresentadores dos trabalhos estarão disponíveis em breve.
+            </div>
+            <div class="alert alert-success wow bounceInUp">
+              <h4>Aqueles que ainda não conseguiram gerar/baixar seus certificados, informe nome e tipo do certificado desejado pelo formulário abaixo.</h4>
+              <br>
+              <center>
+                <a href="https://goo.gl/forms/Bl1QUa5cddu5Snx72" class="btn btn-default" target="_blank">Acessar formulário</a><br><br>
+                <i>Em 24h o certificado está disponível</i>
+              </center>
+            </div>
           </div>
         </div>
         <!-- .row close -->
