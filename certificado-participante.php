@@ -44,10 +44,21 @@ if(isset($_POST['inputName'])){
   }
   // ===========================================================================
   // Outros participantes
-  $participantes[] = strtoupper('Carolina Rodrigues'); // carol.rodrigues0807@hotmail.com
+  $participantes[] = strtoupper('Maria Carolina Paiva Rodrigues'); // carol.rodrigues0807@hotmail.com
   $participantes[] = strtoupper('Leila Soares Viegas Barreto Chagas'); // leila_viegas@hotmail.com
   $participantes[] = strtoupper('Ayrton Pereira Correia de Barros Junior'); // ayrtonbarros_jr@hotmail.com
   $participantes[] = strtoupper('João Ricardo Serique Bernardo'); // ayrtonbarros_jr@hotmail.com
+  $participantes[] = strtoupper('MONICA SILVEIRA'); // monica.silveira@ifba.edu.br
+  $participantes[] = strtoupper('FLÁVIO FABIANO PASCIÊNCIA TORRES'); // flavio.mat@hotmail.com
+  $participantes[] = strtoupper('Ricardo José Ferreira'); // ricardo.jferreir@gmail.com
+  $participantes[] = strtoupper('Pedro Henrique de Morais Martins'); // moraispeedro@gmail.com
+  $participantes[] = strtoupper('Bismarc Lopes da Silva'); // bismarc.bjl@gmail.com
+  $participantes[] = strtoupper('JOSEANE PINHEIRO DE LIMA'); // educador.geografia@hotmail.com
+  $participantes[] = strtoupper('Francisco Eudes da Silva'); // eudessylva@hotmail.com
+  $participantes[] = strtoupper('Antônia Isabela Soares Ximenes'); // isabelaximenes52@gmail.com
+  $participantes[] = strtoupper('Mayára Gomes Targino'); // may.targino@gmail.com
+  $participantes[] = strtoupper('Ayslanny Thuany Araújo de Oliveira'); // ayslannythuany@hotmail.com
+  $participantes[] = strtoupper('Dalviane Ferreira Sousa'); // dfsousa.ifce.cb@gmail.com
 
   function buscaParticipante($inputName, $participantes){
     $out = array();
