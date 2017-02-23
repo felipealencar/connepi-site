@@ -47,6 +47,32 @@ if(isset($_POST['inputName']) && !empty($_POST['inputName'])){
   $participantes[] = strtoupper('Tiago Caian de Assis Silva'); // tiagocaian1@gmail.com
   $participantes[] = strtoupper('Antônia Isabela Soares Ximenes'); // isabelaximenes52@gmail.com
   $participantes[] = strtoupper('Mayára Gomes Targino'); // may.targino@gmail.com
+  $participantes[] = strtoupper('Jailson Bina da Silva'); // jailsonbina.silva@gmail.com
+  $participantes[] = strtoupper('Nelma Maria Rocha de Sousa'); // nelma.bio2014@gmail.com
+  $participantes[] = strtoupper('MARCUS VICTOR MITONORI MARQUES'); // marcus_victor9@hotmail.com
+  $participantes[] = strtoupper('Fabiana Santos da silva'); // santosfabiana802@gmail.com
+  $participantes[] = strtoupper('LEANDRO ARAUJO DE SOUSA'); // leandrosousaifce@gmail.com
+  $participantes[] = strtoupper('Thiago de Loiola Araújo e Silva'); // engtiagolas@hotmail.com
+  $participantes[] = strtoupper('Jocélia da Hora Oliveira Barbosa'); // joceliahora@gmail.com
+  $participantes[] = strtoupper('Edvânia Valério da Silva Cavalcante'); // edvaniacavalcante@hotmail.com.br
+  $participantes[] = strtoupper('Jordana Rangely Almeida Santos de Oliveira'); // jordanarangely@hotmail.com
+  $participantes[] = strtoupper('Josias Silva Santos'); // josias.jss10@gmail.com
+  $participantes[] = strtoupper('Fávilla Vivianne da Silva Pinto'); // favillavivianny3@gmail.com
+  $participantes[] = strtoupper('jessica valesca benicio da nobrega'); // jercika_valesca@hotmail.com
+  $participantes[] = strtoupper('JOSÉ RIBEIRO DA SILVA'); // jorinetos@gmail.com
+  $participantes[] = strtoupper('Fabiana Santos da Silva '); // santosfabiana802@gmail.com
+  $participantes[] = strtoupper('Ricardo França Alves'); // ricardopb37@gmail.com
+  $participantes[] = strtoupper('Francisco Johnson Albuquerque Batista'); // franciscojohnsonwar@gmail.com
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
 
   function buscaParticipante($inputName, $participantes){
     $out = array();

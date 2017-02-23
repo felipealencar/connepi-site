@@ -5,9 +5,11 @@
   display:block;
   border:1px solid white;
   margin-bottom:10px;
-  color:yellow;
+  color:#f6e994;
   font-size:1.5em;
 }
+.btn-certificados-primary { color: yellow; }
+.btn-certificados-primary:hover { color: #444; }
 .btn-certificados i {opacity:0; transition: 1s linear all; color: white;}
 .btn-certificados:hover {
   background-color: white;
@@ -53,7 +55,7 @@
   font-family: 'FontAwesome';
   color: white;
 }
-#continuar:hover {transform: translateX(14px); text-shadow: 0 0 3px white;}
+#continuar:hover {text-shadow: 0 0 4px rgba(255,255,255,0.5);}
 .loading {
   width: 250px; margin: 0 auto;
   padding: 40px 0;

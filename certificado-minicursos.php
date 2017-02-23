@@ -40,11 +40,11 @@ if(isset($_POST['inputName']) && !empty($_POST['inputName'])){
     '02' => array('titulo' => 'Audiodescrição: usos, possibilidades e inclusão pedagógica no ensino tecnológico', 'data' => '07'),
     '03' => array('titulo' => 'Dança asiática: uma alternativa prática de enriquecimento cultural para a educação', 'data' => '07'),
     '04' => array('titulo' => 'Diz isso de outro jeito: Entonações e interações da voz', 'data' => '07'),
-    '06' => array('titulo' => 'Energia Solar Fotovoltaica: Oportunidades do mercado brasileiro e como se capacitar', 'data' => '08'),
-    '07' => array('titulo' => 'Indicação Gerográfica e Turismo - Inovação e Desenvolvimento Regional', 'link' => 'curso=08'),
-    '08' => array('titulo' => 'Introdução à programação de Robôs LEGO', 'data' => '08'),
-    '10' => array('titulo' => 'Técnicas Contemporâneas de Aquarela com materiais sustentáveis para a redução de estress', 'data' => '09'),
-    '11' => array('titulo' => 'Aprendizagem centrada no aluno: Compartilhando a experiência no modelo educacional finlandês', 'data' => '09')
+    '05' => array('titulo' => 'Energia Solar Fotovoltaica: Oportunidades do mercado brasileiro e como se capacitar', 'data' => '08'),
+    '06' => array('titulo' => 'Indicação Gerográfica e Turismo - Inovação e Desenvolvimento Regional', 'data' => '08'),
+    '07' => array('titulo' => 'Introdução à programação de Robôs LEGO', 'data' => '08'),
+    '08' => array('titulo' => 'Técnicas Contemporâneas de Aquarela com materiais sustentáveis para a redução de estress', 'data' => '09'),
+    '09' => array('titulo' => 'Aprendizagem centrada no aluno: Compartilhando a experiência no modelo educacional finlandês', 'data' => '09')
   );
 
   $participantes = array();
@@ -52,6 +52,21 @@ if(isset($_POST['inputName']) && !empty($_POST['inputName'])){
   for($i=1; $i<count($data); $i++){
     $participantes[] = $data[$i][0];
   }
+
+  // ===========================================================================
+  // Inserindo mais participantes
+  $participantes[] = strtoupper('JHONATAS GUTIERREZ SANTOS DE JESUS'); // teslaguto@gmail.com
+  $participantes[] = strtoupper('Clênio Renê Kurz Böhmer'); // cleniob@gmail.com
+  $participantes[] = strtoupper('Ricardo Nascimento do Carmo'); // ricardo.nascimento@acad.ifma.edu.br
+  $participantes[] = strtoupper('Thiago de Loiola Araújo e Silva'); // engtiagolas@hotmail.com
+  $participantes[] = strtoupper('Leonardo Mendes Sousa Xavier'); // leoo_mendes@hotmail.com
+  $participantes[] = strtoupper('Maria Aparecida Gonçalves dos Santos'); // aparecidagsantos94@gmail.com
+  $participantes[] = strtoupper('Danillo Gabriel Moreira Correia de Souza'); // danillosouzamc@gmail.com
+  $participantes[] = strtoupper('ROMÁRIO SILVA BARROS'); // romario.barros@ifpi.edu.br
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper(''); //
 
   function buscaParticipante($inputName, $participantes){
     $out = array();

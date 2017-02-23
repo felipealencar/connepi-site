@@ -38,6 +38,7 @@ if(isset($_POST) && !empty($_POST))
   $stmt->bindValue(2, json_encode($data));
   if($stmt->execute()){
     $msg = "Formulário concluído!";
+    echo '<META http-equiv="refresh" content="1;URL=certificado-avaliador.php?modalidade=banner">';
   } else {
     $msg = "Erro ao enviar o formulário.";
   }
@@ -54,10 +55,6 @@ if(isset($_POST) && !empty($_POST))
         include("formulario.tpl");
       else: ?>
         <h1 class="text-center wow fadeInUp" style="margin:30px 0;"><?php echo $msg;?></h1>
-        <h2 style="color:white;font-weight:bold;border-bottom:1px solid rgba(0,0,0,0.1);">Selecione o tipo do certificado</h3>
-        <hr />
-        <a href="certificado-avaliador.php?modalidade=banner" class="btn-certificados">Modelo normal</a>
-        <a href="certificado-completo" class="btn-certificados">Modelo completo (com os títulos dos artigos avaliado)</a>
       <?php endif;?>
 
     </div>

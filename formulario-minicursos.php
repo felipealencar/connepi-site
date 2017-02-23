@@ -37,11 +37,11 @@ $minicursos = array(
   array('titulo' => 'Audiodescrição: usos, possibilidades e inclusão pedagógica no ensino tecnológico', 'link' => 'curso=02'),
   array('titulo' => 'Dança asiática: uma alternativa prática de enriquecimento cultural para a educação', 'link' => 'curso=03'),
   array('titulo' => 'Diz isso de outro jeito: Entonações e interações da voz', 'link' => 'curso=04'),
-  array('titulo' => 'Energia Solar Fotovoltaica: Oportunidades do mercado brasileiro e como se capacitar', 'link' => 'curso=06'),
-  array('titulo' => 'Indicação Gerográfica e Turismo - Inovação e Desenvolvimento Regional', 'link' => 'curso=07'),
-  array('titulo' => 'Introdução à programação de Robôs LEGO', 'link' => 'curso=08'),
-  array('titulo' => 'Técnicas Contemporâneas de Aquarela com materiais sustentáveis para a redução de estress', 'link' => 'curso=10'),
-  array('titulo' => 'Aprendizagem centrada no aluno: Compartilhando a experiência no modelo educacional finlandês', 'link' => 'curso=11')
+  array('titulo' => 'Energia Solar Fotovoltaica: Oportunidades do mercado brasileiro e como se capacitar', 'link' => 'curso=05'),
+  array('titulo' => 'Indicação Gerográfica e Turismo - Inovação e Desenvolvimento Regional', 'link' => 'curso=06'),
+  array('titulo' => 'Introdução à programação de Robôs LEGO', 'link' => 'curso=07'),
+  array('titulo' => 'Técnicas Contemporâneas de Aquarela com materiais sustentáveis para a redução de estress', 'link' => 'curso=08'),
+  array('titulo' => 'Aprendizagem centrada no aluno: Compartilhando a experiência no modelo educacional finlandês', 'link' => 'curso=09')
 );
 
 require_once("pdo.php");

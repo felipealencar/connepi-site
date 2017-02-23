@@ -37,8 +37,9 @@
           </div>
           <div class="col-md-6">
             <div class="block">
-              <h1 class="wow fadeInDown" data-wow-delay="0.7s"><i class="fa fa-certificate" aria-hidden="true"></i> Certificados</h1>
+              <h1 class="wow fadeInDown" data-wow-delay="0.5s"><i class="fa fa-certificate" aria-hidden="true"></i> Certificados</h1>
                 <ul>
+                  <li class="wow fadeInUp" data-wow-delay="0.5s"><a class="btn-certificados btn-certificados-primary" href="certificado_autores-do-trabalho"><i class="fa fa-share" aria-hidden="true"></i> CERTIFICADO_AUTORES DO TRABALHO</a></li>
                   <li class="wow fadeInUp" data-wow-delay="0.7s"><a class="btn-certificados" href="selecionar-modelo"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE ARTIGOS - SUBMISSÃO</a></li>
                   <li class="wow fadeInUp" data-wow-delay="0.9s"><a class="btn-certificados" href="formulario-avaliador-banner"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - BANNER</a></li>
                   <li class="wow fadeInUp" data-wow-delay="1.1s"><a class="btn-certificados" href="formulario-avaliador-oral"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - ORAL</a></li>
@@ -46,17 +47,14 @@
                   <li class="wow fadeInUp" data-wow-delay="1.5s"><a class="btn-certificados" href="formulario-minicursos"><i class="fa fa-share" aria-hidden="true"></i> MINICURSOS</a></li>
                 </ul>
             </div>
-            <div class="alert alert-success wow fadeInUp" data-wow-delay="2s">
-              Informamos que os certicados dos trabalhos apresentados com os autores e os certificados dos apresentadores dos trabalhos estarão disponíveis em breve.
-            </div>
-            <div class="alert alert-success wow bounceInUp">
+            <!-- <div class="alert alert-success wow bounceInUp">
               <h4>Aqueles que ainda não conseguiram gerar/baixar seus certificados, informe nome e tipo do certificado desejado pelo formulário abaixo.</h4>
               <br>
               <center>
                 <a href="https://goo.gl/forms/Bl1QUa5cddu5Snx72" class="btn btn-default" target="_blank">Acessar formulário</a><br><br>
                 <i>Em 24h o certificado está disponível</i>
               </center>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- .row close -->
