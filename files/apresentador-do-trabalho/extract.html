@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Título Aba</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div id="tableView"></div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    var dados = [];
+    var folders = [
+      [
+        '07-12',
+        ['SEÇÃO 1', 'SEÇÃO 2', 'SEÇÃO 3']
+      ],
+      [
+        '08-12',
+        ['SEÇÃO 1', 'SEÇÃO 2', 'SEÇÃO 3', 'SEÇÃO 4']
+      ],
+      [
+        '09-12',
+        ['SEÇÃO 1']
+      ]
+    ];
+    var files = [
+      'CIÊNCIAS AGRÁRIAS',
+      'CIÊNCIAS BIOLÓGICAS',
+      'CIÊNCIAS DA SAÚDE',
+      'CIÊNCIAS EXATAS E DA TERRA',
+      'CIÊNCIAS HUMANAS',
+      'CIÊNCIAS SOCIAIS APLICADAS',
+      'ENGENHARIAS',
+      'LLA',
+      'MULTIDISCIPLINAR'
+    ];
+    var htmlFiles = [];
+    for(var a = 0; a < folders.length; a++){
+      for(var b = 0; b < folders[a][1].length; b++){
+        for(var c = 0; c < files.length; c++){
+          htmlFiles.push(folders[a][0] + '/' + folders[a][1][b] + '/' + files[c] + '.htm');
+        }
+      }
+    }
+
+    var tablesHtml = '';
+    for(var i = 0; i < htmlFiles.length; i++){
+      $.ajax({
+        url: htmlFiles[i],
+        type: 'get',
+        success: function(data){
+          tablesHtml += data;
+        },
+        error: function(){
+          console.log('deu um erro ai');
+        }
+      });
+    }
+
+    var tableView = $('#tableView');
+
+    // Exibindo a tabela no DOM
+    setTimeout(function(){
+      tableView.html(tablesHtml);
+    }, 3000);
+
+    // Extraindo os dados do DOM
+    setTimeout(function(){
+      var tables = $('table');
+
+      for(var i = 0; i < tables.length; i++){
+        var trs = $(tables[i]).find('tr');
+        for(var j = 0; j < trs.length; j++){
+          var tds = $(trs[j]).find('td');
+          // Yeladiz
+          var id           = ($(tds[1]).find('p.MsoNormal')[0].innerText).trim();
+          var titulo       = ($(tds[2]).find('p.MsoNormal')[0].innerText).trim();
+          var apresentador = ($(tds[3]).find('p.MsoNormal')[0].innerText).trim();
+          if(apresentador != '' && apresentador != 'FALTOU' && id != 'ID'){
+            dados.push( { 'id':id, 'titulo':titulo, 'apresentador':apresentador } );
+          }
+        }
+      }
+    }, 4000);
+
+    // Limpando o DOM
+    setTimeout(function(){
+      tableView.empty();
+      $.ajax({
+      	url: 'ajax.php',
+      	type: 'post',
+        dataType: 'text',
+      	data: {
+      		apresentadores: JSON.stringify(dados)
+      	},
+      	success: function(response){
+      		alert(response);
+      	},
+      	error: function(response){
+      		alert(response);
+      	}
+      });
+    }, 5000);
+
+
+  });
+
+</script>
+
+</body>
+</html>

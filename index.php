@@ -37,7 +37,7 @@
           </div>
           <div class="col-md-6">
             <div class="block">
-              <h1 class="wow fadeInDown" data-wow-delay="0.5s"><i class="fa fa-certificate" aria-hidden="true"></i> Certificados</h1>
+              <h1 class="custom-h1 wow fadeInDown" data-wow-delay="0.5s"><i class="fa fa-certificate" aria-hidden="true"></i> Certificados</h1>
                 <ul>
                   <li class="wow fadeInUp" data-wow-delay="0.5s"><a class="btn-certificados btn-certificados-primary" href="certificado_autores-do-trabalho"><i class="fa fa-share" aria-hidden="true"></i> CERTIFICADO_AUTORES DO TRABALHO</a></li>
                   <li class="wow fadeInUp" data-wow-delay="0.7s"><a class="btn-certificados" href="selecionar-modelo"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE ARTIGOS - SUBMISSÃO</a></li>

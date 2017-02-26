@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="css/lity.css">
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/vendor/jquery-1.10.2.min.js"></script>
   </head>
   <body id="body">
     <div id="preloader">
@@ -39,11 +38,11 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-          <span class="sr-only">Navegação</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" id="#navbar-toggle">
+            <span class="sr-only">Navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">
           <img class="logo-1" src="images/logo.png" alt="LOGO">
@@ -53,14 +52,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <nav class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right" id="top-nav">
-            <li><a href="index.php">Principal</a></li>
-            <li><a href="index.php#about">Sobre o evento</a></li>
-            <li><a href="index.php#location">Local do evento</a></li>
-            <li><a href="index.php#authors">Autores/as</a></li>
-						<li><a href="index.php#universoif">Universo IF</a></li>
-            <li><a href="hospedagem.html" data-lity data-lity-target="hospedagem.html">Hospedagem</a></li>
-            <li><a href="index.php#programacao">Programação</a></li>
-            <li><a href="https://doity.com.br/xiconnepi" target="_blank">Inscrição</a></li>
+            <li><a class="custom-exit-collapse" href="index.php">Principal</a></li>
+            <li><a class="custom-exit-collapse" href="index.php#about">Sobre o evento</a></li>
+            <li><a class="custom-exit-collapse" href="index.php#location">Local do evento</a></li>
+            <li><a class="custom-exit-collapse" href="index.php#authors">Autores/as</a></li>
+						<li><a class="custom-exit-collapse" href="index.php#universoif">Universo IF</a></li>
+            <li><a class="custom-exit-collapse" href="hospedagem.html" data-lity data-lity-target="hospedagem.html">Hospedagem</a></li>
+            <li><a class="custom-exit-collapse" href="index.php#programacao">Programação</a></li>
+            <li><a class="custom-exit-collapse" href="https://doity.com.br/xiconnepi" target="_blank">Inscrição</a></li>
           </ul>
         </nav><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

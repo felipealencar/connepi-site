@@ -29,13 +29,23 @@
 <script src="js/jquery.sticky.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/wow.min.js"></script>
-<script src="js/ism-2.2.min.js"></script>
 <script src="js/jquery-mask-plugin.min.js"></script>
 <script src="js/lity.js"></script>
-<script src="js/min/main.min.js"></script>
+<script src="js/main.js"></script>
 <script src="js/certificado.js"></script>
-
 <script>
+$(window).load(function(){
+  (function(){
+    var script = document.createElement('script');
+    script.sync = 1;
+    script.src = 'js/ism-2.2.min.js';
+    var a = document.getElementsByTagName('script')[0];
+    a.parentNode.insertBefore(script, a);
+  })();
+});
+</script>
+
+<!-- <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -43,6 +53,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-85059492-1', 'auto');
 ga('send', 'pageview');
-</script>
+</script> -->
 </body>
 </html>

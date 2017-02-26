@@ -1,4 +1,12 @@
 /* coffe break */
+@media ( max-width: 444px ){
+  .custom-h1 { font-size: 32px !important; }
+  .btn-certificados { font-size: 17px !important; }
+}
+@media ( max-width: 379px ){
+  .custom-h1 { font-size: 24px !important; }
+  .btn-certificados { font-size: 15px !important; }
+}
 .disabled {cursor:not-allowed;opacity:0.1;}
 .btn-certificados {
   padding:10px;
@@ -11,6 +19,9 @@
 .btn-certificados-primary { color: yellow; }
 .btn-certificados-primary:hover { color: #444; }
 .btn-certificados i {opacity:0; transition: 1s linear all; color: white;}
+@media ( max-width: 1200px){
+  .btn-certificados i { display: none; }
+}
 .btn-certificados:hover {
   background-color: white;
   color: #444;
@@ -459,7 +470,10 @@ a:active {
     padding:20px;
 }
 
-
+@keyframes logo-in {
+  from { opacity: 0; transform: translateY(-90px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* #hero-area  */
 .logo-1 {
@@ -469,9 +483,10 @@ a:active {
    -moz-border-radius: 10px;
    -webkit-border-radius: 10px;
    border-radius: 10px;
-
+   animation: logo-in 0.4s linear;
 }
 .animated .logo-2 {
+    animation: logo-in 0.4s linear;
     display: block!important;
 }
 .logo-2 {

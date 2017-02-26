@@ -139,7 +139,13 @@ if(isset($_POST['inputName'])){
   $participantes[] = strtoupper('FRANCISCA ADRIANA MONTEIRO DE SOUSA'); // adriana.monteiro.cedro@hotmail.com
   $participantes[] = strtoupper('Ábner Lucas Alves Pereira'); // abner_l@hotmail.com
   $participantes[] = strtoupper('RENATA CIBELY FREIRE'); //
-  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper('Erick Batalha Freitas'); // erickbatalha96@gmail.com
+  $participantes[] = strtoupper('Camila Monteiro Penz'); // camilaapenz@gmail.com
+  $participantes[] = strtoupper('FRANCISCA ADRIANA MONTEIRO DE SOUSA '); // adriana.monteiro.cedro@hotmail.com
+  $participantes[] = strtoupper('Jéssica Valesca Benício da Nóbrega'); // jercika_valesca@hotmail.com
+  $participantes[] = strtoupper('Thayara Ferreira Coimbra Lima'); // thayara@ifma.edu.br
+  $participantes[] = strtoupper('Mery Angela Ramos de Andrade'); // merangela@hotmail.com
+  $participantes[] = strtoupper('Antonio Jorlan Soares de Abreu'); // antonio.abreu@ifma.edu.br
   $participantes[] = strtoupper(''); //
   $participantes[] = strtoupper(''); //
   // ===========================================================================
