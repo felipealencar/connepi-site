@@ -7,6 +7,43 @@ $("#cpf").mask("000.000.000-00");
 
 $(document).ready(function(){
 
+  // artigos premiados por area tematica
+  var premiados_section = $('.ta-premiados-section');
+  var premiados_menu = $('#ta-premiados-menu');
+  var premiados_menu_voltar = $("#ta-premiados-menu-voltar");
+  var premiados_menu_links = $('.ta-area-tematica');
+  var premiados_modalidades = $("a.ta-modalidade");
+  var premiados_ranking = $('#ta-premiados-ranking');
+  $.each($(premiados_menu_links), function(){
+    $(this).append('<div class="ta-area-tematica-nome">' + this.dataset.area + '</div>');
+  });
+
+  var ta_current_area;
+  var ta_current_modalidade;
+  premiados_menu_links.click(function(){
+    ta_current_area = $(this).data('area');
+    premiados_section.empty().append('Modalidade').addClass('fadeInRight');
+    premiados_section.toggleClass('fadeInUp', 'bounceInUp');
+    premiados_menu.css('display','none');
+    premiados_modalidades.css('display','block');
+  });
+  premiados_modalidades.click(function(){
+    ta_current_modalidade = $(this).attr('id');
+    premiados_modalidades.css('display','none');
+    premiados_section.empty().append(ta_current_area + '<br>' + ta_current_modalidade).removeClass('fadeInRight').addClass('fadeInRight');
+    $.getJSON('files/dados-certificado-autores-do-trabalho.json', function(data){
+      $.each(data, function(index, obj){
+        if(obj.area == ta_current_area && obj.modalidade == ta_current_modalidade && obj.colocacao > 0){
+          premiados_ranking.append('<div class="ta-trabalho-premiado wow fadeInUp" data-wow-delay="0.2s"><span class="colocacao">'+obj.colocacao+'</span><h1>'+obj.titulo+'</h1><h3>'+obj.autores+'</h3><p><span>Resumo:</span>blablabla</p></div>');
+        }
+      });
+      $('#ta-premiados-ranking').append($('.ta-trabalho-premiado').sort(function(a, b){
+        return $(a).data('colocacao') + $(b).data('colocacao');
+      }));
+    });
+    premiados_ranking.css('display','block');
+  });
+
     //ajax form areas ...
     var form = $('.form-ajax'),
         grandesAreas = $('.grandes-areas'),
@@ -183,10 +220,7 @@ $(document).ready(function(){
 
     });
 
-    wow = new WOW({
-        mobile:       false,       // default
-      }
-    )
+    wow = new WOW( { mobile: false } );
     wow.init();
 
      $('#top-nav').onePageNav({
@@ -334,34 +368,34 @@ $(document).ready(function(){
 // When the window has finished loading create our google map below
 //google.maps.event.addDomListener(window, 'load', init);
 
-function init() {
-    // Basic options for a simple Google Map
-    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-    var mapOptions = {
-        // How zoomed in you want the map to start at (always required)
-        zoom: 16,
+// function init() {
+//     // Basic options for a simple Google Map
+//     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+//     var mapOptions = {
+//         // How zoomed in you want the map to start at (always required)
+//         zoom: 16,
 
-        // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(23.751945, 90.384590), // Dhaka ,
-        scrollwheel: false,
+//         // The latitude and longitude to center the map (always required)
+//         center: new google.maps.LatLng(23.751945, 90.384590), // Dhaka ,
+//         scrollwheel: false,
 
-        // How you would like to style the map.
-        // This is where you would paste any style found on Snazzy Maps.
-        styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
-    };
+//         // How you would like to style the map.
+//         // This is where you would paste any style found on Snazzy Maps.
+//         styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+//     };
 
-    // Get the HTML DOM element that will contain your map
-    // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('map-canvas');
+//     // Get the HTML DOM element that will contain your map
+//     // We are using a div with id="map" seen below in the <body>
+//     var mapElement = document.getElementById('map-canvas');
 
-    // Create the Google Map using our element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
+//     // Create the Google Map using our element and options defined above
+//     var map = new google.maps.Map(mapElement, mapOptions);
 
-    // Let's also add a marker while we're at it
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(23.751945, 90.384590),
-        map: map,
-        icon: 'img/map.png',
-        title: 'Twing!'
-    });
-}
+//     // Let's also add a marker while we're at it
+//     var marker = new google.maps.Marker({
+//         position: new google.maps.LatLng(23.751945, 90.384590),
+//         map: map,
+//         icon: 'img/map.png',
+//         title: 'Twing!'
+//     });
+// }

@@ -1,6 +1,5 @@
 <?php
 
-//from php.net
 function readJSONParse($fileName) {
     // return json_decode(iconv('ISO-8859-1//TRANSLIT', 'utf-8', file_get_contents($fileName)));
     ini_set('mbstring.substitute_character', "none");
@@ -40,22 +39,20 @@ if(isset($_POST['inputBusca'])){
       $filename = strval($trabalho->id);
       $link_download = "cert/gerados/apresentador/$filename.pdf";
 
-      if(!file_exists($link_download)){
-        $mpdf = new mPDF('utf-8', 'A4-L');
-        $mpdf->autoScriptToLang = true;
-        $mpdf->SetDisplayMode('fullpage');
-        $mpdf->WriteHTML($css, 1);
-        $mpdf->WriteHTML("<html>
-        <head></head>
-        <body>
-        <div style='padding:135px 10px 0 10px;'>
-        <p style='text-align:justify;line-height:32px;'>Certificamos que " .$trabalho->apresentador. " apresentou o trabalho intitulado \"" .$trabalho->titulo. "\" no XI Congresso Norte Nordeste de Pesquisa e Inovação, que ocorreu no período de 06 a 09 de dezembro de 2016, na cidade de Maceió - Alagoas.</p>
-        <br><br>
-        <p style='font-size:20px;text-align:center;'>Maceió, 09 de dezembro de 2016</p>
-        </div>
-        </body></html>");
-        $mpdf->Output($link_download, "F");
-      }
+      $mpdf = new mPDF('utf-8', 'A4-L');
+      $mpdf->autoScriptToLang = true;
+      $mpdf->SetDisplayMode('fullpage');
+      $mpdf->WriteHTML($css, 1);
+      $mpdf->WriteHTML("<html>
+      <head></head>
+      <body>
+      <div style='padding:135px 10px 0 10px;'>
+      <p style='text-align:justify;line-height:32px;'>Certificamos que " .$trabalho->apresentador. " apresentou o trabalho intitulado \"" .$trabalho->titulo. "\" no XI CONNEPI – XI Congresso Norte Nordeste de Pesquisa e Inovação, que ocorreu no período de 06 a 09 de dezembro de 2016, na cidade de Maceió - Alagoas.</p>
+      <br><br>
+      <p style='font-size:20px;text-align:center;'>Maceió, 09 de dezembro de 2016</p>
+      </div>
+      </body></html>");
+      $mpdf->Output($link_download, "F");
       $downloads[$count] = array();
       $downloads[$count]['id'] = $trabalho->id;
       $downloads[$count]['titulo'] = $trabalho->titulo;
@@ -69,7 +66,9 @@ if(isset($_POST['inputBusca'])){
 }
 ?>
 
-<?php include("header.php"); ?>
+<?php
+$title_subpage = "Certificado de Apresentador";
+include("header.php"); ?>
 
 <section class="pesquisa">
   <div style="max-width:820px;margin:60px auto 0 auto;padding:0 40px;">

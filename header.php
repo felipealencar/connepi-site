@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>XI CONNEPI</title>
+    <title>XI CONNEPI <?php echo (isset($title_subpage) && !empty($title_subpage)) ? '- ' . $title_subpage : ''; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico  -->
@@ -11,8 +11,7 @@
     <!-- Fonts -->
     <!-- Lato -->
     <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="ionicons-2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="css/slider.css"/>
+    <link rel="stylesheet" href="css/slider.css" type='text/css'>
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -20,8 +19,6 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lity.css">
-    <!-- Responsive Stylesheet -->
-    <link rel="stylesheet" href="css/responsive.css">
   </head>
   <body id="body">
     <div id="preloader">

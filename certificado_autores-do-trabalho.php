@@ -1,29 +1,9 @@
 <?php
 
-//from php.net
-function utf8_fopen_read($fileName) {
-    $fc = iconv('ISO-8859-1//TRANSLIT', 'utf-8', file_get_contents($fileName));
-    $handle = fopen("php://memory", "rw");
-    fwrite($handle, $fc);
-    fseek($handle, 0);
-    return $handle;
-}
-
-function readCSV($csvFile)
-{
-	$row = 1;
-	$__return = array();
-	if (($handle = utf8_fopen_read($csvFile, "r")) !== FALSE) {
-		while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-			$num = count($data);
-			for ($c=0; $c < $num; $c++) {
-				$__return[$row] = $data;
-			}
-			$row++;
-		}
-		fclose ($handle);
-		return $__return;
-	}
+function readJSONParse($fileName) {
+    ini_set('mbstring.substitute_character', "none");
+    return json_decode(iconv('ISO-8859-1//TRANSLIT', 'utf-8', file_get_contents($fileName)));
+    // return json_decode(mb_convert_encoding(file_get_contents(), 'UTF-8', 'UTF-8'), true);
 }
 $erros = array();
 $downloads = array();
@@ -34,13 +14,14 @@ if(isset($_POST['inputBusca'])){
   $inputBusca = mb_strtoupper(trim($_POST['inputBusca']));
   $tipoBusca = $_POST['inputTipoBusca'];
 
-  $data = readCSV("files/dados-certificado-autores-do-trabalho.csv");
+  $data = readJSONParse("files/dados-certificado-autores-do-trabalho.json");
 
   $trabalhos = array();
-  for($i=1; $i<count($data); $i++){
-    $trabalhos[$i]['id'] = trim($data[$i][0]);
-    $trabalhos[$i]['titulo'] = mb_strtoupper(trim($data[$i][1]));
-    $autores_array = explode(",", mb_strtoupper(trim($data[$i][2])));
+  $i=0;
+  foreach($data as $row){
+    $trabalhos[$i]['id'] = trim($row->id);
+    $trabalhos[$i]['titulo'] = mb_strtoupper(trim($row->titulo));
+    $autores_array = explode(",", mb_strtoupper(trim($row->autores)));
     $autores_string = "";
     $autores_string = (count($autores_array) == 1) ? $autores_array[0] : $autores_string;
     $autores_string = (count($autores_array) == 2) ? $autores_array[0] . " e " . $autores_array[1] : $autores_string;
@@ -51,13 +32,12 @@ if(isset($_POST['inputBusca'])){
         else $autores_string .= $autores_array[$j] . ", ";
       }
     }
-
     $trabalhos[$i]['autores'] = $autores_string;
+    $i++;
   }
 
-  // inicio de uma funcao
+  // inicio da busca
   function buscarTrabalho($inputBusca, $tipoBusca, $trabalhos){
-
     $resultado = array();
     foreach($trabalhos as $trabalho){
       if(strpos($trabalho[$tipoBusca], $inputBusca) !== false){
@@ -66,7 +46,7 @@ if(isset($_POST['inputBusca'])){
     }
     return (count($resultado) > 0) ? $resultado : false;
   }
-  // fim de uma funcao
+  // fim da busca
 
   $busca_resultado = buscarTrabalho($inputBusca, $tipoBusca, $trabalhos);
 
@@ -81,6 +61,12 @@ if(isset($_POST['inputBusca'])){
       $link_download = "cert/gerados/autores-do-trabalho/$filename.pdf";
 
       if(!file_exists($link_download)){
+
+        // Casos isolado '-'
+        if($trabalho['id'] == '11441')
+        {
+          $trabalho['titulo'] = "Í" . $trabalho['titulo'];
+        }
         $mpdf = new mPDF('utf-8', 'A4-L');
         $mpdf->autoScriptToLang = true;
         $mpdf->SetDisplayMode('fullpage');
@@ -109,7 +95,9 @@ if(isset($_POST['inputBusca'])){
 }
 ?>
 
-<?php include("header.php"); ?>
+<?php
+$title_subpage = "Certificado de Autores do trabalho";
+include("header.php"); ?>
 
 <section class="pesquisa">
   <div style="max-width:820px;margin:60px auto 0 auto;padding:0 40px;">

@@ -14,7 +14,7 @@
                 <a class="btn btn-default btn-home" href="#about" role="button">Leia mais</a>
               </div>
               <br>
-              <ul style="font-size:18px">
+              <ul class="wow fadeInDown" data-wow-delay="0.3s" style="font-size:18px">
                 <li><a style="color:yellow;" href="resultado.php" target="_blank"><b>Resultado final dos artigos XI CONNEPI</b></a></li>
                 <li><a style="color:yellow;" href="files/resultado-desafio-de-ideias-fase-2.pdf" data-lity data-lity-target="files/resultado-desafio-de-ideias-fase-2.pdf">III Desafio de Ideias</a></li>
                 <li><a style="color:yellow;" href="files/resultado-mostra-tecnologica.pdf" data-lity data-lity-target="files/resultado-mostra-tecnologica.pdf">IV Mostra Tecnológica</a></li>
@@ -36,15 +36,17 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="block">
-              <h1 class="custom-h1 wow fadeInDown" data-wow-delay="0.5s"><i class="fa fa-certificate" aria-hidden="true"></i> Certificados</h1>
+            <div class="block wow fadeIn" data-wow-delay="0.5s">
+              <h1 class="custom-h1 wow fadeInDown"><i class="fa fa-certificate" aria-hidden="true"></i> Certificados</h1>
                 <ul>
-                  <li class="wow fadeInUp" data-wow-delay="0.5s"><a class="btn-certificados btn-certificados-primary" href="certificado_autores-do-trabalho"><i class="fa fa-share" aria-hidden="true"></i> CERTIFICADO_AUTORES DO TRABALHO</a></li>
-                  <li class="wow fadeInUp" data-wow-delay="0.7s"><a class="btn-certificados" href="selecionar-modelo"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE ARTIGOS - SUBMISSÃO</a></li>
-                  <li class="wow fadeInUp" data-wow-delay="0.9s"><a class="btn-certificados" href="formulario-avaliador-banner"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - BANNER</a></li>
-                  <li class="wow fadeInUp" data-wow-delay="1.1s"><a class="btn-certificados" href="formulario-avaliador-oral"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - ORAL</a></li>
-                  <li class="wow fadeInUp" data-wow-delay="1.3s"><a class="btn-certificados" href="formulario-participante"><i class="fa fa-share" aria-hidden="true"></i> PARTICIPANTES</a></li>
-                  <li class="wow fadeInUp" data-wow-delay="1.5s"><a class="btn-certificados" href="formulario-minicursos"><i class="fa fa-share" aria-hidden="true"></i> MINICURSOS</a></li>
+                  <li><a class="btn-certificados btn-certificados-primary" href="certificado-ministrante-de-minicurso"><i class="fa fa-share" aria-hidden="true"></i> MINISTRANTE DE MINICURSO</a></li>
+                  <li><a class="btn-certificados btn-certificados-primary" href="certificado_autores-do-trabalho"><i class="fa fa-share" aria-hidden="true"></i> CERTIFICADO_AUTORES DO TRABALHO</a></li>
+                  <li><a class="btn-certificados btn-certificados-primary" href="certificado-apresentador"><i class="fa fa-share" aria-hidden="true"></i> CERTIFICADO DE APRESENTADOR</a></li>
+                  <li><a class="btn-certificados" href="selecionar-modelo"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE ARTIGOS - SUBMISSÃO</a></li>
+                  <li><a class="btn-certificados" href="formulario-avaliador-banner"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - BANNER</a></li>
+                  <li><a class="btn-certificados" href="formulario-avaliador-oral"><i class="fa fa-share" aria-hidden="true"></i> AVALIADOR DE TRABALHOS - ORAL</a></li>
+                  <li><a class="btn-certificados" href="formulario-participante"><i class="fa fa-share" aria-hidden="true"></i> PARTICIPANTES</a></li>
+                  <li><a class="btn-certificados" href="formulario-minicursos"><i class="fa fa-share" aria-hidden="true"></i> MINICURSOS</a></li>
                 </ul>
             </div>
             <!-- <div class="alert alert-success wow bounceInUp">
@@ -115,42 +117,44 @@
     <section id="location" class="section">
       <div class="container">
         <div class="row">
-          <div class="heading wow fadeInUp">
-            <h2>Local do Evento</h2>
-            <p>
-              O evento será realizado no Hotel Ritz Lagoa da Anta, em um dos lugares mais belos da cidade de Maceió.<br>
-              O local tem capacidade para X pessoas e fica a apenas alguns minutos dos principais pontos turísticos da cidade.<br>
-              A cidade de Maceió tem uma beleza que atrai turistas do mundo inteiro, com praias paradisíacas, <br>
-              culinária rica e um povo acolhedor que está acostumado a receber bem os/as visitantes.<br>
-            </p>
-          </div>
-          <div class="wow heading ism-slider" data-radio_type="thumbnail" id="gallery" style="max-width:580px;width:100%;">
-            <ol>
-              <li>
-                <img src="images/slides/1472493961984_824895.jpg">
-                <div class="ism-caption ism-caption-0">Centro de Convenções, 8 salas e espaços de qualidade para a apresentação de artigos.</div>
-              </li>
-              <li>
-                <img src="images/slides/1472493994443_960725.jpeg">
-                <div class="ism-caption ism-caption-0">Uma das capitais mais bonitas do Brasil.</div>
-              </li>
-              <li>
-                <img src="images/slides/1472494000676_993507.jpeg">
-                <div class="ism-caption ism-caption-0">Uma das capitais mais bonitas do Brasil.</div>
-              </li>
-              <li>
-                <img src="images/slides/1472495117893_211890.jpg">
-              </li>
-              <li>
-                <img src="images/slides/1472495117653_797462.jpg">
-              </li>
-              <li>
-                <img src="images/slides/1472495116904_370896.jpg">
-              </li>
-            </ol>
-          </div>
-          <div class="wow fadeInUp">
-            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.488059674465!2d-35.70101198520857!3d-9.63927219309902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70145d2d07808f1%3A0x9e24a4e01542c37c!2sRitz+Lagoa+da+Anta!5e0!3m2!1sen!2sbr!4v1472236142976" height="250" frameborder="0" style="border:0;max-width:580px;width:100%;" allowfullscreen></iframe> -->
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="heading wow fadeInUp">
+              <h2>Local do Evento</h2>
+              <p>
+                O evento será realizado no Hotel Ritz Lagoa da Anta, em um dos lugares mais belos da cidade de Maceió.<br>
+                O local tem capacidade para X pessoas e fica a apenas alguns minutos dos principais pontos turísticos da cidade.<br>
+                A cidade de Maceió tem uma beleza que atrai turistas do mundo inteiro, com praias paradisíacas, <br>
+                culinária rica e um povo acolhedor que está acostumado a receber bem os/as visitantes.<br>
+              </p>
+            </div>
+            <div class="wow heading ism-slider" data-radio-type="thumbnail" id="gallery" style="max-width:580px;width:100%;">
+              <ol>
+                <li>
+                  <img src="images/slides/1472493961984_824895.jpg">
+                  <div class="ism-caption ism-caption-0">Centro de Convenções, 8 salas e espaços de qualidade para a apresentação de artigos.</div>
+                </li>
+                <li>
+                  <img src="images/slides/1472493994443_960725.jpeg">
+                  <div class="ism-caption ism-caption-0">Uma das capitais mais bonitas do Brasil.</div>
+                </li>
+                <li>
+                  <img src="images/slides/1472494000676_993507.jpeg">
+                  <div class="ism-caption ism-caption-0">Uma das capitais mais bonitas do Brasil.</div>
+                </li>
+                <li>
+                  <img src="images/slides/1472495117893_211890.jpg">
+                </li>
+                <li>
+                  <img src="images/slides/1472495117653_797462.jpg">
+                </li>
+                <li>
+                  <img src="images/slides/1472495116904_370896.jpg">
+                </li>
+              </ol>
+            </div>
+            <div class="wow fadeInUp">
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.488059674465!2d-35.70101198520857!3d-9.63927219309902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70145d2d07808f1%3A0x9e24a4e01542c37c!2sRitz+Lagoa+da+Anta!5e0!3m2!1sen!2sbr!4v1472236142976" height="250" frameborder="0" style="border:0;max-width:580px;width:100%;" allowfullscreen></iframe> -->
+            </div>
           </div>
         </div>
       </div>
@@ -163,82 +167,84 @@
     <section id="authors" class="section">
       <div class="container">
         <div class="row">
-          <div class="heading wow fadeInUp">
-            <h2>Submissão de Artigos e Minicursos</h2>
-            <p>Efetue sua submissão de artigo pelo <a href="http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/author/submit?requiresAuthor=1" target="_blank" style="color: red;">sistema OCS</a>.</p>
-						<p>Se houver dificuldades quanto ao sistema, preencha nosso formulário para suporte (<a href="http://connepi.ifal.edu.br/2016/suporte.html" target="_blank">acessar</a>).</p><br>
-            <p>Seguindo as edições anteriores do CONNEPI, <a style="color: red;" href="areas.html" data-lity data-lity-target="areas.html">9 áreas temáticas</a> poderão ser alvo dos artigos e minicursos a serem submetidos nesta edição. Os artigos e minicursos deverão ser elaborados seguindo os modelos e diretrizes disponíveis nos arquivos abaixo.</p>
-            <div class="icon-box">
-              <span class="icon">
-              <a href="files/modelodeartigo.zip"><i style="color: red;" class="ion-arrow-down-a"></i></a>
-              </span>
-            </div>
-            <div class="caption">
-              <h3><a style="color: red;" href="files/modelodeartigo.zip">Modelo e Diretrizes para Submissão de Artigos</a></h3>
-            </div>
-            <br>
-            <div class="icon-box">
-              <span class="icon">
-              <a href="files/modelodeminicurso.zip"><i style="color: red;" class="ion-arrow-down-a"></i></a>
-              </span>
-            </div>
-            <div class="caption">
-              <h3><a style="color: red;" href="files/modelodeminicurso.zip">Diretrizes para Submissão de Minicursos</a></h3>
-            </div>
-          </div>
-          <div class="heading wow fadeInUp">
-            <h2>Datas Importantes</h2>
-            <p>As datas de submissão de artigo já estão definidas</p>
-          </div>
-          <div class="col-sm-6 col-md-3 wow fadeInLeft">
-            <div class="authors">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="heading wow fadeInUp">
+              <h2>Submissão de Artigos e Minicursos</h2>
+              <p>Efetue sua submissão de artigo pelo <a href="http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/author/submit?requiresAuthor=1" target="_blank" style="color: red;">sistema OCS</a>.</p>
+  						<p>Se houver dificuldades quanto ao sistema, preencha nosso formulário para suporte (<a href="http://connepi.ifal.edu.br/2016/suporte.html" target="_blank">acessar</a>).</p><br>
+              <p>Seguindo as edições anteriores do CONNEPI, <a style="color: red;" href="areas.html" data-lity data-lity-target="areas.html">9 áreas temáticas</a> poderão ser alvo dos artigos e minicursos a serem submetidos nesta edição. Os artigos e minicursos deverão ser elaborados seguindo os modelos e diretrizes disponíveis nos arquivos abaixo.</p>
               <div class="icon-box">
                 <span class="icon">
-                <a href="http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/author/submit?requiresAuthor=1" target="_blank"><i class="ion-arrow-up-a"></i></a>
+                <a href="files/modelodeartigo.zip"><i style="color: red;" class="ion-arrow-down-a"></i></a>
                 </span>
               </div>
               <div class="caption">
-                <h3>Submissão de Artigos</h3>
-                <p>Período: 01 a 30 de Setembro</p>
+                <h3><a style="color: red;" href="files/modelodeartigo.zip">Modelo e Diretrizes para Submissão de Artigos</a></h3>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
-            <div class="authors">
+              <br>
               <div class="icon-box">
                 <span class="icon">
-                <i class="ion-ios-list-outline"></i>
+                <a href="files/modelodeminicurso.zip"><i style="color: red;" class="ion-arrow-down-a"></i></a>
                 </span>
               </div>
               <div class="caption">
-                <h3>Avaliação dos Artigos</h3>
-                <p>Período: 01 de Setembro a 20 de Outubro</p>
+                <h3><a style="color: red;" href="files/modelodeminicurso.zip">Diretrizes para Submissão de Minicursos</a></h3>
               </div>
             </div>
-          </div>
-          <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
-            <div class="authors">
-              <div class="icon-box">
-                <span class="icon">
-                <i class="ion-arrow-up-a"></i>
-                </span>
-              </div>
-              <div class="caption">
-                <h3>Submissão de Minicursos</h3>
-                <p>Período: 10 a 30 de Setembro</p>
+            <div class="heading wow fadeInUp">
+              <h2>Datas Importantes</h2>
+              <p>As datas de submissão de artigo já estão definidas</p>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInLeft">
+              <div class="authors">
+                <div class="icon-box">
+                  <span class="icon">
+                  <a href="http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/author/submit?requiresAuthor=1" target="_blank"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                  </span>
+                </div>
+                <div class="caption">
+                  <h3>Submissão de Artigos</h3>
+                  <p>Período: 01 a 30 de Setembro</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.9s">
-            <div class="authors">
-              <div class="icon-box">
-                <span class="icon">
-                <i class="ion-android-checkbox-outline"></i>
-                </span>
+            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
+              <div class="authors">
+                <div class="icon-box">
+                  <span class="icon">
+                  <i class="fa fa-list-alt" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="caption">
+                  <h3>Avaliação dos Artigos</h3>
+                  <p>Período: 01 de Setembro a 20 de Outubro</p>
+                </div>
               </div>
-              <div class="caption">
-                <h3>Inscrições</h3>
-                <p>Período:a partir de 20 de Outubro</p>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
+              <div class="authors">
+                <div class="icon-box">
+                  <span class="icon">
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="caption">
+                  <h3>Submissão de Minicursos</h3>
+                  <p>Período: 10 a 30 de Setembro</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.9s">
+              <div class="authors">
+                <div class="icon-box">
+                  <span class="icon">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="caption">
+                  <h3>Inscrições</h3>
+                  <p>Período:a partir de 20 de Outubro</p>
+                </div>
               </div>
             </div>
           </div>
@@ -254,50 +260,52 @@
 		<section id="universoif" class="section">
       <div class="container">
         <div class="row">
-          <div class="heading wow fadeInUp">
-						<h2>Universo IF</h2>
-						<p>Um evento que acontece dentro do CONNEPI voltado para o estímulo ao empreendedorismo e a prospecção de ideias inovadoras no âmbito dos Institutos Federais. Serão três dias de atividades onde grupos formados por alunos e professores dos Institutos Federais participam de palestras e outras dinâmicas com o objetivo de incentivar a concepção de seus projetos acadêmicos voltados para a inovação e a geração de negócios de base tecnológica, despertando e disseminando a cultura empreendedora e mostrando que qualquer pessoa tem o poder de, com o seu esforço, transformar a sua realidade.</p>
-            <br><br>
-					</div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="heading wow fadeInUp">
+  						<h2>Universo IF</h2>
+  						<p>Um evento que acontece dentro do CONNEPI voltado para o estímulo ao empreendedorismo e a prospecção de ideias inovadoras no âmbito dos Institutos Federais. Serão três dias de atividades onde grupos formados por alunos e professores dos Institutos Federais participam de palestras e outras dinâmicas com o objetivo de incentivar a concepção de seus projetos acadêmicos voltados para a inovação e a geração de negócios de base tecnológica, despertando e disseminando a cultura empreendedora e mostrando que qualquer pessoa tem o poder de, com o seu esforço, transformar a sua realidade.</p>
+              <br><br>
+  					</div>
 
-          <div class="heading wow fadeInUp" data-wow-delay="0.7s">
-            <h2>O Universo IF divide-se em duas dimensões</h2>
-            <div class="col-md-6">
-              <h2 style="color:yellow">III Desafio de Ideias</h2>
-              <p><a style="color:white" href="files/resultado-desafio-de-ideias-fase-2.pdf" data-lity data-lity-target="files/resultado-desafio-de-ideias-fase-2.pdf">Resultado Segunda fase <span class="badge">15 aprovados</span></a></p>
-              <p><a style="color:white" href="files/resultado-desafio-de-ideias.pdf" data-lity data-lity-target="files/resultado-desafio-de-ideias.pdf">Resultado primeira fase <span class="badge">40 aprovados</span></a></p>
-              <p><a style="color:white" href="files/regulamento-desafio-de-ideias.pdf" data-lity data-lity-target="files/regulamento-desafio-de-ideias.pdf">Regulamento</a></p>
+            <div class="heading wow fadeInUp" data-wow-delay="0.7s">
+              <h2>O Universo IF divide-se em duas dimensões</h2>
+              <div class="col-md-6">
+                <h2 class="custom-h2-universoIf">III Desafio de Ideias</h2>
+                <p><a style="color:white" href="files/resultado-desafio-de-ideias-fase-2.pdf" data-lity data-lity-target="files/resultado-desafio-de-ideias-fase-2.pdf">Resultado Segunda fase <span class="badge">15 aprovados</span></a></p>
+                <p><a style="color:white" href="files/resultado-desafio-de-ideias.pdf" data-lity data-lity-target="files/resultado-desafio-de-ideias.pdf">Resultado primeira fase <span class="badge">40 aprovados</span></a></p>
+                <p><a style="color:white" href="files/regulamento-desafio-de-ideias.pdf" data-lity data-lity-target="files/regulamento-desafio-de-ideias.pdf">Regulamento</a></p>
+              </div>
+              <div class="col-md-6">
+                <h2 class="custom-h2-universoIf">IV Mostra Tecnologica</h2>
+                <ul class="list-group">
+                  <p><a style="color:white" href="files/resultado-mostra-tecnologica.pdf" data-lity data-lity-target="files/resultado-mostra-tecnologica.pdf">Resultado <span class="badge">40 aprovados</span></a></p>
+                  <p><a style="color:white" href="files/regulamento-mostra-tecnologica-connepi-2016.pdf" data-lity data-lity-target="files/regulamento-mostra-tecnologica-connepi-2016.pdf">Regulamento</a></p>
+                </ul>
+              </div>
             </div>
-            <div class="col-md-6">
-              <h2 style="color:yellow">IV Mostra Tecnologica</h2>
-              <ul class="list-group">
-                <p><a style="color:white" href="files/resultado-mostra-tecnologica.pdf" data-lity data-lity-target="files/resultado-mostra-tecnologica.pdf">Resultado <span class="badge">40 aprovados</span></a></p>
-                <p><a style="color:white" href="files/regulamento-mostra-tecnologica-connepi-2016.pdf" data-lity data-lity-target="files/regulamento-mostra-tecnologica-connepi-2016.pdf">Regulamento</a></p>
-              </ul>
-            </div>
+
+              <!--
+  						<div class="box-img col-sm-5 col-md-4 wow fadeInLeft" data-wow-delay="0.7s">
+  							<a href="images/universoif01.jpg" data-lity data-lity-target="images/universoif01.jpg">
+  								<img src="images/universoif01.jpg" width="100%" alt="Universo IF: III Desafio de Ideias">
+  								<i class="ion-android-expand"></i>
+  							</a>
+  						</div>
+  						<div class="box-img col-sm-5 col-md-4 wow fadeInUp" data-wow-delay="0.7s">
+  							<a href="images/universoif02.jpeg" data-lity data-lity-target="images/universoif02.jpeg">
+  								<img src="images/universoif02.jpeg" width="100%" alt="Universo IF: Incrições abertas">
+  								<i class="ion-android-expand"></i>
+  							</a>
+  						</div>
+  						<div class="box-img col-sm-5 col-md-4 wow fadeInRight" data-wow-delay="0.7s">
+  							<a href="images/universoif03.jpg" data-lity data-lity-target="images/universoif03.jpg">
+  								<img src="images/universoif03.jpg" width="100%" alt="Universo IF: IV Mostra Tecnológica">
+  								<i class="ion-android-expand"></i>
+
+  							</a>
+  						</div>
+            -->
           </div>
-
-            <!--
-						<div class="box-img col-sm-5 col-md-4 wow fadeInLeft" data-wow-delay="0.7s">
-							<a href="images/universoif01.jpg" data-lity data-lity-target="images/universoif01.jpg">
-								<img src="images/universoif01.jpg" width="100%" alt="Universo IF: III Desafio de Ideias">
-								<i class="ion-android-expand"></i>
-							</a>
-						</div>
-						<div class="box-img col-sm-5 col-md-4 wow fadeInUp" data-wow-delay="0.7s">
-							<a href="images/universoif02.jpeg" data-lity data-lity-target="images/universoif02.jpeg">
-								<img src="images/universoif02.jpeg" width="100%" alt="Universo IF: Incrições abertas">
-								<i class="ion-android-expand"></i>
-							</a>
-						</div>
-						<div class="box-img col-sm-5 col-md-4 wow fadeInRight" data-wow-delay="0.7s">
-							<a href="images/universoif03.jpg" data-lity data-lity-target="images/universoif03.jpg">
-								<img src="images/universoif03.jpg" width="100%" alt="Universo IF: IV Mostra Tecnológica">
-								<i class="ion-android-expand"></i>
-
-							</a>
-						</div>
-          -->
 					</div>
 				</div>
 			</div>
