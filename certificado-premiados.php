@@ -8,31 +8,51 @@ function readJSONParse($fileName) {
 $erros = array();
 $downloads = array();
 
-if(isset($_POST['inputBusca'])){
+if(isset($_POST['inputBusca']) || isset($_GET['generateFromId'])){
 
   mb_internal_encoding("UTF-8");
-  $inputBusca = mb_strtoupper(trim($_POST['inputBusca']));
-  $tipoBusca = $_POST['inputTipoBusca'];
+  $inputBusca = (isset($_POST['inputBusca']) && !isset($_GET['generateFromId'])) ? trim($_POST['inputBusca']) : trim($_GET['generateFromId']);
+  $tipoBusca = (isset($_POST['inputBusca']) && !isset($_GET['generateFromId'])) ? trim($_POST['inputTipoBusca']) : 'id';
 
   $data = readJSONParse("files/dados-certificado-autores-do-trabalho.json");
 
   $trabalhos = array();
   $i=0;
   foreach($data as $row){
-    $trabalhos[$i]['id'] = trim($row->id);
-    $trabalhos[$i]['titulo'] = mb_strtoupper(trim($row->titulo));
-    $autores_array = explode(",", mb_strtoupper(trim($row->autores)));
+    $trabalhos[$i]['id'] = $row->id;
+    $trabalhos[$i]['titulo'] = $row->titulo;
+    $autores_array = explode(",", $row->autores);
     $autores_string = "";
     $autores_string = (count($autores_array) == 1) ? $autores_array[0] : $autores_string;
     $autores_string = (count($autores_array) == 2) ? $autores_array[0] . " e " . $autores_array[1] : $autores_string;
     if(count($autores_array) >= 3){
       for($j=0; $j<count($autores_array); $j++){
-        if($j == (count($autores_array)-1)) $autores_string .= "e " . $autores_array[$j];
-        elseif($j == (count($autores_array)-2)) $autores_string .= $autores_array[$j] . " ";
-        else $autores_string .= $autores_array[$j] . ", ";
+        if($j == (count($autores_array)-1)){
+          $autores_string .= "e " . $autores_array[$j];
+        }
+        elseif($j == (count($autores_array)-2)){
+          $autores_string .= $autores_array[$j] . " ";
+        }
+        else{
+          $autores_string .= $autores_array[$j] . ", ";
+        }
       }
     }
     $trabalhos[$i]['autores'] = $autores_string;
+    if(isset($row->colocacao) && $row->colocacao == 1){
+      $trabalhos[$i]['colocacao'] = 'primeira';
+    }
+    elseif(isset($row->colocacao) && $row->colocacao == 2){
+      $trabalhos[$i]['colocacao'] = 'segunda';
+    }
+    elseif(isset($row->colocacao) && $row->colocacao == 3){
+      $trabalhos[$i]['colocacao'] = 'terceira';
+    }
+    else{
+      $trabalhos[$i]['colocacao'] = (isset($row->colocacao)) ? $row->colocacao : '';
+    }
+    $trabalhos[$i]['area'] = (isset($row->area)) ? $row->area : '';
+    $trabalhos[$i]['modalidade'] = (isset($row->modalidade)) ? $row->modalidade : '';
     $i++;
   }
 
@@ -40,7 +60,7 @@ if(isset($_POST['inputBusca'])){
   function buscarTrabalho($inputBusca, $tipoBusca, $trabalhos){
     $resultado = array();
     foreach($trabalhos as $trabalho){
-      if(strpos($trabalho[$tipoBusca], $inputBusca) !== false){
+      if(strpos(mb_strtoupper($trabalho[$tipoBusca]), mb_strtoupper($inputBusca)) !== false){
         $resultado[] = $trabalho;
       }
     }
@@ -58,27 +78,30 @@ if(isset($_POST['inputBusca'])){
     foreach($busca_resultado as $trabalho){
 
       $filename = strval($trabalho['id']);
-      $link_download = "cert/gerados/autores-do-trabalho/$filename.pdf";
+      $link_download = "cert/gerados/premiados/{$filename}.pdf";
 
-      // Casos isolado '-'
-      if($trabalho['id'] == '11441')
-      {
-        $trabalho['titulo'] = "Í" . $trabalho['titulo'];
+      if(1 == 1){
+
+        // Casos isolado '-'
+        if($trabalho['id'] == '11441')
+        {
+          $trabalho['titulo'] = "Í" . $trabalho['titulo'];
+        }
+        $mpdf = new mPDF('utf-8', 'A4-L');
+        $mpdf->autoScriptToLang = true;
+        $mpdf->SetDisplayMode('fullpage');
+        $mpdf->WriteHTML($css, 1);
+        $mpdf->WriteHTML("<html>
+        <head></head>
+        <body>
+        <div style='padding:135px 10px 0 10px;'>
+        <p style='text-align:justify;line-height:32px;'>Certificamos que o trabalho ".$trabalho['titulo'].", de autoria de ".$trabalho['autores'].", foi premiado na ".$trabalho['colocacao']." colocação na área ".$trabalho['area'].", modalidade ".$trabalho['modalidade'].", no XI Congresso Norte Nordeste de Pesquisa e Inovação (CONNEPI), realizado no período de 06 a 09 de dezembro de 2016, na cidade de Maceió, Alagoas.</p>
+        <br><br>
+        <p style='font-size:20px;text-align:center;'>Maceió, 09 de dezembro de 2016</p>
+        </div>
+        </body></html>");
+        $mpdf->Output($link_download, "F");
       }
-      $mpdf = new mPDF('utf-8', 'A4-L');
-      $mpdf->autoScriptToLang = true;
-      $mpdf->SetDisplayMode('fullpage');
-      $mpdf->WriteHTML($css, 1);
-      $mpdf->WriteHTML("<html>
-      <head></head>
-      <body>
-      <div style='padding:135px 10px 0 10px;'>
-      <p style='text-align:justify;line-height:32px;'>Certificamos que o trabalho intitulado \"" .$trabalho['titulo']. "\" dos autores " .$trabalho['autores']. " foi apresentado no XI Congresso Norte Nordeste de Pesquisa e Inovação em Maceió - AL, que ocorreu no período de 06 a 09 de dezembro de 2016, na cidade de Maceió - Alagoas.</p>
-      <br><br>
-      <p style='font-size:20px;text-align:center;'>Maceió, 09 de dezembro de 2016</p>
-      </div>
-      </body></html>");
-      $mpdf->Output($link_download, "F");
       $downloads[$count] = array();
       $downloads[$count]['id'] = $trabalho['id'];
       $downloads[$count]['titulo'] = $trabalho['titulo'];
@@ -131,7 +154,7 @@ include("header.php"); ?>
 
     <style media="screen">
       .killer-radio { display: block; margin-left: 40px; margin-bottom:10px;}
-      label {
+      label:not(.no-style) {
         display: inline-block;
         cursor: pointer;
         position: relative;
@@ -141,7 +164,7 @@ include("header.php"); ?>
         font-weight: 400;
         line-height: 21px;
       }
-      label:before {
+      label:not(.no-style):before {
         content: "";
         width: 20px; height: 20px;
         position: absolute;
@@ -158,6 +181,12 @@ include("header.php"); ?>
       }
       @media (max-width: 500px){
         .killer-radio { display: block; }
+      }
+
+      #div_verificarEmail {
+      	margin-top: 30px;
+      	display: none;
+      	background-color: #5DB581 !important;
       }
 
     </style>
@@ -180,18 +209,23 @@ include("header.php"); ?>
 
     <!-- PDF LIST -->
     <?php if(count($downloads) > 0): ?>
-      <div class="row" style="margin-top:5px" id="pdflist">
+      <div class="row" style="margin-top:5px;" id="pdflist">
         <div class="list-group">
 
-          <h1 class="wow fadeInDown" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;"><i style="margin-right:20px;" class="fa fa-search" aria-hidden="true"></i> Resultado da busca</h1>
-          <hr style="margin-top:20px;border-top:1px solid rgb(157, 210, 203);border-botom:1px solid rgb(219, 219, 219);" />
-          <a href="certificado_autores-do-trabalho" style="margin-top:10px;margin-bottom:30px;" class="btn btn-default btn-home">Voltar</a>
+        	<h1 class="wow fadeInDown" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;"><i style="margin-right:20px;" class="fa fa-search" aria-hidden="true"></i> Resultado da busca</h1>
+	        <hr style="margin-top:20px;border-top:1px solid rgb(157, 210, 203);border-botom:1px solid rgb(219, 219, 219);" />
+	        <a href="javascript:;" onclick="window.history.back();" style="margin-top:10px;margin-bottom:30px;" class="btn btn-default btn-home">Voltar</a>
 
-          <?php foreach($downloads as $download): ?>
-          <a href="<?php echo $download['linkDownload']; ?>" target="_blank" class="list-group-item wow fadeInUp"><?php echo $download['titulo']; ?></a>
-          <?php endforeach; ?>
+	        <?php foreach($downloads as $download): ?>
+	        <a href="javascript:;" data-download="<?php echo $download['linkDownload']; ?>" id="<?php echo $download['id']; ?>" class="list-group-item link-artigo wow fadeInUp"><?php echo $download['titulo']; ?></a>
+	        <?php endforeach; ?>
 
-        </div>
+	        <div class="well-lg" id="div_verificarEmail">
+	          <label for="inputEmail" class="no-style" style="color:white;padding-bottom:2px;border-bottom:1px solid #dedede;margin-bottom:10px;">Insira o e-mail do autor principal</label>
+	          <input type="text" class="form-control" name="inputEmail" id="inputEmail" placeholder="">
+	          <button id="btn_verificarEmail" class="btn btn-defaul btn-home">Continuar</button>
+	        </div>
+        </div><!-- .list-group -->
       </div>
     <?php else: ?>
 

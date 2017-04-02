@@ -67,7 +67,7 @@ if(isset($_POST['inputName']) && !empty($_POST['inputName'])){
   $participantes[] = strtoupper('Estefani Marciel Ciriaco da Cunha'); // estefanimarciel@hotmail.com
   $participantes[] = strtoupper('Matheus Henrique Felipe Lima'); // matheus1selection@gmail.com
   $participantes[] = strtoupper('Adriana Maria Coelho'); // dryana.coelho@gmail.com
-  $participantes[] = strtoupper(''); //
+  $participantes[] = strtoupper('Adriana Coelho Coelho'); //
   $participantes[] = strtoupper(''); //
   $participantes[] = strtoupper(''); //
   $participantes[] = strtoupper(''); //

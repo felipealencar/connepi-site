@@ -1,0 +1,15 @@
+body {
+  background: url('pibiti.jpg') no-repeat;
+  background-image-resolution: 300dpi;
+  background-image-resize: 6;
+  font-family: serif;
+  font-size: 18pt;
+}
+.mascara{
+  background: #fff;
+  width: 100%;
+  height:700px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}

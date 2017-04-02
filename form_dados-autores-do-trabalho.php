@@ -1,7 +1,5 @@
 <?php
-
-$json_url = "files/dados-certificado-autores-do-trabalho.json";
-$data = readJSONParse($json_url);
+// TO-DO
 function readJSONParse($fileName) {
     ini_set('mbstring.substitute_character', "none");
     return json_decode(iconv('ISO-8859-1//TRANSLIT', 'utf-8', file_get_contents($fileName)));
@@ -11,21 +9,24 @@ function writeJSONParse($fileName, $data){
   return (file_put_contents($fileName, json_encode($data))) ? true : false;
 }
 
+// Engine ;)
+$json_url = "files/dados-certificado-autores-do-trabalho.json";
+$data = readJSONParse($json_url);
+
 if(isset($_POST['id'])){
 
   $erros = array();
   $sucessos = array();
-  $inserindo = false;
   $atualizando = false;
 
   $id = $_POST['id'];
-  $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : false;
-  $autores = (isset($_POST['autores'])) ? $_POST['autores'] : false;
+  $titulo = (isset($_POST['titulo']) && !empty($_POST['titulo'])) ? $_POST['titulo'] : false;
+  $autores = (isset($_POST['autores']) && !empty($_POST['autores'])) ? $_POST['autores'] : false;
 
   foreach($data as $trabalho){
     if(strval($trabalho->id) == strval($id)){
-      $trabalho->titulo = ($titulo !== false) ? $titulo : $trabalho->titulo;
-      $trabalho->autores = ($autores !== false) ? $autores : $trabalho->autores;
+      $trabalho->titulo = ($titulo != false) ? $titulo : $trabalho->titulo;
+      $trabalho->autores = ($autores != false) ? $autores : $trabalho->autores;
       $atualizando = true;
       $sucessos[] = "<b>Dados atualizado</b><hr/><b>ID</b><br>{$id}<br><br><b>Título</b><br>{$titulo}<br><br><b>Autores</b><br>{$autores}";
       break;
@@ -40,7 +41,7 @@ if(isset($_POST['id'])){
   if(count($erros) <= 0){
     // Atualiza o .json
     // (independente de atualizar ou inserir dados)
-    if(writeJSONParse($json_url, $data)) $sucessos[] = "<b>Dados inserido</b><hr/><b>ID</b><br>{$id}<br><br><b>Título</b><br>{$titulo}<br><br><b>Autores</b><br>{$autores}";
+    if(writeJSONParse($json_url, $data)) $sucessos[] = "<b>Dados inserido/atualizado</b><hr/><b>ID</b><br>{$id}<br><br><b>Título</b><br>{$titulo}<br><br><b>Autores</b><br>{$autores}";
     else $erros[] = "Falha ao salvar o JSON";
   }
 }
@@ -51,6 +52,8 @@ if(isset($_POST['id'])){
   .form-control:nth-child(1) { width: 20%; }
   .form-control:nth-child(2) { width: 60%; }
   .form-control:nth-child(3) { width: 80%; height: 120px; }
+  .ui-autocomplete { width: 320px; height: 200px; overflow-y: scroll; overflow-x: hidden; }
+  .ui-autocomplete-loading { background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat; }
 </style>
 
 <?php
@@ -59,14 +62,29 @@ include('header.php');?>
 <section class="pesquisa">
   <div class="container">
     <form method="post" name="certificado">
-      <input type="text" name="id" placeholder="ID" class="form-control" required>
-      <input type="text" name="titulo" placeholder="Título" class="form-control">
-      <textarea name="autores" placeholder="Autores separados por vírgula" class="form-control"></textarea>
+
+      <input id="input-busca-id" type="text" name="id" placeholder="ID" class="form-control" required>
+      <textarea id="input-busca-titulo" name="titulo" placeholder="Título" class="form-control" cols="2"></textarea>
+      <textarea id="input-busca-autores" name="autores" placeholder="Autores separados por vírgula" class="form-control" cols="5"></textarea>
+
       <div class="form-group">
         <button type="submit" class="btn btn-home">Inserir/Atualizar</button>
         <button type="button" class="btn btn-home btn-debug" data-toggle="modal" data-target="#debug_data">Debug</button>
       </div>
     </form>
+
+    <!-- Lembrar de cuidar da própria vida -->
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="input-group">
+          <input type="text" class="ta-tool form-control" placeholder="Abrir submissão por ID">
+          <span class="input-group-btn">
+            <button onclick="window.open('http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/director/submissionReview/' + $('.ta-tool').val(), '_blank');" class="btn btn-default" type="button">Ir!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div>
+    </div>
+
   </div>
 
   <!-- Modal Debug Data -->
@@ -77,10 +95,15 @@ include('header.php');?>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">Debug dos dados</h4>
         </div>
-        <div class="modal-body">
-          <div>
-            <pre style="height: 600px; "><?php echo var_dump($data); ?></pre>
-          </div>
+        <div class="modal-body" style="max-height: 600px;overflow-y:auto;">
+          <?php foreach($data as $job):?>
+            <div class="well">
+              <p style="display:block;margin-bottom:10px;"><b>ID:</b> <?php echo $job->id;?></p>
+              <p style="display:block;margin-bottom:10px;"><b>Título:</b> <?php echo $job->titulo;?></p>
+              <p style="display:block;margin-bottom:10px"><b>Autores:</b> <?php echo $job->autores;?></p>
+              <p style="display:block;"><b>Colocação:</b> <?php echo $job->colocacao;?></p>
+            </div>
+          <?php endforeach;?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

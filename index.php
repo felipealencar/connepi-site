@@ -2,7 +2,7 @@
     <section id="hero-area">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <div class="block">
             <div class="row">
               <div class="col-md-8">
@@ -35,10 +35,15 @@
             </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-7">
+            <div class="block ">
+              <h1 class="custom-h1 wow fadeInDown"><i class="fa fa-flag" aria-hidden="true"></i> Trabalhos Premiados</h1>
+              <a href="premiados" class="btn-certificados btn-certificados-primary wow pulse" data-wow-delay="0.9s">Confira os trabalhos premiados do XI CONNEPI</a>
+            </div>
             <div class="block wow fadeIn" data-wow-delay="0.5s">
-              <h1 class="custom-h1 wow fadeInDown"><i class="fa fa-certificate" aria-hidden="true"></i> Certificados</h1>
+              <h1 class="custom-h1 wow fadeInDown">Certificados</h1>
                 <ul>
+                  <li><a class="btn-certificados btn-certificados-primary" href="certificado-premiados"><i class="fa fa-share" aria-hidden="true"></i> TRABALHOS PREMIADOS</a></li>
                   <li><a class="btn-certificados btn-certificados-primary" href="certificado-ministrante-de-minicurso"><i class="fa fa-share" aria-hidden="true"></i> MINISTRANTE DE MINICURSO</a></li>
                   <li><a class="btn-certificados btn-certificados-primary" href="certificado_autores-do-trabalho"><i class="fa fa-share" aria-hidden="true"></i> CERTIFICADO_AUTORES DO TRABALHO</a></li>
                   <li><a class="btn-certificados btn-certificados-primary" href="certificado-apresentador"><i class="fa fa-share" aria-hidden="true"></i> CERTIFICADO DE APRESENTADOR</a></li>

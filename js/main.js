@@ -1,11 +1,53 @@
 $(window).load(function() {
     $("#preloader").fadeOut("slow");
+    $("#carregando").css('display', 'none');
 });
 
 // máscara (input)
 $("#cpf").mask("000.000.000-00");
 
+function backToTop(){
+  window.location.href = '#';
+}
+
 $(document).ready(function(){
+
+    // verificação do trabalho premiado
+    var paper_id;
+    var certificado_download;
+    $('.link-artigo').on('click', function(){
+        $('#div_verificarEmail').css('display', 'block');
+        paper_id = $(this).attr('id');
+        certificado_download = $(this).data('download');
+    });
+
+    $('#btn_verificarEmail').on('click', function(){
+        $.ajax({
+            type: 'get',
+            url: 'ajax.php',
+            data: {
+                emailVerification: $('#inputEmail').val(),
+                emailVerification_id: paper_id
+            },
+            beforeSend: function(){
+                $("#carregando").css('display', 'block');
+            },
+            success: function(response){
+                $("#carregando").css('display', 'none');
+                if(response.responseText == 'success'){
+                    window.location.href = certificado_download;
+                }
+            },
+            error: function(response){
+                $("#carregando").css('display', 'none');
+                if(response.responseText == 'success'){
+                    window.location.href = certificado_download;
+                } else {
+                    alert(response.responseText);
+                }
+            }
+        });
+    });
 
   // artigos premiados por area tematica
   var premiados_section = $('.ta-premiados-section');
@@ -26,6 +68,7 @@ $(document).ready(function(){
     premiados_section.toggleClass('fadeInUp', 'bounceInUp');
     premiados_menu.css('display','none');
     premiados_modalidades.css('display','block');
+    backToTop();
   });
   premiados_modalidades.click(function(){
     ta_current_modalidade = $(this).attr('id');
@@ -34,7 +77,7 @@ $(document).ready(function(){
     $.getJSON('files/dados-certificado-autores-do-trabalho.json', function(data){
       $.each(data, function(index, obj){
         if(obj.area == ta_current_area && obj.modalidade == ta_current_modalidade && obj.colocacao > 0){
-          premiados_ranking.append('<div class="ta-trabalho-premiado wow fadeInUp" data-wow-delay="0.2s"><span class="colocacao">'+obj.colocacao+'</span><h1>'+obj.titulo+'</h1><h3>'+obj.autores+'</h3><p><span>Resumo:</span>blablabla</p></div>');
+          premiados_ranking.append('<div class="ta-trabalho-premiado" id="'+obj.id+'"><span class="colocacao">'+obj.colocacao+'</span><a class="certificado" href="certificado-premiados?generateFromId='+obj.id+'" target="_top">Baixar certificado <i class="fa fa-download" aria-hidden="true"></i></a><h1>'+obj.titulo+'</h1><h3>'+obj.autores+'</h3><p><b>Resumo:</b>'+obj.abstract+'</p></div>');
         }
       });
       $('#ta-premiados-ranking').append($('.ta-trabalho-premiado').sort(function(a, b){
@@ -42,6 +85,7 @@ $(document).ready(function(){
       }));
     });
     premiados_ranking.css('display','block');
+    backToTop();
   });
 
     //ajax form areas ...

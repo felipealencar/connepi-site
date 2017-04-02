@@ -159,6 +159,13 @@ if(isset($_POST['inputName'])){
   $participantes[] = strtoupper('Thaliane Ramos Gomes'); // thaliane.ramos123@gmail.com
   $participantes[] = strtoupper('SEVERINO ROGÉRIO JUNIOR'); // djrogeux@live.com
   $participantes[] = strtoupper('Vanuza Ribeiro Macedo'); // vannuzaribeiro@hotmail.com
+  $participantes[] = strtoupper('CARLOS MARIANO MELO JÚNIOR'); //
+  $participantes[] = strtoupper('MATHEUS CARVALHO CONCEIÇÃO'); //
+  $participantes[] = strtoupper('Rosiolanda Soares Sousa'); //
+  $participantes[] = strtoupper('NELCY MAGDALA MOURA SANTOS'); //
+  $participantes[] = strtoupper('Guilherme Carvalho Rodrigues'); //
+  $participantes[] = strtoupper('NELCY MAGDALA MOURA E SANTOS'); //
+  $participantes[] = strtoupper(''); //
   $participantes[] = strtoupper(''); //
   // ===========================================================================
 
@@ -190,22 +197,20 @@ if(isset($_POST['inputName'])){
 
       $link_download = "cert/gerados/participante/$filename.pdf";
 
-      if(!file_exists($link_download)){
-        $mpdf = new mPDF('utf-8', 'A4-L');
-        $mpdf->autoScriptToLang = true;
-        $mpdf->SetDisplayMode('fullpage');
-        $mpdf->WriteHTML($css, 1);
-        $mpdf->WriteHTML("<html>
-        <head></head>
-        <body>
-        <div style='padding:200px 10px 0 30px;text-align:center;'>
-        Certificamos que <b>$participante</b> participou do XI CONNEPI – Congresso Norte Nordeste de Pesquisa e Inovação, que ocorreu no período de 06 a 09 de dezembro de 2016, no Hotel Ritz Lagoa da Anta, na cidade de Maceió - Alagoas.
-        <br><br><br>
-        <b style='font-size:18px;'>Maceió, 09 de dezembro de 2016.</b>
-        </div>
-        </body></html>");
-        $mpdf->Output($link_download, "F");
-      }
+      $mpdf = new mPDF('utf-8', 'A4-L');
+      $mpdf->autoScriptToLang = true;
+      $mpdf->SetDisplayMode('fullpage');
+      $mpdf->WriteHTML($css, 1);
+      $mpdf->WriteHTML("<html>
+      <head></head>
+      <body>
+      <div style='padding:200px 10px 0 30px;text-align:center;'>
+      Certificamos que <b>$participante</b> participou do XI CONNEPI – Congresso Norte Nordeste de Pesquisa e Inovação, que ocorreu no período de 06 a 09 de dezembro de 2016, no Hotel Ritz Lagoa da Anta, na cidade de Maceió - Alagoas.
+      <br><br><br>
+      <b style='font-size:18px;'>Maceió, 09 de dezembro de 2016.</b>
+      </div>
+      </body></html>");
+      $mpdf->Output($link_download, "F");
       $downloads[$count] = array();
       $downloads[$count]['nome'] = $participante;
       $downloads[$count]['linkDownload'] = $link_download;

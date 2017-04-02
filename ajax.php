@@ -110,7 +110,8 @@ if(count($_POST) && isset($_POST['form']) && $_POST['form'] == 'avaliador')
 
 }
 
-if(isset($_GET['cod_grande_area'])){
+if(isset($_GET['cod_grande_area']) || isset($_GET['cod_area']) || isset($_GET['cod_sub_area'])){
+	if(isset($_GET['cod_grande_area'])){
 
 	$sql = "select * from site_areas_conhecimento WHERE cod_grande_area = '{$_GET['cod_grande_area']}' ORDER BY nome_area ASC";
 
@@ -129,5 +130,30 @@ $response = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 header('Content-Type: application/json');
 echo json_encode($response);
 exit(0);
+}
+
+if(isset($_GET['emailVerification'])){
+
+	$email = trim($_GET['emailVerification']);
+	$paper_id = $_GET['emailVerification_id'];
+	$user_id = $db->query("SELECT user_id FROM users WHERE email = '{$email}'")->fetchAll(PDO::FETCH_ASSOC);
+	
+	if($user_id){
+		$paper_user_id = $db->query("SELECT user_id FROM papers WHERE paper_id = {$paper_id}")->fetchAll(PDO::FETCH_ASSOC);
+		if($user_id[0]['user_id'] == $paper_user_id[0]['user_id']){
+			$responseMsg = 'success';
+		}
+		else {
+			$responseMsg = 'Esse e-email não confere com a do autor principal';
+		}
+	}
+	else {
+		$responseMsg = 'E-mail não encontrado';
+	}
+	header('Content-Type: application/json');
+	echo $responseMsg;
+	exit(0);
+
+}
 
 ?>

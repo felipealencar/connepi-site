@@ -20,6 +20,7 @@
 <!-- Js -->
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
 <!-- <script src="js/jquery.lwtCountdown-1.0.js"></script> -->
 <script src="js/bootstrap.min.js"></script>
