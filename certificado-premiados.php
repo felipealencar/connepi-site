@@ -41,15 +41,19 @@ if(isset($_POST['inputBusca']) || isset($_GET['generateFromId'])){
     $trabalhos[$i]['autores'] = $autores_string;
     if(isset($row->colocacao) && $row->colocacao == 1){
       $trabalhos[$i]['colocacao'] = 'primeira';
+      $trabalhos[$i]['premiado'] = 'Sim';
     }
     elseif(isset($row->colocacao) && $row->colocacao == 2){
       $trabalhos[$i]['colocacao'] = 'segunda';
+      $trabalhos[$i]['premiado'] = 'Sim';
     }
     elseif(isset($row->colocacao) && $row->colocacao == 3){
       $trabalhos[$i]['colocacao'] = 'terceira';
+      $trabalhos[$i]['premiado'] = 'Sim';
     }
     else{
       $trabalhos[$i]['colocacao'] = (isset($row->colocacao)) ? $row->colocacao : '';
+      $trabalhos[$i]['premiado'] = 'Não';
     }
     $trabalhos[$i]['area'] = (isset($row->area)) ? $row->area : '';
     $trabalhos[$i]['modalidade'] = (isset($row->modalidade)) ? $row->modalidade : '';
@@ -106,6 +110,7 @@ if(isset($_POST['inputBusca']) || isset($_GET['generateFromId'])){
       $downloads[$count]['id'] = $trabalho['id'];
       $downloads[$count]['titulo'] = $trabalho['titulo'];
       $downloads[$count]['autores'] = $trabalho['autores'];
+      $downloads[$count]['premiado'] = $trabalho['premiado'];
       $downloads[$count]['linkDownload'] = $link_download;
       $count++;
     }
@@ -116,7 +121,7 @@ if(isset($_POST['inputBusca']) || isset($_GET['generateFromId'])){
 ?>
 
 <?php
-$title_subpage = "Certificado de Autores do trabalho";
+$title_subpage = "Certificado de trabalho premiado";
 include("header.php"); ?>
 
 <section class="pesquisa">
@@ -124,6 +129,7 @@ include("header.php"); ?>
 
     <?php if(count($downloads) <= 0) : ?>
     <h1 class="wow fadeInDown" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;"><i style="margin-right:20px;" class="fa fa-search" aria-hidden="true"></i> Buscar certificado</h1>
+    <h2><?php echo $title_subpage; ?></h2>
     <hr style="margin-top:20px;border-top:1px solid rgb(157, 210, 203);border-botom:1px solid rgb(219, 219, 219);" />
 
     <div class="row">
@@ -217,10 +223,14 @@ include("header.php"); ?>
 	        <a href="javascript:;" onclick="window.history.back();" style="margin-top:10px;margin-bottom:30px;" class="btn btn-default btn-home">Voltar</a>
 
 	        <?php foreach($downloads as $download): ?>
-	        <a href="javascript:;" data-download="<?php echo $download['linkDownload']; ?>" id="<?php echo $download['id']; ?>" class="list-group-item link-artigo wow fadeInUp"><?php echo $download['titulo']; ?></a>
+	         <?php if($download['premiado'] == 'Sim'): ?>
+            <a href="javascript:;" data-download="<?php echo $download['linkDownload']; ?>" id="<?php echo $download['id']; ?>" class="list-group-item link-artigo wow fadeInUp"><?php echo $download['titulo']; ?></a>
+           <?php else: ?>
+            <a style="background-color:#444;color:#d1d1d1;cursor:default;" href="javascript:;" id="<?php echo $download['id']; ?>" class="list-group-item wow fadeInUp"><b style="display:block;"><i> - NÃO PREMIADO -</i></b> <?php echo $download['titulo']; ?></a>
+           <?php endif; ?>
 	        <?php endforeach; ?>
 
-	        <div class="well-lg" id="div_verificarEmail">
+	        <div class="well-lg wow shake" id="div_verificarEmail">
 	          <label for="inputEmail" class="no-style" style="color:white;padding-bottom:2px;border-bottom:1px solid #dedede;margin-bottom:10px;">Insira o e-mail do autor principal</label>
 	          <input type="text" class="form-control" name="inputEmail" id="inputEmail" placeholder="">
 	          <button id="btn_verificarEmail" class="btn btn-defaul btn-home">Continuar</button>

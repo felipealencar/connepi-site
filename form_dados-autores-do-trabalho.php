@@ -50,8 +50,8 @@ if(isset($_POST['id'])){
 <style media="screen">
   .form-control { margin-top: 15px; }
   .form-control:nth-child(1) { width: 20%; }
-  .form-control:nth-child(2) { width: 60%; }
-  .form-control:nth-child(3) { width: 80%; height: 120px; }
+  .form-control:nth-child(2) { width: 100%; }
+  .form-control:nth-child(3) { width: 100%; height: 120px; }
   .ui-autocomplete { width: 320px; height: 200px; overflow-y: scroll; overflow-x: hidden; }
   .ui-autocomplete-loading { background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat; }
 </style>
@@ -64,7 +64,7 @@ include('header.php');?>
     <form method="post" name="certificado">
 
       <input id="input-busca-id" type="text" name="id" placeholder="ID" class="form-control" required>
-      <textarea id="input-busca-titulo" name="titulo" placeholder="Título" class="form-control" cols="2"></textarea>
+      <textarea id="input-busca-titulo" name="titulo" placeholder="Título" class="form-control" cols="3"></textarea>
       <textarea id="input-busca-autores" name="autores" placeholder="Autores separados por vírgula" class="form-control" cols="5"></textarea>
 
       <div class="form-group">
@@ -75,14 +75,14 @@ include('header.php');?>
 
     <!-- Lembrar de cuidar da própria vida -->
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-6">
         <div class="input-group">
           <input type="text" class="ta-tool form-control" placeholder="Abrir submissão por ID">
           <span class="input-group-btn">
-            <button onclick="window.open('http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/director/submissionReview/' + $('.ta-tool').val(), '_blank');" class="btn btn-default" type="button">Ir!</button>
+            <button onclick="window.open('http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/director/submissionReview/' + $('.ta-tool').val(), '_blank');" class="btn btn-default" type="button">Go</button>
           </span>
         </div><!-- /input-group -->
-      </div>
+      </div><!-- /.col-lg-6 -->
     </div>
 
   </div>

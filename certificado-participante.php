@@ -44,6 +44,24 @@ if(isset($_POST['inputName'])){
   }
   // ===========================================================================
   // Outros participantes
+  $participantes[] = strtoupper('Tiago Idelfonso e Silva Pedrada');
+  $participantes[] = strtoupper('Anny Akácia de Jesus Santos');
+  $participantes[] = strtoupper('Maria das Graças Amorim de Castro');
+  $participantes[] = strtoupper('Alinne Cardoso Albuquerque Ramos de Oliveira');
+  $participantes[] = strtoupper('Adeuvânia Silva Oliveira');
+  $participantes[] = strtoupper('Luiz Henrique Ferreira Wanderley');
+  $participantes[] = strtoupper('FERNANDO DA SILVA OLIVEIRA');
+  $participantes[] = strtoupper('Vera Lúcia Sousa da Silva');
+  $participantes[] = strtoupper('Eloyza dos Santos Santana'); // eloyzass04@gmail.com
+  $participantes[] = strtoupper('Welsson Fernandes Soares'); // wwelsonsoares10@gmail.com
+  $participantes[] = strtoupper('Leandro Pereira de Oliveira'); // leopdi2011@hotmail.com
+  $participantes[] = strtoupper('Maria Muritiba de Oliveira'); // mmuritiba84@gmail.com
+  $participantes[] = strtoupper('Bruna Angélica Borges'); // bruna.borges@ifro.edu.br
+  $participantes[] = strtoupper('Maria Zillene Franklin da Silva Oliveira'); // zillene26@gmail.com
+  $participantes[] = strtoupper('Alana Kelly de Medeiros Costa');
+  $participantes[] = strtoupper('Diana Forte de Oliveira');
+  $participantes[] = strtoupper('Carolina de Brito Barbosa'); // carolinabritobarbosa@hotmail.com
+  $participantes[] = strtoupper('Jordânia Catarina de Sousa e Silva');
   $participantes[] = strtoupper('Maria Carolina Paiva Rodrigues'); // carol.rodrigues0807@hotmail.com
   $participantes[] = strtoupper('Leila Soares Viegas Barreto Chagas'); // leila_viegas@hotmail.com
   $participantes[] = strtoupper('Ayrton Pereira Correia de Barros Júnior'); // ayrtonbarros_jr@hotmail.com
@@ -161,13 +179,12 @@ if(isset($_POST['inputName'])){
   $participantes[] = strtoupper('Vanuza Ribeiro Macedo'); // vannuzaribeiro@hotmail.com
   $participantes[] = strtoupper('CARLOS MARIANO MELO JÚNIOR'); //
   $participantes[] = strtoupper('MATHEUS CARVALHO CONCEIÇÃO'); //
-  $participantes[] = strtoupper('Rosiolanda Soares Sousa'); //
-  $participantes[] = strtoupper('NELCY MAGDALA MOURA SANTOS'); //
   $participantes[] = strtoupper('Guilherme Carvalho Rodrigues'); //
-  $participantes[] = strtoupper('NELCY MAGDALA MOURA E SANTOS'); //
   $participantes[] = strtoupper(''); //
   $participantes[] = strtoupper(''); //
   // ===========================================================================
+
+  mb_internal_encoding("UTF-8");
 
   function buscaParticipante($inputName, $participantes){
     $out = array();
@@ -188,6 +205,8 @@ if(isset($_POST['inputName'])){
     $count = 0;
     foreach($busca_resultado as $participante){
 
+      $participante = mb_strtoupper($participante);
+
       $filename = strtolower(str_replace(' ', '_', trim(iconv('UTF-8', 'ASCII//TRANSLIT', $participante), ',')));
       for($i=0; $i<strlen($filename); $i++){
         if(strpos("abcdefghijklmnopqrstuvxzwy0123456789_-", $filename[$i]) === false){
@@ -197,20 +216,22 @@ if(isset($_POST['inputName'])){
 
       $link_download = "cert/gerados/participante/$filename.pdf";
 
-      $mpdf = new mPDF('utf-8', 'A4-L');
-      $mpdf->autoScriptToLang = true;
-      $mpdf->SetDisplayMode('fullpage');
-      $mpdf->WriteHTML($css, 1);
-      $mpdf->WriteHTML("<html>
-      <head></head>
-      <body>
-      <div style='padding:200px 10px 0 30px;text-align:center;'>
-      Certificamos que <b>$participante</b> participou do XI CONNEPI – Congresso Norte Nordeste de Pesquisa e Inovação, que ocorreu no período de 06 a 09 de dezembro de 2016, no Hotel Ritz Lagoa da Anta, na cidade de Maceió - Alagoas.
-      <br><br><br>
-      <b style='font-size:18px;'>Maceió, 09 de dezembro de 2016.</b>
-      </div>
-      </body></html>");
-      $mpdf->Output($link_download, "F");
+      if(!file_exists($link_download)){
+        $mpdf = new mPDF('utf-8', 'A4-L');
+        $mpdf->autoScriptToLang = true;
+        $mpdf->SetDisplayMode('fullpage');
+        $mpdf->WriteHTML($css, 1);
+        $mpdf->WriteHTML("<html>
+        <head></head>
+        <body>
+        <div style='padding:200px 10px 0 30px;text-align:center;'>
+        Certificamos que <b>$participante</b> participou do XI CONNEPI – Congresso Norte Nordeste de Pesquisa e Inovação, que ocorreu no período de 06 a 09 de dezembro de 2016, no Hotel Ritz Lagoa da Anta, na cidade de Maceió - Alagoas.
+        <br><br><br>
+        <b style='font-size:18px;'>Maceió, 09 de dezembro de 2016.</b>
+        </div>
+        </body></html>");
+        $mpdf->Output($link_download, "F");
+      }
       $downloads[$count] = array();
       $downloads[$count]['nome'] = $participante;
       $downloads[$count]['linkDownload'] = $link_download;

@@ -93,7 +93,7 @@ if(isset($_POST['inputBusca'])){
 ?>
 
 <?php
-$title_subpage = "Certificado de Autores do trabalho";
+$title_subpage = "Certificado de autores do trabalho";
 include("header.php"); ?>
 
 <section class="pesquisa">
@@ -101,6 +101,7 @@ include("header.php"); ?>
 
     <?php if(count($downloads) <= 0) : ?>
     <h1 class="wow fadeInDown" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;"><i style="margin-right:20px;" class="fa fa-search" aria-hidden="true"></i> Buscar certificado</h1>
+    <h2><?php echo $title_subpage; ?></h2>
     <hr style="margin-top:20px;border-top:1px solid rgb(157, 210, 203);border-botom:1px solid rgb(219, 219, 219);" />
 
     <div class="row">

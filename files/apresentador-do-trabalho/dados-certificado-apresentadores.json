@@ -1,4 +1,44 @@
 [{
+	"id": "12374",
+	"titulo": "GERENCIANDO AS ATIVIDADE DE MONITORIA COM O SIGMA",
+	"apresentador": "Jesaías Carvalho Pereira Silva"
+},{
+	"id": "10335",
+	"titulo": "SUPER-HÍFEN - GAMIFICANDO A LÍNGUA PORTUGUESA",
+	"apresentador": "Maria das Graças Amorim de Castro"
+},{
+	"id": "7108",
+	"titulo": "FORMULAÇÃO E AVALIAÇÃO FÍSICO-QUÍMICA E MICROBIOLÓGICA DA GELEIA DE ABACAXI (ANANASCOMOSUS L. MERRIL) DO MUNICÍPIO DE TURIAÇU-MA",
+	"apresentador": "Roberta Adrielle Lima Vieira"
+},{
+	"id": "11861",
+	"titulo": "DESENVOLVIMENTO DO RACIOCÍNIO LÓGICO A PARTIR DO USO DE MATERIAIS DIDÁTICOS MANIPULÁVEIS EM UMA TURMA DO 9º ANO DO ENSINO FUNDAMENTAL",
+	"apresentador": "Anny Akácia de Jesus Santos"
+},{
+	"id": "6980",
+	"titulo": "CARATERIZAÇÃO DA ÁGUA PARA IRRIGAÇÃO DOS AGRICULTORES FAMILIAR NO MUNICÍPIO DE SÃO BENEDITO, CEARÁ",
+	"apresentador": "Antonia Isabela Soares Ximenes"
+},{
+	"id": "9812",
+	"titulo": "REMOÇÃO DE PESTICIDA ATRAZINA ATRAVÉS DA ADSORÇÃO UTILIZANDO SEMENTE DE NONI (MORINDA CITRIFOLIA L.)",
+	"apresentador": "Francisco Bezerra de Matos Neto"
+},{
+	"id": "11337",
+	"titulo": "INFLUÊNCIA DO HORÁRIO DE COLETA E TEMPO DE SECAGEM NA COMPOSIÇÃO QUÍMICA DO ÓLEO ESSENCIAL DE CROTON RHAMNIFOLIUS H.B.K.",
+	"apresentador": "Leonardo Mendes Sousa Xavier"
+},{
+	"id": "11900",
+	"titulo": "INFLUÊNCIA DO HORÁRIO DE COLETA E TEMPO DE SECAGEM NA COMPOSIÇÃO QUÍMICA E NA ATIVIDADE BIOLÓGICA DO ÓLEO ESSENCIAL DE CROTON SONDERIANUS",
+	"apresentador": "Leonardo Mendes Sousa Xavier"
+},{
+	"id": "8987",
+	"titulo": "EDUCAÇÃO A DISTÂNCIA: O PAPEL PEDAGÓGICO DA AVALIAÇÃO FORMATIVA NA CONSTRUÇÃO DO CONHECIMENTO EM AVAS",
+	"apresentador": "Fernanda Felipe Leal"
+}, {
+	"id": "12371",
+	"titulo": "PANORAMA DO ABASTECIMENTO DE ÁGUA NO MUNICÍPIO DE RIACHO FRIO, PIAUÍ",
+	"apresentador": "Rômulo Vargas Lustosa"
+}, {
 	"id": "11168",
 	"titulo": "Estudo geológico de uma área situada a oeste do município de Jaguaretama no Estado do Ceará",
 	"apresentador": "Talita Fernanda Carvalho Gentil"
@@ -1440,7 +1480,7 @@
 	"apresentador": "FRANCISCO EDU ANDRADE"
 }, {
 	"id": "8288",
-	"titulo": "Indução de resistência a pragas silício em cultivares de melancia",
+	"titulo": "Indução de resistência a pragas pelo silício em cultivares de melancia",
 	"apresentador": "BISMARK NOGUEIRA DE ALENCAR"
 }, {
 	"id": "7674",

@@ -1,4 +1,5 @@
 <?php include("header.php");?>
+
     <section id="hero-area">
       <div class="container">
         <div class="row">
@@ -68,14 +69,15 @@
       </div>
       <!-- .container close -->
     </section>
-    <!-- header close -->
+
+
     <!--
-      Sobre o evento início
+      Sobre o evento
       ==================== -->
     <section id="about" class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-7 col-sm-12 wow fadeInLeft">
+          <div class="col-md-7 col-sm-12">
             <div class="sub-heading">
               <h3>Maceió será palco da 11ª edição.</h3>
             </div>
@@ -94,7 +96,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-5 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">
+          <div class="col-md-5 col-sm-12">
             <div class="about-slider">
               <div class="init-slider">
                 <div class="about-item">
@@ -112,18 +114,15 @@
         </div>
       </div>
     </section>
-    <!-- #about close -->
+
     <!--
-      Sobre o evento
-      ==================== -->
-    <!--
-      Local início
+      Local
       ==================== -->
     <section id="location" class="section">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="heading wow fadeInUp">
+            <div class="heading">
               <h2>Local do Evento</h2>
               <p>
                 O evento será realizado no Hotel Ritz Lagoa da Anta, em um dos lugares mais belos da cidade de Maceió.<br>
@@ -165,15 +164,15 @@
       </div>
       <!-- .container close -->
     </section>
-    <!-- #location close -->
+
     <!--
-      Chamadas início
+      Chamadas 
       ==================== -->
     <section id="authors" class="section">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="heading wow fadeInUp">
+            <div class="heading">
               <h2>Submissão de Artigos e Minicursos</h2>
               <p>Efetue sua submissão de artigo pelo <a href="http://connepi.ifal.edu.br/ocs/index.php/connepi/connepi2016/author/submit?requiresAuthor=1" target="_blank" style="color: red;">sistema OCS</a>.</p>
   						<p>Se houver dificuldades quanto ao sistema, preencha nosso formulário para suporte (<a href="http://connepi.ifal.edu.br/2016/suporte.html" target="_blank">acessar</a>).</p><br>
@@ -196,11 +195,11 @@
                 <h3><a style="color: red;" href="files/modelodeminicurso.zip">Diretrizes para Submissão de Minicursos</a></h3>
               </div>
             </div>
-            <div class="heading wow fadeInUp">
+            <div class="heading">
               <h2>Datas Importantes</h2>
               <p>As datas de submissão de artigo já estão definidas</p>
             </div>
-            <div class="col-sm-6 col-md-3 wow fadeInLeft">
+            <div class="col-sm-6 col-md-3">
               <div class="authors">
                 <div class="icon-box">
                   <span class="icon">
@@ -213,7 +212,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
+            <div class="col-sm-6 col-md-3">
               <div class="authors">
                 <div class="icon-box">
                   <span class="icon">
@@ -226,7 +225,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
+            <div class="col-sm-6 col-md-3">
               <div class="authors">
                 <div class="icon-box">
                   <span class="icon">
@@ -239,7 +238,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.9s">
+            <div class="col-sm-6 col-md-3">
               <div class="authors">
                 <div class="icon-box">
                   <span class="icon">
@@ -257,22 +256,21 @@
       </div>
       <!-- .container close -->
     </section>
-    <!-- #authors close -->
 
     <!--
-      Universo IF início
+      Universo IF
       ==================== -->
 		<section id="universoif" class="section">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="heading wow fadeInUp">
+            <div class="heading">
   						<h2>Universo IF</h2>
   						<p>Um evento que acontece dentro do CONNEPI voltado para o estímulo ao empreendedorismo e a prospecção de ideias inovadoras no âmbito dos Institutos Federais. Serão três dias de atividades onde grupos formados por alunos e professores dos Institutos Federais participam de palestras e outras dinâmicas com o objetivo de incentivar a concepção de seus projetos acadêmicos voltados para a inovação e a geração de negócios de base tecnológica, despertando e disseminando a cultura empreendedora e mostrando que qualquer pessoa tem o poder de, com o seu esforço, transformar a sua realidade.</p>
               <br><br>
   					</div>
 
-            <div class="heading wow fadeInUp" data-wow-delay="0.7s">
+            <div class="heading">
               <h2>O Universo IF divide-se em duas dimensões</h2>
               <div class="col-md-6">
                 <h2 class="custom-h2-universoIf">III Desafio de Ideias</h2>
@@ -321,15 +319,15 @@
         <div class="row">
           <div class="col-x-12 col-sm-12 col-md-12">
             <div class="block">
-              <div class="heading wow fadeInUp">
+              <div class="heading">
                 <h2 class="titulo-header">Programação</h2>
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 wow fadeInLeft">
+          <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="block">
 
-              <div class="col-md-6 col-xs-12 col-sm-12 wow fadeInRight" data-wow-delay="0.3s">
+              <div class="col-md-6 col-xs-12 col-sm-12">
                 <h2 class="titulo">Programação e disposição das apresentações</h2>
                 <div class="caption">
                   <a href="files/programacao/programacao_banner.pdf" data-lity data-lity-target="files/programacao/programacao_banner.pdf" class="item"><i class="fa fa-file" aria-hidden="true"></i> Modalidade: <b>Pôster/Banner</b></a><br>
@@ -337,14 +335,14 @@
                 </div>
               </div>
 
-              <div class="col-md-6 col-xs-12 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">
+              <div class="col-md-6 col-xs-12 col-sm-12">
                 <h2 class="titulo">Programação preliminar de palestras e mesas redondas</h2>
                 <div class="caption">
                   <a href="files/programacao/mesas_redonda.pdf" data-lity data-lity-target="files/programacao/mesas_redonda.pdf" class="item"><i class="fa fa-file" aria-hidden="true"></i> <b>Visualizar documento</b></a>
                 </div>
               </div>
 
-              <div class="col-md-12 col-xs-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+              <div class="col-md-12 col-xs-12 col-sm-12">
                 <br><br><h2 class="titulo">Tabela detalhada</h2>
                 <div class="image">
                   <a href="files/programacao/tabela.gif" target="_blank">
@@ -358,23 +356,22 @@
         </div>
       </div>
     </section>
-    <!-- #programação close -->
 
     <!--
-      Contato início
+      Contato
       ==================== -->
     <section id="contact" class="section">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="block">
-              <div class="heading wow fadeInUp">
+              <div class="heading">
                 <h2>Entre em contato</h2>
                 <p>Caso tenha qualquer dúvida sobre o evento ou queira nos dar sugestões, envie um e-mail para: connepi.ifal@gmail.com</p>
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-5 wow fadeInUp">
+          <div class="col-xs-12 col-sm-12 col-md-5">
             <div class="block text-left">
               <div class="sub-heading">
                 <h4>Localização</h4>
@@ -395,8 +392,5 @@
         </div>
       </div>
     </section>
-    <section clas="wow fadeInUp">
-      <div class="map-wrapper">
-      </div>
-    </section>
+
 <?php include("footer.php");?>

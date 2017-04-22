@@ -313,7 +313,7 @@
   50% {opacity: 0.1}
   100% {opacity: 0.9}
 }
-#carregando {display: none;}
+#carregando { display: none; }
 #continuar {
   width: 240px; padding: 10px;
   border-radius: 4px;
@@ -336,7 +336,7 @@
   padding: 40px 0;
   animation-name: loadingifal;
   animation-iteration-count: infinite;
-  animation-duration: 2s;
+  animation-duration: 1s;
   text-align: center;
 }
 #formulario {opacity: 0; margin-top: 600px; display: none;}
