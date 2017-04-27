@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand" href="index.php">
           <img class="logo-1" src="images/logo.png" alt="LOGO">
           <img class="logo-2" src="images/logo-2.png" alt="LOGO">
           </a>
@@ -50,7 +50,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <nav class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right" id="top-nav">
-            <li><a class="custom-exit-collapse" href="index.php">Principal</a></li>
+            <!-- <li><a class="custom-exit-collapse" href="index.php">Principal</a></li> -->
             <li><a class="custom-exit-collapse" href="index.php#about">Sobre o evento</a></li>
             <li><a class="custom-exit-collapse" href="index.php#location">Local do evento</a></li>
             <li><a class="custom-exit-collapse" href="index.php#authors">Autores/as</a></li>
@@ -58,6 +58,7 @@
             <li><a class="custom-exit-collapse" href="hospedagem.html" data-lity data-lity-target="hospedagem.html">Hospedagem</a></li>
             <li><a class="custom-exit-collapse" href="index.php#programacao">Programação</a></li>
             <li><a class="custom-exit-collapse" href="https://doity.com.br/xiconnepi" target="_blank">Inscrição</a></li>
+            <li><a class="custom-exit-collapse custom-link-new" href="anais.php">Anais</a></li>
           </ul>
         </nav><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

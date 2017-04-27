@@ -1,3 +1,132 @@
+a.custom-link-new {
+  position: relative;
+}
+a.custom-link-new:after {
+  content: '';
+  position: absolute;
+  top: 5px; right: -5px;
+  width: 50px; height: 20px;
+  background-image: url('../images/novo-icon.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  overflow: hidden;
+  opacity: .3;
+  transition: 400ms all;
+}
+a.custom-link-new:hover:after {
+  opacity: 1 !important;
+}
+@media (max-width: 1199px){
+  a.custom-link-new:after {
+    top: 0px; left: 25px;
+  }
+}
+
+/* ---------------
+    Anais
+  -------------*/
+.anais-dias {
+  margin-top: 60px;
+  text-align: center;
+}
+.anais-dias h2,
+.anais-title {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 6px;
+  color: #3b4045;
+  text-align: center;
+}
+.anais-dias h2:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  background-color: #3b4045;
+  height: 3px;
+  width: 100%;
+}
+.anais-dias > div > div {
+  text-align: center;
+  background-color: #3b4045;
+  color: #fff;
+  margin-top: 30px;
+  transition: 200ms all;
+  padding-bottom: 20px;
+}
+.anais-dias > div > div span {
+  padding: 10px 0;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.anais-dias > div > div a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 52px;
+  line-height: 104px;
+  transition: 200ms all;
+}
+.anais-dias > div > div:hover {
+  background-color: #fff;
+  color: #3b4045;
+}
+.anais-dias > div > div:hover a {
+  color: #3b4045;
+  background-color: rgba(0, 0, 0, .05);
+}
+/* ------------------
+    row - dia
+  ---------------- */
+.anais-dia {
+  margin-top: 30px;
+}
+.anais-dia h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #3b4045;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3b4045;
+}
+.anais-dia-item {
+  height: 150px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.anais-dia-item img {
+  width: 100%;
+  height: 100%;
+  outline: 4px solid rgba(255, 255, 255, .5);
+  transition: 140ms all;
+}
+.anais-dia-item img:hover {
+  outline: 4px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, .5);
+  transform: translateY(-4px);
+}
+.anais-dia-links-galeria {
+  text-align: center;
+}
+.anais-dia-links-galeria a {
+  margin-top: -1px;
+  font-size: 12px;
+}
+@media (min-width: 992px) and (max-width: 1199px){
+  .anais-dias h2 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 520px){
+  .anais-dias h2 {
+    font-size: 24px;
+  }
+}
+
 /* Publicação dos artigos premiado */
 .ta-hero {
   padding: 300px 0;
