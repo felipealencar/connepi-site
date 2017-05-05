@@ -71,7 +71,7 @@ html:not(.osx) ::-webkit-scrollbar-thumb:vertical {
   .sidebar {
     float: left;
     width: 30%;
-    height: 700px;
+    height: 720px;
     background-color: #3b4045;
   }
 }
