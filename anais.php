@@ -1,4 +1,7 @@
-<?php include('anais_config.php'); ?>
+<?php include('anais_config.php');
+$discus_pageUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : 'none';
+?>
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -60,6 +63,11 @@
         <div class="foto">
           <?php echo $fotoInicial; ?>
         </div>
+        <div class="comments">
+          <h2>Comentários</h2>
+          <p>Seu comentário ficará visível em toda galeria</p>
+          <?php include('discus_view.php');?>
+        </div><!-- .comments -->
       </div><!-- .content-entry -->
     <?php endif;?>
     <!-- FIM GALERIA DE FOTOS -->
@@ -70,6 +78,8 @@
 
 <script src="js/vendor/jquery-1.10.2.min.js" charset="utf-8"></script>
 <script src="js/lity.min.js" charset="utf-8"></script>
+<script id="dsq-count-scr" src="//horarioescolar.disqus.com/count.js" async></script>
 <script src="js/anais/scripts.js" charset="utf-8"></script>
+
 </body>
 </html>

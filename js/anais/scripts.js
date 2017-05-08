@@ -20,7 +20,6 @@ $(document).on('ready', function(){
     var control = $(this).data('control');
     var slider = $('.thumbs-roll .thumbs');
     var maxPrev = -(slider.width() - 588);
-    console.info(maxPrev);
     var currentTraslate = (($('.thumbs-roll .thumbs').css('transform')).split(','))[4];
 
     // Sliding
@@ -33,6 +32,7 @@ $(document).on('ready', function(){
 
   // change current image
   $(document).on('click', '.img-tigger', function(){
+    $('.img-target').attr('src', '');
     $('.img-target').attr('src', $(this).data('target'));
   });
 
