@@ -63,17 +63,34 @@ if(isset($_GET['dia']) && isset($_GET['galeria']) && !empty($_GET['dia']) && !em
   $getTitulo = $galeria[$getDia][$getGaleria]['titulo'];
   $totalFotosGaleria = $galeria[$getDia][$getGaleria]['totalFotos'];
   $showGaleriaHeader = "Dia 0{$getDia}.12.16 - {$getTitulo}";
+  $showGaleriaHeaderComentarios = "Dia: 0{$getDia}.12.2016<br/>Galeria: {$getTitulo}";
   $showGaleria = true;
 
   $widthThumbnails = 0;
   $thumbnails = "";
+  $jgpOuJPG = ($getDia == 9) ? 'JPG' : 'jpg';
   for($i=1; $i<=$totalFotosGaleria; $i++){
-    $linkImagem = "files/materiais_anais/dia{$getDia}/{$getGaleria}/imagem%20({$i}).jpg";
+    $linkImagem = "files/materiais_anais/dia{$getDia}/{$getGaleria}/imagem%20({$i}).{$jgpOuJPG}";
     $linkImagemThumb = "files/materiais_anais/thumbs/dia{$getDia}/{$getGaleria}/imagem%20({$i}).jpg";
     $thumbnails .= "<a class='img-tigger' href='javascript:;' data-target='{$linkImagem}'><img src='{$linkImagemThumb}' /></a>";
     $widthThumbnails += 85;
   }
-
-  $fotoInicial = "<img class='img-target' src='files/materiais_anais/dia{$getDia}/{$getGaleria}/imagem%20(1).jpg' />";
+  $fotoInicial = "<a href='{$linkImagem}' class='img-target-a' data-lity data-lity-target='files/materiais_anais/dia{$getDia}/{$getGaleria}/imagem%20(1).{$jgpOuJPG}'><img class='img-target' src='files/materiais_anais/dia{$getDia}/{$getGaleria}/imagem%20(1).{$jgpOuJPG}' /></a>";
 }
+
+// Vídeo
+$showVideo = false;
+if(isset($_GET['video']) && !empty($_GET['video'])){
+  $showVideo = true;
+  $videos = array(
+    'abertura-evento' => array('title' => 'Abertura do evento', 'id' => 'ommjEqtgkfI'),
+    'desafio-de-ideias' => array('title' => 'Desafio de ideias', 'id' => 'CexktpcdnpE'),
+    'encerramento-e-premiacao' => array('title' => 'Encerramento e premiação', 'id' => 'rWpHy6d8wZM'),
+    'patrocinadores' => array('title' => 'Patrocinadores', 'id' => 'vpoJFkKYPwQ'),
+  );
+  $getVideo = $_GET['video'];
+  $videoTitle = 'Vídeo: ' . $videos[$getVideo]['title'];
+  $videoId = $videos[$getVideo]['id'];
+}
+
 ?>

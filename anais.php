@@ -50,6 +50,22 @@ $discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : '
       <h1><?php echo ($showGaleria) ? $showGaleriaHeader: "Anais do XI CONNEPI"; ?></h1>
     </div><!-- .content-header -->
 
+    <!-- INICIO VÍDEO -->
+    <?php if($showVideo):?>
+      <div class="content-entry">
+        <h1><?php echo $videoTitle; ?></h1>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<?=$videoId;?>?rel=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="comments">
+          <h2>Comentários</h2>
+          <p style="text-transform:uppercase; margin-top:10px; font-size:11px;"><?=$videoTitle;?></p>
+          <?php include('discus_view.php');?>
+        </div><!-- .comments -->
+      </div><!-- .content-entry -->
+    <?php endif;?>
+    <!-- FIM VÍDEO -->
+
     <!-- INICIO GALERIA DE FOTOS -->
     <?php if($showGaleria):?>
       <div class="content-entry">
@@ -65,7 +81,7 @@ $discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : '
         </div>
         <div class="comments">
           <h2>Comentários</h2>
-          <p>Seu comentário ficará visível em toda galeria</p>
+          <p style="text-transform:uppercase; margin-top:10px; font-size:11px;"><?=$showGaleriaHeaderComentarios;?></p>
           <?php include('discus_view.php');?>
         </div><!-- .comments -->
       </div><!-- .content-entry -->

@@ -1,9 +1,8 @@
 $(document).on('ready', function(){
 
   // loading
-  $('body').removeClass('overlay');
+  setTimeout(function(){$('body').removeClass('overlay')},300);
   $('.loading').fadeOut();
-  $('.container').addClass('fadeIn');
 
   // sidebar
   $('.sidebar-nav > a').on('click', function(){
@@ -23,7 +22,7 @@ $(document).on('ready', function(){
     var currentTraslate = (($('.thumbs-roll .thumbs').css('transform')).split(','))[4];
 
     // Sliding
-    if(control == 'next' && parseInt(currentTraslate) < 0){
+    if(control == 'next' && parseInt(currentTraslate) < -10){
       slider.css({'transform':'matrix(1, 0, 0, 1, '+ (parseInt(currentTraslate) + 160) +', 0)'});
     } else if (control == 'prev' && parseInt(currentTraslate) > maxPrev){
       slider.css({'transform':'matrix(1, 0, 0, 1, '+ (parseInt(currentTraslate) - 160) +', 0)'});
@@ -32,8 +31,12 @@ $(document).on('ready', function(){
 
   // change current image
   $(document).on('click', '.img-tigger', function(){
+    $('.img-tigger').removeClass('active');
     $('.img-target').attr('src', '');
     $('.img-target').attr('src', $(this).data('target'));
+    $('.img-target-a').attr('href', $(this).data('target'));
+    $('.img-target-a').data('lity-target', $(this).data('target'));
+    $(this).addClass('active');
   });
 
 });
