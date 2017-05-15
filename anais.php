@@ -50,8 +50,16 @@ $discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : '
       <h1><?php echo ($showGaleria) ? $showGaleriaHeader: "Anais do XI CONNEPI"; ?></h1>
     </div><!-- .content-header -->
 
-    <!-- INICIO VÍDEO -->
+    <?php if(!$showVideo && !$showGaleria && (!isset($_GET) || empty($_GET))):?>
+      <div class="content-entry">
+        <h2>Bem vindo ao Anais do XI CONNEPI</h2>
+        <hr style="margin:20px 0;border-top:none;border-bottom:1px solid #6f6f6f;"/>
+        <p style="font-size:14px;font-style:italic;">Visualize as galerias navegando no menu à esquerda, elas estão agrupadas por dias e, organizadas em categorias.</p>
+      </div><!-- .content-entry -->
+    <?php endif;?>
+
     <?php if($showVideo):?>
+      <!-- INICIO VÍDEO -->
       <div class="content-entry">
         <h1><?php echo $videoTitle; ?></h1>
         <div class="video">
@@ -63,11 +71,11 @@ $discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : '
           <?php include('discus_view.php');?>
         </div><!-- .comments -->
       </div><!-- .content-entry -->
+      <!-- FIM VÍDEO -->
     <?php endif;?>
-    <!-- FIM VÍDEO -->
 
-    <!-- INICIO GALERIA DE FOTOS -->
     <?php if($showGaleria):?>
+      <!-- INICIO GALERIA DE FOTOS -->
       <div class="content-entry">
         <div class="thumbs-roll">
           <div class="thumbs" style="width:<?=$widthThumbnails;?>px;">
@@ -85,8 +93,8 @@ $discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : '
           <?php include('discus_view.php');?>
         </div><!-- .comments -->
       </div><!-- .content-entry -->
+      <!-- FIM GALERIA DE FOTOS -->
     <?php endif;?>
-    <!-- FIM GALERIA DE FOTOS -->
 
   </div><!-- .content -->
 
