@@ -1,9 +1,5 @@
 $(document).on('ready', function(){
 
-  // loading
-  setTimeout(function(){$('body').removeClass('overlay')},300);
-  $('.loading').fadeOut();
-
   // toggleNav
   $(document).on('click', '.toggleNav', function(){
     $(this).toggleClass('active');
