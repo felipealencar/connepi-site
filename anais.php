@@ -18,15 +18,7 @@ $discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : '
 <link rel="stylesheet" href="css/lity.css">
 <link rel="stylesheet" href="css/anais/style.css">
 </head>
-<body class="overlay">
-
-<div class="loading">
-  <div class="spinner">
-    <div class="bounce1"></div>
-    <div class="bounce2"></div>
-    <div class="bounce3"></div>
-  </div>
-</div>
+<body>
 
 <div class="container animated">
 
