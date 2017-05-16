@@ -46,7 +46,7 @@ $galeria = array(
 $sidebarNav = "";
 foreach($galeria as $key => $value){
   $subActiveClass = (isset($_GET['dia']) && $_GET['dia'] == $key) ? 'active' : '';
-  $sidebarNav .= "<a href='javascript:;' data-sub='{$key}'>Fotos do dia 0{$key}.12.2017</a>";
+  $sidebarNav .= "<a href='javascript:;' data-sub='{$key}'>Fotos do dia 0{$key}.12.2017 <i class='fa fa-chevron-down' aria-hidden='true'></i></a>";
   $sidebarNav .= "<div class='sub {$subActiveClass}' id='sub-{$key}'>";
   foreach($value as $key_value => $value_value){
     $linkGaleria = "dia={$key}&galeria={$key_value}";

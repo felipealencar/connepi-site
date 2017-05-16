@@ -4,10 +4,22 @@ $(document).on('ready', function(){
   setTimeout(function(){$('body').removeClass('overlay')},300);
   $('.loading').fadeOut();
 
+  // toggleNav
+  $(document).on('click', '.toggleNav i', function(){
+    $(this).parent().toggleClass('active');
+    $('.sidebar-nav').toggleClass('active');
+  });
+
   // sidebar
   $('.sidebar-nav > a').on('click', function(){
-    $('.sidebar-nav .sub').hide();
-    $('.sidebar-nav .sub#sub-' + $(this).data('sub')).fadeIn();
+    if(!$(this).next().hasClass('active')){
+      $('.sidebar-nav .sub').removeClass('active');
+      $(this).next().addClass('active');
+      $(this).find('.fa').removeClass('fa-chevron-down').addClass('fa-chevron-left')
+    } else {
+      $(this).find('.fa').removeClass('fa-chevron-left').addClass('fa-chevron-down')
+      $('.sidebar-nav .sub').removeClass('active');
+    }
   });
 
   // thumbs-roll

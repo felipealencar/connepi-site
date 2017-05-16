@@ -32,9 +32,10 @@ $discus_pageIdentifier = (isset($_GET['dia'])) ? 'Galeria_Dia_'.$_GET['dia'] : '
 
   <div class="sidebar">
     <div class="sidebar-header"></div><!-- .sidebar-header -->
+    <button class="toggleNav"><i class="fa fa-bars" aria-hidden="true"></i></button>
     <nav class="sidebar-nav">
       <a href="anais.php">Inicio</a>
-      <a href="javascript:;" data-sub="videos">Vídeos</a>
+      <a href="javascript:;" data-sub="videos">Vídeos <i class='fa fa-chevron-down' aria-hidden='true'></i></a>
       <div class="sub <?php echo (isset($_GET['video'])) ? 'active' : ''; ?>" id="sub-videos">
         <a href="anais.php?video=abertura-evento">Abertura do evento</a>
         <a href="anais.php?video=desafio-de-ideias">Desafio de Ideias</a>
