@@ -5,8 +5,8 @@ $(document).on('ready', function(){
   $('.loading').fadeOut();
 
   // toggleNav
-  $(document).on('click', '.toggleNav i', function(){
-    $(this).parent().toggleClass('active');
+  $(document).on('click', '.toggleNav', function(){
+    $(this).toggleClass('active');
     $('.sidebar-nav').toggleClass('active');
   });
 
